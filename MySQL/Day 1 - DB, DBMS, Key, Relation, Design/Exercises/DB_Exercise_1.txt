@@ -1,0 +1,14 @@
+A customer wants to build an online business to display movies.
+He wants a website where:
+- You can lists different movies.
+- A movie have at least a title, a year of release and a director.
+- A director have at least a name.
+
+
+Part 1 - Modeling of the D.B. :
+- Determine what data the customer needs to save in the database.
+- Determine the entities (tables) that result from these data.
+- Identify all the attributes (for each table).
+- Identify the relationships between the different tables.
+- Identify the cardinalities of these relationships.
+- Create the relational diagram of the B.D.D.
