@@ -80,16 +80,16 @@ Part 6
 
 Part 7:
 - Get the sum of the views of all the movies.
-	SELECT SUM(*)
+	SELECT SUM(views)
 	FROM movies
 
 - Get the sum of the views of all the films of the director 'George Lucas'
-	SELECT SUM(*)
+	SELECT SUM(views)
 	FROM movies
 	WHERE director_id = 2
 
 - Get the sum of views by director
-	SELECT director_id, SUM(*)
+	SELECT director_id, SUM(views)
 	FROM movies
 	GROUP BY director_id
 

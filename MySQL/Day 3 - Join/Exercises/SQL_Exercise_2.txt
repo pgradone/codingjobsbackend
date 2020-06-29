@@ -1,0 +1,19 @@
+--
+This exercise is based on the first one of the first day (BOOK DATABASE)
+You can import SQL file (library.sql) in a new database.
+--
+
+Part 2 - SQL Queries:
+	Write all queries:
+	- View books sorted by release date.
+	- View all books with their respective author.
+	- View books sorted by authors.
+	- Display all books that contain the letter 'x' (replace x with what you want)
+	- Show all the books that came out in 2018 (replace the year with what you want)
+	- Show all books whose author is 'Albert Camus' (replace the author by the one you want)
+	- Display all books whose author's name contains the letter 'x' (replace x with what you want)
+	- Retrieve all orders already placed.
+	- Retrieve all orders already placed with the user's info.
+	- Get all the commands of the user 'john' (replace by what you want)
+	- Per user, recover the total sum of orders.
+	- By user, retrieve the list of authors of which he already buy a book.
