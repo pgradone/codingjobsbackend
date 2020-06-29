@@ -19,3 +19,5 @@ Now, there is a 'series' table that has the same fields as the 'movies' table.
 	- Get the number of views per director (movies and series combined).
 
 	- Get the total view number for all movies AND all series (movies and separate series).
+
+	
