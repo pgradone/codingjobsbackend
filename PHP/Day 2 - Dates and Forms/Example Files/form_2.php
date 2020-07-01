@@ -22,7 +22,7 @@ if(isset($_POST['firstName'])) {
 }
 
   ?>
-  <form action="data.php" method="POST">
+  <form action="" method="POST">
     <input type="text" name="firstName" placeholder="Your first name" value="<?php echo $firstName; ?>">
     <input type="text" name="email" placeholder="Your email">
     <input type="password" name="password" placeholder="Your password">
