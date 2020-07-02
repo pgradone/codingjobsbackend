@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 1 </p>';
@@ -27,12 +27,13 @@ if (isset($_POST['submit'])) {
 	if (empty($_POST['numb1']) or empty($_POST['numb2'])) {
 		echo 'Please fill both input';
 	} else {
-		echo multiply($_POST['numb1'],$_POST['numb2']);
+		echo multiply($_POST['numb1'], $_POST['numb2']);
 	}
 }
 
 
-function multiply ($n1,$n2) {
+function multiply($n1, $n2)
+{
 	return $n1 * $n2;
 }
 
@@ -41,23 +42,26 @@ function multiply ($n1,$n2) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Exercise</title>
 </head>
+
 <body>
-	<form method="POST" >
+	<form method="POST">
 		<input type="number" name='numb1'>
 		<input type="number" name="numb2">
-		<input type="submit" name="submit" >
+		<input type="submit" name="submit">
 	</form>
 </body>
+
 </html>
 
 <?php
 echo '<hr>';
-echo '<p style="font-weight: 900"> EXERCISE 2 </p>';
+echo '<p style="font-weight: 900"> EXERCISE 2 - check largest number </p>';
 
 /*
 - Exercise 2
@@ -77,14 +81,15 @@ if (isset($_POST['submit2'])) {
 	if (empty($_POST['numb3']) or empty($_POST['numb4'])) {
 		echo 'Please fill both input';
 	} else {
-		echo maxfinder($_POST['numb3'],$_POST['numb4']);
+		echo maxfinder($_POST['numb3'], $_POST['numb4']);
 	}
 }
 
 $numb3 = 5;
 $numb4 = 6;
-function maxfinder($numb3, $numb4) {
-	$maxnum = max($numb3,$numb4);
+function maxfinder($numb3, $numb4)
+{
+	$maxnum = max($numb3, $numb4);
 	echo 'The greatest number is ' . $maxnum . '<br>';
 	$msg = '';
 	if ($numb3 > $numb4) {
@@ -94,7 +99,7 @@ function maxfinder($numb3, $numb4) {
 		$msg = 'The first number is smaller';
 	}
 	if ($numb3 == $numb4) {
-			$msg = 'The two numbers are identical';
+		$msg = 'The two numbers are identical';
 	}
 	echo $msg;
 }
@@ -103,23 +108,26 @@ function maxfinder($numb3, $numb4) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Exercise</title>
 </head>
+
 <body>
-	<form method="POST" >
+	<form method="POST">
 		<input type="number" name='numb3'>
 		<input type="number" name="numb4">
-		<input type="submit" name="submit2" >
+		<input type="submit" name="submit2">
 	</form>
 </body>
+
 </html>
 
 <?php
 echo '<hr>';
-echo '<p style="font-weight: 900"> EXERCISE 3 </p>';
+echo '<p style="font-weight: 900"> EXERCISE 3 - John\'s expenses</p>';
 
 /*
 -- Exercise 3
@@ -137,13 +145,33 @@ echo '<p style="font-weight: 900"> EXERCISE 3 </p>';
 
 */
 
-for ($i=0; $i < 20 ; $i++) { 
-	# code...
+$expenses = [];
+for ($i = mktime(00, 00, 00, 01, 01, 2019); $i <= mktime(00, 00, 00, 01, 01, 2020); $i += (60 * 60 * 24)) {
+	$expenses[$i] = random_int(1, 500);
+	// echo date('Y-m-d', $i) . ' - ' . $expenses[$i] . '€<br>';
 }
 
+$totexpenses = 0;
+foreach ($expenses as $key => $value) {
+	$totexpenses += $value;
+}
+echo '3.1 - Total of John\'s expenses : ' . $totexpenses . '€';
 
 echo '<hr>';
-echo '<p style="font-weight: 900"> EXERCISE 4 </p>';
+
+function sumOfExpenses($expenses)
+{
+	$tot = 0;
+	foreach ($expenses as $amount) {
+		$tot += $amount;
+	}
+	return $tot;
+}
+
+echo '3.2 - Total of John\'s expenses from function : ' . sumOfExpenses($expenses) . '€';
+
+echo '<hr>';
+echo '<p style="font-weight: 900"> EXERCISE 4 - Palyndrome check </p>';
 
 /*
 -- Exercice 4
@@ -158,6 +186,48 @@ Example :
 
 */
 
+function isApalindrome($txt)
+{
+	$isPalindrome = false;
+	$c = 0;
+	for ($i = 0; $i < strlen($txt); $i++) {
+		$c += substr($txt, $i, 1) == substr($txt, -$i - 1, 1) ? 1 : 0;
+	}
+	return $c == strlen($txt);
+}
+
+if (isset($_POST['submit4'])) {
+	$msgp = 'Please fill a palindrome to check';
+	if (!empty($_POST['text2Check'])) {
+		$p2c = $_POST['text2Check'];
+		$msgp = isApalindrome($p2c) ?  $p2c . ' is a palindrome' : $p2c . ' is NOT a palindrome';
+	}
+	echo $msgp . '<br><br>';
+}
+
+include 'form_pot.html';
+
+?>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Function_Exercise_1</title>
+</head>
+
+<body>
+	<form method="POST">
+		<input type="text" name='text2Check'>
+		<input type="submit" name="submit4" value="submit me">
+	</form>
+</body>
+
+</html> -->
+
+<?php
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 5 </p>';
 
@@ -255,4 +325,4 @@ Expected result :
 
 */
 
- ?>
+?>
