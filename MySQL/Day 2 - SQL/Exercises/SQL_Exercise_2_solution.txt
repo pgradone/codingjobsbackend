@@ -1,0 +1,41 @@
+-- Explanation :
+
+Now, there is a 'series' table that has the same fields as the 'movies' table.
+
+
+	Series
+	------
+	serie_id, title, year_released, views, director_id
+
+
+-- Queries :
+	- Recover all series and all movies.
+	SELECT *, 'series' as `table` FROM series
+	UNION
+	SELECT *, 'movies' as `table` FROM movies
+
+	For those exercises, you have to use UNION
+
+	- Collect all series and all movies from 2018
+	SELECT * FROM series WHERE year_released = 2018
+	UNION
+	SELECT * FROM movies WHERE year_released = 2018
+
+	- Collect all the series and all the films with the director.
+	SELECT * FROM series WHERE director_id IS NOT NULL
+	UNION
+	SELECT * FROM movies WHERE director_id IS NOT NULL
+
+	- Get the number of views per director (movies and series combined).
+	SELECT director_id, sum(views) as `total views` FROM 
+	(
+		SELECT * FROM series
+		UNION
+		SELECT * FROM movies
+	) temp
+	GROUP BY director_id
+
+	- Get the total view number for all movies AND all series (movies and separate series).
+	SELECT concat('Movies ' , SUM(views)) as sum_of_views FROM `movies`
+	UNION
+	SELECT concat('Series: ',  SUM(views)) FROM `series`
