@@ -32,6 +32,7 @@ Now, there is a 'series' table that has the same fields as the 'movies' table.
 		SELECT * FROM series
 		UNION
 		SELECT * FROM movies
+<<<<<<< HEAD
 	)
 	GROUP BY director_id
 
@@ -39,3 +40,12 @@ Now, there is a 'series' table that has the same fields as the 'movies' table.
 	SELECT 'movies' as category, SUM(*) FROM `movies` GROUP BY `movies`
 	UNION
 	SELECT 'series' as category, SUM(*) FROM `series` GROUP BY `movies`
+=======
+	) temp
+	GROUP BY director_id
+
+	- Get the total view number for all movies AND all series (movies and separate series).
+	SELECT concat('Movies ' , SUM(views)) as sum_of_views FROM `movies`
+	UNION
+	SELECT concat('Series: ',  SUM(views)) FROM `series`
+>>>>>>> eccac36b10e5e0a93bd6fe91d4a3ea2bdf72edb3

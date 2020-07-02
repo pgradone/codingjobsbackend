@@ -23,18 +23,31 @@
 	Do not worry about what's in the input once the button is clicked.
 */
 
+<<<<<<< HEAD
+=======
+date_default_timezone_set('Europe/Luxembourg');
+>>>>>>> eccac36b10e5e0a93bd6fe91d4a3ea2bdf72edb3
 $users = array("johnny hallyday", "simon bertrand", "tom hanks", "toto tata", "john");
 
 $firstname = '';
 $lastname = '';
 
+<<<<<<< HEAD
 if (!empty($_POST['firstname'])) {
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
+=======
+
+if (!empty($_POST['firstname'])) {
+	$firstname = trim($_POST['firstname']);
+	$lastname = trim($_POST['lastname']);
+	$fullname = trim(trim($firstname) . ' ' . trim($lastname));
+>>>>>>> eccac36b10e5e0a93bd6fe91d4a3ea2bdf72edb3
 	$enterdate = strtotime($_POST['enterdate']);
 
 	$isauthorized = false;
 	foreach ($users as $key => $value) {
+<<<<<<< HEAD
 		if ($value == $firstname . ' ' . $lastname)
 			$isauthorized = true;
 	}
@@ -49,6 +62,26 @@ if (!empty($_POST['firstname'])) {
 		echo $firstname . ' / ' . $lastname . ' is NOT an authorized user <br>';
 	}
 	var_dump($_POST);
+=======
+		if (strtolower($value) == strtolower($fullname))
+			$isauthorized = true;
+	}
+
+	if ($isauthorized) {
+		echo $fullname . ' is an authorized user';
+		if ($enterdate) {
+			echo ', who entered  at ' . date('H:i:s',$enterdate) . ' on ' . date('d/m/Y',$enterdate);
+			// echo ' i.e., ' . date('H:i:s', abs(time() - $enterdate)) . ' seconds ago';
+			echo ' i.e., ' . abs(time() - $enterdate) . ' seconds ago,  ' . date('H:i:s', abs(time() - $enterdate));
+		}
+	} else {
+		echo $fullname . ' is NOT an authorized user <br>';
+	}
+
+echo '<br>';
+
+var_dump($_POST);
+>>>>>>> eccac36b10e5e0a93bd6fe91d4a3ea2bdf72edb3
 }
 ?>
 
@@ -67,7 +100,11 @@ if (!empty($_POST['firstname'])) {
 	<form action="" method="post">
 		<input type="text" name="firstname" placeholder="First Name" value="<?php echo $firstname; ?>">
 		<input type="text" name="lastname" placeholder="Last Name" value="<?php echo $lastname; ?>">
+<<<<<<< HEAD
 		<input type="date" name="enterdate" id="">
+=======
+		<input type="datetime-local" name="enterdate">
+>>>>>>> eccac36b10e5e0a93bd6fe91d4a3ea2bdf72edb3
 		<input type="submit" name="submit">
 	</form>
 </body>
