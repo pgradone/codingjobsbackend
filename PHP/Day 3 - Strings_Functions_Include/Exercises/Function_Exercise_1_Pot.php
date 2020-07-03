@@ -289,7 +289,7 @@ echo '<p style="font-weight: 900"> EXERCISE 8 </p>';
 */
 
 echo '<hr>';
-echo '<p style="font-weight: 900"> EXERCISE 9</p>';
+echo '<p style="font-weight: 900"> EXERCISE 9 - CountWords</p>';
 
 /*	
 -- Exercise 9
@@ -307,8 +307,14 @@ Hint: use a function that allows you to split a sentence into words (already see
 
 */
 
+$sentence = 'This is a sentence containing 7 words';
+echo 'the sentence "<strong>' . $sentence . '</strong>" contains ' . countWords($sentence) . ' words';
+function countWords($txt) {
+	return count(explode(' ', $txt));
+}
+
 echo '<hr>';
-echo '<p style="font-weight: 900"> EXERCISE 10 </p>';
+echo '<p style="font-weight: 900"> EXERCISE 10 - countEachWords </p>';
 
 
 /*
@@ -327,5 +333,39 @@ Expected result :
 						....... );
 
 */
+
+$sentence = 'this is a random sentence, it is totally random';
+
+var_dump($sentence);
+echo '<br>';
+var_dump(explode(' ', $sentence));
+var_dump(countEachWords($sentence));
+
+function countEachWords($myString) {
+	$sentenceArray = explode(' ',$myString);
+	$wc = [];
+	foreach ($sentenceArray as $word) {
+		if (!isset($wc[$word])) {
+			$wc[$word] = 1;
+		} else {
+			$wc[$word]++;
+		}
+		// $wc[$word] = isset($wc[$word]) ? $wc[$word]++ : 1;
+	}
+	return $wc;
+}
+
+if (isset($_POST['submit9'])) {
+	$msg = 'Please input a sentence to check';
+	if (!empty($_POST['text2Check'])) {
+		echo 'the sentence "<strong>' . $_POST['text2Check'] . '</strong>" contains ' . countWords($_POST['text2Check']) . ' words <br>';
+		echo 'This sencence contains the following word count : <br>';
+		var_dump(countEachWords($_POST['text2Check']));
+	}
+	echo $msg . '<br>';
+}
+
+include 'form_pot.html';
+
 
 ?>

@@ -22,3 +22,6 @@ git pull origin master
 
 # pull from my repo:
 git pull pot master
+
+# full refernce here:
+https://dev.to/g_abud/advanced-git-reference-1o9j?utm_source=digest_mailer&utm_medium=email&utm_campaign=digest_email
