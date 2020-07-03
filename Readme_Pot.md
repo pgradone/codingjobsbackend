@@ -3,11 +3,13 @@
 # Check current config: 
 git config --get remote.origin.url
 
-# Set up:
- git remote add pot https://github.com/pgradone/codingjobsbackend.git
-
 # add files to repo:
 git add .
+
+# Set up my link:
+git remote add pot https://github.com/pgradone/codingjobsbackend.git
+git remote add origin https://github.com/InsteanA
+
 
 # commit for the first time
 git commit -m 'first commit'
@@ -17,3 +19,6 @@ git push pot master
 
 # pull from teacher's repo:
 git pull origin master
+
+# pull from my repo:
+git pull pot master
