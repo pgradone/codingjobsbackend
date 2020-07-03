@@ -188,7 +188,6 @@ Example :
 
 function isApalindrome($txt)
 {
-	$isPalindrome = false;
 	$c = 0;
 	for ($i = 0; $i < strlen($txt); $i++) {
 		$c += substr($txt, $i, 1) == substr($txt, -$i - 1, 1) ? 1 : 0;
@@ -199,48 +198,52 @@ function isApalindrome($txt)
 if (isset($_POST['submit4'])) {
 	$msgp = 'Please fill a palindrome to check';
 	if (!empty($_POST['text2Check'])) {
-		$p2c = $_POST['text2Check'];
-		$msgp = isApalindrome($p2c) ?  $p2c . ' is a palindrome' : $p2c . ' is NOT a palindrome';
+		$msgp = $_POST['text2Check'] . ' is ' . (isApalindrome($_POST['text2Check']) ? '': 'NOT') . ' a palindrome';
 	}
 	echo $msgp . '<br><br>';
 }
 
 include 'form_pot.html';
 
-?>
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Function_Exercise_1</title>
-</head>
-
-<body>
-	<form method="POST">
-		<input type="text" name='text2Check'>
-		<input type="submit" name="submit4" value="submit me">
-	</form>
-</body>
-
-</html> -->
-
-<?php
 echo '<hr>';
-echo '<p style="font-weight: 900"> EXERCISE 5 </p>';
+echo '<p style="font-weight: 900"> EXERCISE 5 - Prime number </p>';
 
 /*
 -- Exercice 5
 
 Write a function that checks if a number is a prime number.
-A prime number is an integer greater than 1 that can only be divided by itself and 1.
+A prime number is an integer greater than 1 that can only be divided by itself or by 1.
 
 */
 
+
+function isAPrime($num)
+{
+	if (!is_numeric($num)) {
+		return false;
+	}
+	for ($i = 2; $i < $num; $i++) {
+		if (($num % $i == 0)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+if (isset($_POST['submit5'])) {
+	$msgp = 'Please input a (positive integer) number to check';
+	if (!empty($_POST['text2Check'])) {
+		$msgp = $_POST['text2Check'] . ' is ' . (isAPrime($_POST['text2Check']) ? '': 'NOT') . ' a prime number';
+		// $msgp = isAPrime($p2c) ?  $p2c . ' is a prime number' : $p2c . ' is NOT a prime number';
+	}
+	echo $msgp . '<br><br>';
+}
+
+include 'form_pot.html';
+
+
 echo '<hr>';
-echo '<p style="font-weight: 900"> EXERCISE 6 </p>';
+echo '<p style="font-weight: 900"> EXERCISE 6 - HTML images</p>';
 
 /*
 
