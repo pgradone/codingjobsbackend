@@ -25,6 +25,10 @@
 	<title>Document</title>
 </head>
 <body>
-	
+	<form action="home_Pot.php" method="POST">
+    <input type="email" name="mail" id="mail">
+    <input type="password" name="password" id="password">
+    <input type="submit" name="submit">
+  </form>
 </body>
 </html>

@@ -9,3 +9,5 @@
 	 */
 
 $fw = fopen('last_access.log', 'w');
+fwrite($fw,strtotime('now'));
+fclose($fw);
