@@ -14,18 +14,11 @@ echo 'creating a page indicating how often it has been visited by the user <br><
 session_start();
 
 if (isset($_SESSION['viewd'])) {
-    
-}
-
-$_SESSION['viewd']++;
-// $_SESSION['viewd']=1;
-// $_SESSION['whenvisited'] = time();
-
-if($_SESSION['viewd']==1){
+    $_SESSION['viewd']++;
+} else {
+    $_SESSION['viewd'] = 1;
     $_SESSION['whenvisited'] = time();
 }
-
-var_dump($_SESSION);
 
 echo 'This page has been visited ' . $_SESSION['viewd'] . ' times at ' . date('H:i:s', $_SESSION['whenvisited']) . '<br>';
 
