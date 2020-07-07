@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 07, 2020 at 08:29 AM
+-- Generation Time: Jul 07, 2020 at 02:10 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -34,19 +34,21 @@ CREATE TABLE IF NOT EXISTS `directors` (
   `name` varchar(50) NOT NULL,
   `nationality` enum('USA','Luxembourg','France','Italy') DEFAULT NULL,
   `year_of_birth` int(11) DEFAULT NULL,
+  `picture` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `directors`
 --
 
-INSERT INTO `directors` (`id`, `name`, `nationality`, `year_of_birth`) VALUES
-(1, 'Guy Ritchie', 'USA', 1968),
-(2, 'Steven Spielberg', 'USA', 1946),
-(3, 'Pier Paolo Pasolini', 'Italy', 1922),
-(4, 'Martin Scorsese', 'USA', 1942),
-(5, 'George Lucas', 'USA', 1944);
+INSERT INTO `directors` (`id`, `name`, `nationality`, `year_of_birth`, `picture`) VALUES
+(1, 'Guy Ritchie', 'USA', 1968, 'https://upload.wikimedia.org/wikipedia/commons/1/14/GuyRitchiebyKathyHutchins.jpg'),
+(2, 'Steven Spielberg', 'USA', 1946, 'https://www.biography.com/.image/t_share/MTE5NTU2MzE2Mzc0MDA5MzU1/steven-spielberg-9490621-1-402.jpg'),
+(3, 'Pier Paolo Pasolini', 'Italy', 1922, 'https://artaiafvg.files.wordpress.com/2015/04/pier-paolo-pasolini-1.jpg'),
+(4, 'Martin Scorsese', 'USA', 1942, 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Martin_Scorsese_by_David_Shankbone.jpg'),
+(5, 'George Lucas', 'USA', 1944, 'https://fr.web.img6.acsta.net/pictures/15/12/18/10/51/568937.jpg'),
+(6, 'Stephen Amis', 'USA', 1966, 'https://media-exp1.licdn.com/dms/image/C5603AQFzz6liUcZUQA/profile-displayphoto-shrink_200_200/0?e=1598486400&v=beta&t=pq1n6iVIYDW0sTjgeZ5UuFVWDWVxsWpwe2owNjF2CWU');
 
 -- --------------------------------------------------------
 
@@ -61,6 +63,7 @@ CREATE TABLE IF NOT EXISTS `movies` (
   `year_released` int(11) DEFAULT NULL,
   `views` int(11) DEFAULT NULL,
   `director_id` int(11) DEFAULT NULL,
+  `poster` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `director_id` (`director_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
@@ -69,17 +72,17 @@ CREATE TABLE IF NOT EXISTS `movies` (
 -- Dumping data for table `movies`
 --
 
-INSERT INTO `movies` (`id`, `title`, `year_released`, `views`, `director_id`) VALUES
-(1, 'Jurassic Park', NULL, 120000, 2),
-(2, 'Scarface', NULL, 150000, 4),
-(3, 'Salò', NULL, 5000, 3),
-(4, 'Star Wars I', 1978, 12000040, 5),
-(5, 'Indiana Jones', 1981, 15000000, 2),
-(6, 'Teorema', 1968, 39000, 3),
-(7, 'Oedipus Rex', 1967, 200000, 3),
-(8, 'The Real Thing', NULL, 600, NULL),
-(9, 'Something Fishy', 1982, NULL, NULL),
-(10, 'Raiders of the Lost Ark', 1981, 60000040, 5);
+INSERT INTO `movies` (`id`, `title`, `year_released`, `views`, `director_id`, `poster`) VALUES
+(1, 'Jurassic Park', 1993, 120000, 2, 'https://images-na.ssl-images-amazon.com/images/I/51dZZ4pl-kL._AC_.jpg'),
+(2, 'Scarface', 1983, 150000, 4, 'https://thewallpaper.co//wp-content/uploads/2019/10//gun-film-movie-drama-dark-weapon-crime-poster-movie-wallpaper-scarface-cinema-images-hd-wallpaper-jpg.jpg'),
+(3, 'Salò', 1975, 5000, 3, 'https://cdn.shopify.com/s/files/1/1057/4964/products/salo-vintage-movie-poster-original-italian-2-foglio-39x55-6073_1491x.jpg?v=1534413233'),
+(4, 'Star Wars I', 1978, 12000040, 5, 'https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_.jpg'),
+(5, 'Indiana Jones', 1981, 15000000, 2, 'https://m.media-amazon.com/images/M/MV5BMTIxNDUxNzcyMl5BMl5BanBnXkFtZTcwNTgwOTI3MQ@@._V1_UY1200_CR90,0,630,1200_AL_.jpg'),
+(6, 'Teorema', 1968, 39000, 3, 'https://m.media-amazon.com/images/M/MV5BZjNlMzM5MGYtMmRiYS00NDlhLThjMTgtYmUwYzVhYzVlZjgyL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_UY1200_CR79,0,630,1200_AL_.jpg'),
+(7, 'Oedipus Rex', 1967, 200000, 3, 'https://www.gstatic.com/tv/thumb/v22vodart/31308/p31308_v_v8_aa.jpg'),
+(8, 'The Real Thing', 2002, 600, 6, 'https://m.media-amazon.com/images/M/MV5BMTc4NjcxMjczMF5BMl5BanBnXkFtZTcwMjg0MDcyMQ@@._V1_UX182_CR0,0,182,268_AL_.jpg'),
+(9, 'Something Fishy', 1994, NULL, NULL, 'https://m.media-amazon.com/images/M/MV5BMWI3ZjAwMjEtNmU1Zi00MDU4LTk5M2QtNWViMjRiMGVhYjg1XkEyXkFqcGdeQXVyNTY1MDY1NjY@._V1_SY1000_CR0,0,734,1000_AL_.jpg'),
+(10, 'Raiders of the Lost Ark', 1981, 60000040, 5, NULL);
 
 -- --------------------------------------------------------
 

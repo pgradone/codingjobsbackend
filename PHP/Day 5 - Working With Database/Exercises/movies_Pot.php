@@ -9,6 +9,7 @@ $db_name = 'moviedatabase';
 $db_OK = mysqli_select_db($conn, $db_name);
 
 if ($db_OK) {
+
   // echo "$db_name  found !<br>";
   $qry = 'SELECT movies.*, directors.name, directors.nationality FROM `movies` INNER JOIN directors ON directors.id=movies.director_id';
   $res=mysqli_query($conn,$qry);
@@ -19,28 +20,37 @@ if ($db_OK) {
   echo '<h2>retrieving the results in an associative array using a loop</h2>';
   foreach ($movies as $movie) {
     echo '<hr>';
-    echo '<figure onClick="movie.php?id=' . $movie['id'] . '">
+    echo '<figure>
     <img src="' . $movie['poster'] . '" alt="' . $movie['title'] . '" style="width:20rem">
     <figcaption>' . $movie['title'] . '</figcaption>
   </figure><h3> by: ' . $movie['name'] . ' ('. $movie['nationality'] . ') ' .  
-  ' released: ' . $movie['year_released'] . '<h3>';
+  ' released: ' . $movie['year_released'] . '<h3>
+  <form method="GET" action="movie_Pot.php">
+    <input type="submit" name="id" value="' . $movie['id'] . '" id="Submit">
+  </form>'
+  ;
   }
+  // now call the movies details
+  if(isset($_POST["submit"])) {
+    echo $_GET['submit'];
+    }
+
   // call the query A SECOND TIME
   // because the cursor has reached the end with the FIRST call
-  $res=mysqli_query($conn,$qry);
+//   $res=mysqli_query($conn,$qry);
 
 
-  // display welcome
-echo '<h2>retrieving the results in a WHILE loop<h2>';
+//   // display welcome
+// echo '<h2>retrieving the results in a WHILE loop<h2>';
 
-  while ($db_record = mysqli_fetch_assoc($res)) {
-    echo '<hr>';
-    echo '<figure>
-    <img src="' . $db_record['poster'] . '" alt="' . $db_record['title'] . '" style="width:20rem">
-    <figcaption>' . $db_record['title'] . '</figcaption>
-  </figure><h3> by: ' . $db_record['name'] . ' ('. $db_record['nationality'] . ') ' .  
-  ' released: ' . $db_record['year_released'] . '<h3>';
-  }
+//   while ($db_record = mysqli_fetch_assoc($res)) {
+//     echo '<hr>';
+//     echo '<figure>
+//     <img src="' . $db_record['poster'] . '" alt="' . $db_record['title'] . '" style="width:20rem">
+//     <figcaption>' . $db_record['title'] . '</figcaption>
+//   </figure><h3> by: ' . $db_record['name'] . ' ('. $db_record['nationality'] . ') ' .  
+//   ' released: ' . $db_record['year_released'] . '<h3> <input type="submit" name="submit>';
+//   }
 } else {
   echo "$db_name NOT found !<br>";
 }
