@@ -16,24 +16,20 @@ if ($db_OK) {
 
   $movies= mysqli_fetch_all($res,MYSQLI_ASSOC);
 
-  // var_dump($movies);
-  echo '<h2>retrieving the results in an associative array using a loop</h2>';
   foreach ($movies as $movie) {
     echo '<hr>';
-    echo '<figure>
-    <img src="' . $movie['poster'] . '" alt="' . $movie['title'] . '" style="width:20rem">
-    <figcaption>' . $movie['title'] . '</figcaption>
-  </figure><h3> by: ' . $movie['name'] . ' ('. $movie['nationality'] . ') ' .  
-  ' released: ' . $movie['year_released'] . '<h3>
-  <form method="GET" action="movie_Pot.php">
-    <input type="submit" name="id" value="' . $movie['id'] . '" id="Submit">
-  </form>'
+    echo '<h2><a href="movie_Pot.php?id=' . $movie['id'] . '">' . $movie['title'] . '</a><h2>';
+  // echo '<form method="GET" action="movie_Pot.php">
+  //         <input type="submit" name="id" value="' . $movie['id'] . '" id="Submit">
+  //       </form>'
   ;
   }
   // now call the movies details
-  if(isset($_POST["submit"])) {
-    echo $_GET['submit'];
-    }
+  // but this is is stupidly useless
+  // I just need a  stupid HREF in <a> tag!
+  // if(isset($_POST["submit"])) {
+  //   echo $_GET['submit'];
+  //   }
 
   // call the query A SECOND TIME
   // because the cursor has reached the end with the FIRST call

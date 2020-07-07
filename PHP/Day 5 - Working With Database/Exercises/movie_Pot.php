@@ -32,7 +32,7 @@ if ($db_OK) {
     <img src="' . $movie['poster'] . '" alt="' . $movie['title'] . '" style="width:20rem">
     <figcaption>' . $movie['title'] . '</figcaption>
     </figure><h3> by: ' . $movie['name'] . ' ('. $movie['nationality'] . ') ' .  
-    ' released: ' . $movie['year_released'] . '<h3>';
+    ' released: ' . $movie['year_released'] . ', ' . $movie['views'] . ' views <h3>';
   }
 } else {
   echo "$db_name NOT found !<br>";
