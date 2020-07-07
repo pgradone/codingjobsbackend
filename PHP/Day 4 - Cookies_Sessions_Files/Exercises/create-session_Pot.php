@@ -17,7 +17,7 @@ echo 'creating session VIEWED <br><br>';
 
 session_start();
 
-$_SESSION['viewed'] = false;
+$_SESSION['viewed'] = true;
 
 var_dump($_SESSION);
 // var_dump($_COOKIE);
