@@ -42,7 +42,7 @@
       <strong>Views :</strong>
       <?= $movie['views'] ?>
     </p>
-    <a href="movie.php?id=<?= $movie['id'] ?>"></a>
+    <a href="movie.php?id=<?= $movie['id'] ?>">See details</a>
   <?php endforeach; ?>
 
 </body>
