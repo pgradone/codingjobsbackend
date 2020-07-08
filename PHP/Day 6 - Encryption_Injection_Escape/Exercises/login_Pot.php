@@ -2,6 +2,15 @@
 
 require_once 'navbar_Pot.html';
 $errmsg = 'Waiting for input';
+
+// Also fill username input field
+// if submitted with the $_GET['username'] method
+$usrname = '';
+if (isset($_GET['username'])) {
+  $usrname = $_GET['username'];
+  $errmsg = 'Set ' . $usrname . ' as default username';
+}
+
 // LOGIN PROCESS **************************************
 if (isset($_POST['login'])) {
   // check if usr already exist, then exit with warning
@@ -13,38 +22,25 @@ if (isset($_POST['login'])) {
   if ($username) {
     if ($db_found) {
       $sqlTxt = 'SELECT * FROM users WHERE username = "' . $username . '"';
-      // echo $sqltxt . '<br>';
       $result = mysqli_query($db_handle, $sqlTxt);
       $numRows = mysqli_num_rows($result);
       if ($numRows == 1) {
-        // check user and password
-        if (isset($_POST['usr']) && isset($_POST['mail'])) {
-          // check if email is valid
-          if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
-            $errmsg =  'email is valid :'  . $_POST['mail'];
-            $encryptPass = password_hash($_POST['passwSet'], PASSWORD_DEFAULT);
-            $sqlTxt = 'INSERT INTO users (mail, password, username) 
-                  VALUES ("' . $_POST['mail'] . '", "' . $encryptPass . '", "' . $_POST['usr'] . '")';
-            $errmsg = 'user' . $username . ' will be inserted, using SQL:<br><br>' . $sqlTxt;
-            $result = mysqli_query($db_handle, $sqlTxt);
-            if ($result) {
-              $errmsg = 'Username: ' . $username . ' / ' . $_POST['mail'] .
-                ' inserted successfully using<br>
-                  ' . $sqlTxt . ' :)';
-            } else {
-              $errmsg = ' !!! Username: ' . $username . ' / ' . $_POST['mail'] .
-                ' insertion FAILED using<br>
-                  ' . $sqlTxt . ' :)';
-            }
+        // check password
+        if (isset($_POST['passwSet'])) {
+          // check if password is valid
+          $user = mysqli_fetch_assoc($result);
+          $passFromDb = $user['password'];
+          if (password_verify($_POST['passwSet'], $passFromDb)) {
+            $errmsg =  'password is valid :'  . $_POST['mail'];
           } else {
-            $errmsg = 'email : ' . $_POST['mail'] . ' is not OK';
+            $errmsg = '!! password is INVALID';
           }
         } else {
-          $errmsg = 'password or email not set';
+          $errmsg = '!! password is EMPTY';
         }
       } else {
-        $errmsg = 'user ' . $username . ' does not exists YET! , SQL:<br>' . $sqlTxt . '<br>
-            <a href="register_Pot.php">Create a user now</a>';
+        $errmsg = 'This user does not exist yet - SQL:<br>' . $sqlTxt . '<br>
+            <a href="register_Pot.php?username=' . $username . '">Create the user ' . $username . ' ? </a>';
       }
     } else {
       $errmsg = 'DB not found!';
@@ -71,9 +67,8 @@ if (isset($_POST['login'])) {
   <hr>
   <h2>Login :</h2>
   <form action="#" method="post">
-    <input type="text" name="usr" id="">
-    <input type="text" name="mail" id="">
-    <input type="password" name="passwSet" id="">
+    <input type="text" name="usr" id="" id="" value="<?= $usrname; ?>">
+    <input type=" password" name="passwSet" id="">
     <input type="submit" name="login" value="Login">
   </form>
   <?= $errmsg . '<br>'; ?>

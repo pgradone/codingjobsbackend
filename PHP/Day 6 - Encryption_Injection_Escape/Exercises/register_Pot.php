@@ -1,6 +1,15 @@
 <?php
 require_once 'navbar_Pot.html';
 $errmsg = 'Waiting for input';
+
+// Also fill username input field
+// if submitted with the $_GET['username'] method
+$usrname = '';
+if (isset($_GET['username'])) {
+  $usrname = $_GET['username'];
+  $errmsg = 'Set ' . $usrname . ' as default username';
+}
+
 // REGISTRATION PROCESS **************************************
 if (isset($_POST['register'])) {
   // check if usr already exist, then exit with warning
@@ -28,28 +37,28 @@ if (isset($_POST['register'])) {
             $result = mysqli_query($db_handle, $sqlTxt);
             if ($result) {
               $errmsg = 'Username: ' . $username . ' / ' . $_POST['mail'] .
-                ' inserted successfully using<br>
-                  ' . $sqlTxt . ' :)';
+                ' inserted successfully :)<br> using<br>' . $sqlTxt;
             } else {
               $errmsg = ' !!! Username: ' . $username . ' / ' . $_POST['mail'] .
-                ' insertion FAILED using<br>
-                  ' . $sqlTxt . ' :)';
+                ' insertion FAILED<br> using<br>
+                  ' . $sqlTxt;
             }
           } else {
-            $errmsg = 'email : ' . $_POST['mail'] . ' is not OK';
+            $errmsg = '!! email : ' . $_POST['mail'] . ' is INVALID';
           }
         } else {
-          $errmsg = 'password or email not set';
+          $errmsg = '!! password or email not set';
         }
       } else {
         # warn user exists already
-        $errmsg = 'user ' . $username . ' exists already! , SQL:<br>' . $sqlTxt;
+        $errmsg = 'This user already exists <a href="login_Pot.php?username=' . $username . '">
+              Login with ' . $username . ' ?</a> , SQL:<br>' . $sqlTxt;
       }
     } else {
-      $errmsg = 'DB not found!';
+      $errmsg = '!! DB not found!';
     }
   } else {
-    $errmsg = 'USERNAME is empty!';
+    $errmsg = '!! USERNAME is empty!';
   }
 } else {
 }
@@ -70,7 +79,7 @@ if (isset($_POST['register'])) {
   <hr>
   <h2>Register :</h2>
   <form action="#" method="post">
-    <input type="text" name="usr" id="">
+    <input type="text" name="usr" id="" value="<?= $usrname; ?>">
     <input type="text" name="mail" id="">
     <input type="password" name="passwSet" id="">
     <input type="submit" name="register" value="Register">
