@@ -1,7 +1,7 @@
 <?php
 // display welcome
 require_once 'navbar_Pot.html';
-echo '<h1>Movie detail page<h1>';
+echo '<h1>Movie details page<h1>';
 
 require_once '../Example Files/database.php';
 // create connection string

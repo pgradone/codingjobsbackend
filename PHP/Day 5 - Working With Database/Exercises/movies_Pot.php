@@ -2,8 +2,15 @@
 // display welcome
 require_once 'navbar_Pot.html';
 echo '<h1>Movies List<h1>';
-echo '<input placeholder="search movie" name="search"
- onclick="<?php echo \'hiiiiii\'; ?>">';
+// create search form
+?>
+
+<form method="get">
+  <input type="text" name="srch" id="" placeholder="in title">
+  <input type="submit" name="srchBtn">
+</form>
+
+<?php
 require_once '../Example Files/database.php';
 // create connection string
 $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD);
@@ -11,10 +18,16 @@ $db_name = 'moviedatabase';
 $db_OK = mysqli_select_db($conn, $db_name);
 
 if ($db_OK) {
-
-  // echo "$db_name  found !<br>";
-  $qry = 'SELECT movies.*, directors.name, directors.nationality FROM `movies` INNER JOIN directors ON directors.id=movies.director_id';
-    $res=mysqli_query($conn,$qry);
+  // build query according to search criteria
+  if (isset($_GET['srchBtn'])) {
+    $qry = 'SELECT movies.*, directors.name, directors.nationality 
+    FROM `movies` INNER JOIN directors ON directors.id=movies.director_id
+    WHERE movies.title LIKE "%' . $_GET['srch'] . '%"';
+  } else {
+    $qry = 'SELECT movies.*, directors.name, directors.nationality FROM `movies` INNER JOIN directors ON directors.id=movies.director_id';
+  }
+  
+  $res=mysqli_query($conn,$qry);    
 
   $movies= mysqli_fetch_all($res,MYSQLI_ASSOC);
 
