@@ -1,5 +1,6 @@
 <?php
-require_once 'navbar_Pot.html';
+// session_start();
+require_once 'navbar_Pot.php';
 $errmsg = 'Waiting for input';
 
 // Also fill username input field
@@ -37,7 +38,7 @@ if (isset($_POST['register'])) {
             $result = mysqli_query($db_handle, $sqlTxt);
             if ($result) {
               $errmsg = 'Username: ' . $username . ' / ' . $_POST['mail'] .
-                ' inserted successfully :)<br> using<br>' . $sqlTxt;
+                ' registered successfully :)<br> using<br>' . $sqlTxt;
             } else {
               $errmsg = ' !!! Username: ' . $username . ' / ' . $_POST['mail'] .
                 ' insertion FAILED<br> using<br>
@@ -71,7 +72,7 @@ if (isset($_POST['register'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Registration</title>
 </head>
 
 <body>
@@ -79,9 +80,9 @@ if (isset($_POST['register'])) {
   <hr>
   <h2>Register :</h2>
   <form action="#" method="post">
-    <input type="text" name="usr" id="" value="<?= $usrname; ?>">
-    <input type="text" name="mail" id="">
-    <input type="password" name="passwSet" id="">
+    <input type="text" name="usr" value="<?= $usrname; ?>">
+    <input type="text" name="mail">
+    <input type="password" name="passwSet">
     <input type="submit" name="register" value="Register">
   </form>
   <?= $errmsg . '<br>'; ?>

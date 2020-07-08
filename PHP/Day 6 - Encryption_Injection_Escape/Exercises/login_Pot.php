@@ -1,6 +1,6 @@
 <?php
 
-require_once 'navbar_Pot.html';
+require_once 'navbar_Pot.php';
 $errmsg = 'Waiting for input';
 
 // Also fill username input field
@@ -30,8 +30,15 @@ if (isset($_POST['login'])) {
           // check if password is valid
           $user = mysqli_fetch_assoc($result);
           $passFromDb = $user['password'];
+          $userFromDB = $user['username'];
           if (password_verify($_POST['passwSet'], $passFromDb)) {
-            $errmsg =  'password is valid :'  . $_POST['mail'];
+            // $errmsg =  'password is valid for user: '  . $_POST['usr'];
+            $errmsg =  'user: '  . $userFromDB . ' logged in successfully!';
+            // create session to remember login between pages
+            session_start();
+            $_SESSION['latest_activity'] = time();
+            $_SESSION['page_view'] = 1;
+            $_SESSION['lastuser'] = $userFromDB;
           } else {
             $errmsg = '!! password is INVALID';
           }
@@ -59,7 +66,7 @@ if (isset($_POST['login'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Login</title>
 </head>
 
 <body>
@@ -67,8 +74,8 @@ if (isset($_POST['login'])) {
   <hr>
   <h2>Login :</h2>
   <form action="#" method="post">
-    <input type="text" name="usr" id="" id="" value="<?= $usrname; ?>">
-    <input type=" password" name="passwSet" id="">
+    <input type="text" name="usr" value="<?= $usrname; ?>">
+    <input type=" password" name="passwSet">
     <input type="submit" name="login" value="Login">
   </form>
   <?= $errmsg . '<br>'; ?>
