@@ -8,9 +8,10 @@
 </head>
 
 <body>
-  <h2>Welcome to the freakin movie website</h2>
-  <h1>Welcome to the freakin movie website</h1>
+  <?php require_once 'navbar.html'; ?>
 
+  <h2>Welcome to the freakin movie website</h2>
+ 
   <?php
 
   require_once 'database.php';

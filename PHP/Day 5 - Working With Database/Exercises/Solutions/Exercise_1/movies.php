@@ -8,6 +8,11 @@
 </head>
 
 <body>
+    <?php require_once 'navbar.html'; ?>
+
+  <h1>Movies List</h1>
+  <hr>
+
   <?php
   // To work with database, we'll use a library call : mysqli
   require_once 'database.php';
@@ -37,6 +42,7 @@
       <strong>Views :</strong>
       <?= $movie['views'] ?>
     </p>
+    <a href="movie.php?id=<?= $movie['id'] ?>"></a>
   <?php endforeach; ?>
 
 </body>
