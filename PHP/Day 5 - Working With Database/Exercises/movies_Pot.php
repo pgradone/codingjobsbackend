@@ -1,7 +1,9 @@
 <?php
 // display welcome
-echo '<h1>Welcome to my amazing movie website<h1>';
-
+require_once 'navbar_Pot.html';
+echo '<h1>Movies List<h1>';
+echo '<input placeholder="search movie" name="search"
+ onclick="<?php echo \'hiiiiii\'; ?>">';
 require_once '../Example Files/database.php';
 // create connection string
 $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD);
@@ -12,7 +14,7 @@ if ($db_OK) {
 
   // echo "$db_name  found !<br>";
   $qry = 'SELECT movies.*, directors.name, directors.nationality FROM `movies` INNER JOIN directors ON directors.id=movies.director_id';
-  $res=mysqli_query($conn,$qry);
+    $res=mysqli_query($conn,$qry);
 
   $movies= mysqli_fetch_all($res,MYSQLI_ASSOC);
 
