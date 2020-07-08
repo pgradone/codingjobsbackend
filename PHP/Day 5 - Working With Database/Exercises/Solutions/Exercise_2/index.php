@@ -11,17 +11,17 @@
   <?php require_once 'navbar.html'; ?>
 
   <h2>Welcome to the freakin movie website</h2>
- 
+
   <?php
 
   require_once 'database.php';
 
   $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD);
-  $db_found = mysqli_select_db($db_handle, 'moviedatabase');
+  $db_found = mysqli_select_db($db_handle, 'moviedb');
 
   if ($db_found) {
 
-    $sql_query = 'SELECT * FROM movies ORDER BY date_of_release DESC LIMIT 3';
+    $sql_query = 'SELECT * FROM movies ORDER BY year_of_release DESC LIMIT 3';
 
     $result_query = mysqli_query($db_handle, $sql_query);
 
