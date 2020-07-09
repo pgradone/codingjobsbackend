@@ -19,6 +19,9 @@ if (isset($_POST['register'])) {
   $db_name = 'moviedatabase';
   $db_found = mysqli_select_db($db_handle, $db_name);
   $username = isset($_POST['usr']) ? trim($_POST['usr']) : '';
+   // prevent injection for $username
+  $username = strip_tags($username);
+  $username = htmlspecialchars($username);
   if ($username) {
     if ($db_found) {
       $sqlTxt = 'SELECT * FROM users WHERE username = "' . $username . '"';
@@ -28,6 +31,11 @@ if (isset($_POST['register'])) {
       if ($numRows == 0) {
         // check user and password
         if (isset($_POST['usr']) && isset($_POST['mail'])) {
+           // prevent injection for $username
+          $usr = $_POST['usr'];
+          $usr = strip_tags($usr);
+          $usr = htmlspecialchars($usr);
+
           // check if email is valid
           if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
             $errmsg =  'email is valid :'  . $_POST['mail'];

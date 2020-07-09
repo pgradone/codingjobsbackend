@@ -55,8 +55,6 @@ if (isset($_POST['login'])) {
           $errmsg = '!! password cannot be EMPTY';
         }
       } else {
-        $username = strip_tags($username);
-        $username = htmlspecialchars($username);
         $errmsg = 'This user does not exist yet. ' .
             '<a href="register_Pot.php?username=' . $username . '">Create the user: ' . $username . ' ? </a>';
       }
