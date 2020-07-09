@@ -23,9 +23,13 @@ if (isset($_POST['login'])) {
   $db_name = 'moviedatabase';
   $db_found = mysqli_select_db($db_handle, $db_name);
   $username = isset($_POST['usr']) ? trim($_POST['usr']) : '';
+  // prevent injection for $username
+  $username = strip_tags($username);
+  $username = htmlspecialchars($username);
   if ($username) {
     if ($db_found) {
       $sqlTxt = 'SELECT * FROM users WHERE username = "' . $username . '"';
+      echo $sqlTxt . '<br>';
       $result = mysqli_query($db_handle, $sqlTxt);
       $numRows = mysqli_num_rows($result);
       if ($numRows == 1) {
@@ -35,7 +39,7 @@ if (isset($_POST['login'])) {
           $user = mysqli_fetch_assoc($result);
           $passFromDb = $user['password'];
           $userFromDB = $user['username'];
-          if (password_verify($_POST['passwSet'], $passFromDb)) {
+          if (password_verify(strip_tags($_POST['passwSet']), $passFromDb)) {
             // $errmsg =  'password is valid for user: '  . $_POST['usr'];
             // create session to remember login between pages
             session_start();
@@ -43,7 +47,7 @@ if (isset($_POST['login'])) {
             $_SESSION['page_view'] = 1;
             $_SESSION['lastuser'] = $userFromDB;
             $errmsg =  'user: '  . $userFromDB . ' logged in successfully!';
-                  header('Location: account_Pot.php');
+                  // header('Location: account_Pot.php');
           } else {
             $errmsg = '!! password for ' . $userFromDB . ' is INVALID';
           }
@@ -51,6 +55,8 @@ if (isset($_POST['login'])) {
           $errmsg = '!! password cannot be EMPTY';
         }
       } else {
+        $username = strip_tags($username);
+        $username = htmlspecialchars($username);
         $errmsg = 'This user does not exist yet. ' .
             '<a href="register_Pot.php?username=' . $username . '">Create the user: ' . $username . ' ? </a>';
       }

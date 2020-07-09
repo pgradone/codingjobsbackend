@@ -23,4 +23,4 @@ if (isset($_SESSION['lastuser'])) {
   <a href="./account_Pot.php">Account</a> |
 </nav>
 
-<?= '<br>' . $status . '<br'; ?>
+<!-- <?= '<br>' . $status . '<br'; ?> -->
