@@ -1,7 +1,7 @@
 <?php
 // session_start();
 require_once 'navbar_Pot.php';
-$errmsg = 'Waiting for input';
+$errmsg = 'Awaiting input...';
 
 // Also fill username input field
 // if submitted with the $_GET['username'] method
@@ -39,6 +39,7 @@ if (isset($_POST['register'])) {
             if ($result) {
               $errmsg = 'Username: ' . $username . ' / ' . $_POST['mail'] .
                 ' registered successfully :)<br> using<br>' . $sqlTxt;
+                session_start();
             } else {
               $errmsg = ' !!! Username: ' . $username . ' / ' . $_POST['mail'] .
                 ' insertion FAILED<br> using<br>

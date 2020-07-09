@@ -1,7 +1,11 @@
 <?php
 
 require_once 'navbar_Pot.php';
-$errmsg = 'Waiting for input';
+$errmsg = 'Awaiting input...';
+
+// destroy the current session if the call comes from LOGOUT of NAVBAR
+if (isset($_GET['destroysession']))
+  session_destroy();
 
 // Also fill username input field
 // if submitted with the $_GET['username'] method
@@ -33,21 +37,22 @@ if (isset($_POST['login'])) {
           $userFromDB = $user['username'];
           if (password_verify($_POST['passwSet'], $passFromDb)) {
             // $errmsg =  'password is valid for user: '  . $_POST['usr'];
-            $errmsg =  'user: '  . $userFromDB . ' logged in successfully!';
             // create session to remember login between pages
             session_start();
             $_SESSION['latest_activity'] = time();
             $_SESSION['page_view'] = 1;
             $_SESSION['lastuser'] = $userFromDB;
+            $errmsg =  'user: '  . $userFromDB . ' logged in successfully!';
+                  header('Location: account_Pot.php');
           } else {
-            $errmsg = '!! password is INVALID';
+            $errmsg = '!! password for ' . $userFromDB . ' is INVALID';
           }
         } else {
-          $errmsg = '!! password is EMPTY';
+          $errmsg = '!! password cannot be EMPTY';
         }
       } else {
-        $errmsg = 'This user does not exist yet - SQL:<br>' . $sqlTxt . '<br>
-            <a href="register_Pot.php?username=' . $username . '">Create the user ' . $username . ' ? </a>';
+        $errmsg = 'This user does not exist yet. ' .
+            '<a href="register_Pot.php?username=' . $username . '">Create the user: ' . $username . ' ? </a>';
       }
     } else {
       $errmsg = 'DB not found!';
