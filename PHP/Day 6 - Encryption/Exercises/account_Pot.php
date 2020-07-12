@@ -1,16 +1,17 @@
 <?php
-
 session_start();
 require_once 'navbar_Pot.php';
 $msg = 'Account page';
+
 if (isset($_SESSION['lastuser'])) {
+  echo 'Hello';
   // display welcome message
   $_SESSION['page_view']++;
-  $msg =  'Welcome ' . $_SESSION['lastuser'];
+  $msg =  'Welcome ' . $_SESSION['lastuser'] . '<br>
+      Your session: <br>' . var_dump($_SESSION);
 } else {
   // redirect to login.php
-  $msg = 'account logged out <a href="login_Pot.php">Login</a>';
-  header('login_Pot.php');
+  header('Location: login_Pot.php');
 }
 
 ?>
