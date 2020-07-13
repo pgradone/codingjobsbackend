@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
   // check if usr already exist, then exit with warning
   require_once 'database.php';
   $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD);
-  $db_name = 'moviedatabase';
+  $db_name = 'moviedb';
   $db_found = mysqli_select_db($db_handle, $db_name);
   $username = isset($_POST['usr']) ? trim($_POST['usr']) : '';
   // prevent injection for $username
@@ -47,7 +47,7 @@ if (isset($_POST['login'])) {
             $_SESSION['page_view'] = 1;
             $_SESSION['lastuser'] = $userFromDB;
             $errmsg =  'user: '  . $userFromDB . ' logged in successfully!';
-                  // header('Location: account_Pot.php');
+            // header('Location: account_Pot.php');
           } else {
             $errmsg = '!! password for ' . $userFromDB . ' is INVALID';
           }
@@ -56,7 +56,7 @@ if (isset($_POST['login'])) {
         }
       } else {
         $errmsg = 'This user does not exist yet. ' .
-            '<a href="register_Pot.php?username=' . $username . '">Create the user: ' . $username . ' ? </a>';
+          '<a href="register_Pot.php?username=' . $username . '">Create the user: ' . $username . ' ? </a>';
       }
     } else {
       $errmsg = 'DB not found!';

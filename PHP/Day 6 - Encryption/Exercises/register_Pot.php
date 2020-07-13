@@ -16,10 +16,10 @@ if (isset($_POST['register'])) {
   // check if usr already exist, then exit with warning
   require_once 'database.php';
   $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD);
-  $db_name = 'moviedatabase';
+  $db_name = 'moviedb';
   $db_found = mysqli_select_db($db_handle, $db_name);
   $username = isset($_POST['usr']) ? trim($_POST['usr']) : '';
-   // prevent injection for $username
+  // prevent injection for $username
   $username = strip_tags($username);
   $username = htmlspecialchars($username);
   if ($username) {
@@ -31,7 +31,7 @@ if (isset($_POST['register'])) {
       if ($numRows == 0) {
         // check user and password
         if (isset($_POST['usr']) && isset($_POST['mail'])) {
-           // prevent injection for $username
+          // prevent injection for $username
           $usr = $_POST['usr'];
           $usr = strip_tags($usr);
           $usr = htmlspecialchars($usr);
@@ -47,7 +47,7 @@ if (isset($_POST['register'])) {
             if ($result) {
               $errmsg = 'Username: ' . $username . ' / ' . $_POST['mail'] .
                 ' registered successfully :)<br> using<br>' . $sqlTxt;
-                session_start();
+              session_start();
             } else {
               $errmsg = ' !!! Username: ' . $username . ' / ' . $_POST['mail'] .
                 ' insertion FAILED<br> using<br>
