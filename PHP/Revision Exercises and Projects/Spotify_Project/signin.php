@@ -2,7 +2,6 @@
 // This page will serve as Login AND Register page
 // as a function of the the $_GET argument
 session_start(); 
-var_dump($_GET)?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +14,7 @@ var_dump($_GET)?>
   <?php
     require_once 'menu.php';
     $email = '';
+    $loginEmail = '';
     $errors = [];
     $mode = 'login';
     $extraFields = '';
@@ -23,8 +23,11 @@ var_dump($_GET)?>
         $extraFields = '<br>- First Name :<input type="text" name="first_name" placeholder="First Name"><br>
       - Last Name :<input type="text" name="last_name" placeholder="Last_Name">';
     }
-    if(isset($_GET['login']))
-      $mode = 'login';
+    if (isset($_GET['login'])) {
+        $mode = 'login';
+        $loginEmail = $_GET['login'];
+        var_dump($loginEmail);
+    }
 
     // *** LOGIN procedure
     if (isset($_POST['login'])) {
@@ -52,6 +55,7 @@ var_dump($_GET)?>
             $errors['success'] = $mailusr['first_name'] . ' '
              . $mailusr['last_name'] . 'is successfully logged in! <a>
              Logout</a>' 
+             $_SESSION['emailuser'] = $mailusr['mail'];
              ;
           } else {
             # throw wrong password error
@@ -81,27 +85,28 @@ var_dump($_GET)?>
         require_once 'dbconstants.php';
         $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
         $checkqry = 'SELECT * FROM users WHERE mail = \'' . $sanitizedEmail . '\'' ;
-        $errors['SQL'] = $checkqry;
+        // $errors['SQL'] = $checkqry;
         $result_query = mysqli_query($connection, $checkqry);
 
         // if existent mail, error, else prepere for insertions
         $count = mysqli_num_rows($result_query);
         if ($count > 0) {
           // EMAIL ALREADY TAKEN !
-          $errors['email'] = 'Email ' . $email . ' already already exists ! <a>Login?</a>';
+          $errors['email'] = 'Email ' . $email . ' already already exists ! <a href="signin.php?login:'. $email .'">Login?</a>';
         } else {
           // Hash the password
           $securePassword = password_hash($password, PASSWORD_DEFAULT);
           // Prepare query execution
           $insertquery = "INSERT INTO users(first_name,last_name, mail, password)
           VALUES('$firstname','$lastname','$sanitizedEmail','$securePassword')";
+          //  $errors['SQL'] = $insertquery;
           $result_query = mysqli_query($connection, $insertquery);
           // Check if the user was successfully registered
           if ($result_query) {
-            $error['registration'] = '$firstname' . ' ' . '$lastname' . ' successfully registered
-            . You can now <a>login</a>.<br>';
+            $error['registrationOK'] = '$firstname' . ' ' . '$lastname' . ' successfully registered
+            . You can now <a href="">login</a>.<br>';
           } else
-            $error['sql'] = 'Something went wrong... Try again. <br>' . $insertquery;
+            $error['dberror'] = 'Something went wrong... Try again. <br>' . $insertquery;
           // Finally close the connection
         }
         mysqli_close($connection);
@@ -112,7 +117,7 @@ var_dump($_GET)?>
 
 <h1><?= $mode . ' to the website' ; ?></h1>
   <form action="" method="post">
-    -    email :<input type="mail" name="mail" placeholder="mail" autocomplete="false"><br>
+    -    email :<input type="mail" name="mail" placeholder="mail" autocomplete="false" value="<?= $loginEmail; ?>"><br>
     - password :<input type="password" name="password" placeholder="password"  autocomplete="false">
     <?= $extraFields ; ?>
     <input type="submit" name="<?= $mode ?>" value="<?= $mode ?>"><br>
