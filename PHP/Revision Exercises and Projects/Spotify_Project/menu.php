@@ -2,17 +2,20 @@
 $msg = '      Status: ';
 $signinMenu = '<a href="./signin.php?register">Register</a> | <a href="./signin.php?login">Login</a>';
 
-if (isset($_SESSION['lastuser'])) {
-  $msg = $msg . ' -- Session of  ' . $_SESSION['lastuser'];
-  session_unset();
+if (isset($_SESSION['emailuser'])) {
+  $msg = $msg . ' -- Session of  ' . $_SESSION['emailuser'];
+  // session_unset();
+  $signinMenu = $signinMenu . '| <a href="./home.php?logout">Logout</a>';
 }
 
 ?>
 <nav>
-  <a href="./Home.php">Home</a> |
-  <a href="./Songs.php">Songs</a> |
-  <a href="./Artists.php">Artists</a> |
-  <a href="./Playlists.php">Playlists</a> |
+  <a href="./home.php">Home</a> |
+  <a href="./account.php">Account</a> |
+  <a href="./songs.php">Songs</a> |
+  <a href="./artists.php">Artists</a> |
+  <a href="./playlists.php">Playlists</a> |
   <?= $signinMenu; ?>
   <?= $msg; ?>
 </nav>
+

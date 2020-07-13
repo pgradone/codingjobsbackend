@@ -2,6 +2,7 @@
 // This page will serve as Login AND Register page
 // as a function of the the $_GET argument
 session_start(); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,16 +55,18 @@ session_start();
           if (password_verify($password, $mailusr['password'])) {
             $errors['success'] = $mailusr['first_name'] . ' '
              . $mailusr['last_name'] . 'is successfully logged in! <a>
-             Logout</a>' 
+             Logout</a>'; 
              $_SESSION['emailuser'] = $mailusr['mail'];
-             ;
+             $_SESSION['firstname'] = $mailusr['first_name'];
+             $_SESSION['lastname'] = $mailusr['last_name'];
+             header('Location: account.php');
           } else {
             # throw wrong password error
             $errors['wrongpassword'] = 'Invalid password.';
           }
         } else {
           $errors['emailnotfound'] = 'This user email does not exist - 
-            <a>Create ' . $sanitizedEmail . ' ?</a>'; 
+            <a href="signin?register:' . $sanitizedEmail . '">Register ' . $sanitizedEmail . ' ?</a>'; 
         } 
         mysqli_close($connection);       
       }
