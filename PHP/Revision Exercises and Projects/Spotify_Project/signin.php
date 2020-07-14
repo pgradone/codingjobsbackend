@@ -33,7 +33,7 @@
       $mode = 'login';
     }
     
-    session_start();
+    // session_start();
     require_once 'menu.php';
     
     // *** LOGIN procedure
