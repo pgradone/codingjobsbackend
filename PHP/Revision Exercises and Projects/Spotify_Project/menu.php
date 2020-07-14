@@ -1,13 +1,5 @@
 <?php
 session_start();
-$msg = '      Status: ';
-$signinMenu = '<a href="./signin.php?register">Register</a> | <a href="./signin.php?login">Login</a>';
-
-if (isset($_SESSION['emailuser'])) {
-  $msg = $msg . ' -- Session of  ' . $_SESSION['emailuser'];
-  // session_unset();
-  $signinMenu = $signinMenu . '| <a href="./signin.php?logout">Logout</a>';
-}
 
 ?>
 <nav>
@@ -16,7 +8,8 @@ if (isset($_SESSION['emailuser'])) {
   <a href="./songs.php">Songs</a> |
   <a href="./artists.php">Artists</a> |
   <a href="./playlists.php">Playlists</a> |
-  <?= $signinMenu; ?>
-  <?= $msg; ?>
+  <a href="./signin.php?register">Register</a> |
+  <a href="./signin.php?login">Login</a> |
+  <a href="./signin.php?logout">Logout</a>
 </nav>
 

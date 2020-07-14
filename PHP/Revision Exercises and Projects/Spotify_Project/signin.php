@@ -29,8 +29,8 @@
     }
     
     if (isset($_GET['logout'])) {
-      session_unset();
-      $mode = 'login';
+      $mode = 'logout';
+      $loginEmail = $_GET['logout'];
     }
     
     // session_start();
