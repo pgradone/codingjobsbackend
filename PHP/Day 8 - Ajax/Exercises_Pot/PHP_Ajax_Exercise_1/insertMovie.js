@@ -9,10 +9,10 @@ $(function () {
       type: "post",
       data: $("form").serialize(),
       success: function (res) {
-        $("#resultMessage").html('<div class="green"> ' + res + " </div>");
+        $("#resultMessage").html(res);
       },
       error: function (err) {
-        $("#resultMessage").html('<div class="red"> ' + err + " </div>");
+        $("#errorMessage").html(err);
       },
     });
   });
