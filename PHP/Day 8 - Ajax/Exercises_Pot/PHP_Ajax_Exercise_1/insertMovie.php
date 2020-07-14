@@ -16,13 +16,14 @@ if (!empty($_POST)) {
 		require_once 'database.php';
 		// Open a connection to the DBMS
 		$connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-		$query = "INSERT INTO movies(title, year_released, director_id) 
-		VALUES('" . $_POST['title'] . "', " . $_POST['year_released'] . "," . $_POST['director_id'] . ")";
+		$query = "INSERT INTO movies(title, year_released, views, director_id, poster) 
+    VALUES('" . $_POST['title'] . "', " . $_POST['year_released'] . "," .
+       $_POST['views'] . "," . $_POST['director_id'] . ", '" . $_POST['poster'] . "')";
 		// Send an SQL request to our DB
 		$result_query = mysqli_query($connect, $query);
 
 		if ($result_query) {
-			echo 'Movie successfully addded !';
+			echo 'Movie successfully added !';
 		} else {
 			echo 'Error inserting into the DB';
 		}

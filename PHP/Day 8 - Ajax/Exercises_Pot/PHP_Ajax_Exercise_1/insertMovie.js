@@ -12,6 +12,7 @@ $(function () {
         $("#resultMessage").html(res);
       },
       error: function (err) {
+        console.log("AJAX Error !");
         $("#errorMessage").html(err);
       },
     });

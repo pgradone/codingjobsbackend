@@ -28,13 +28,13 @@ playlist) and all of the music in this playlist.</p>
   <hr>
 
   <h2>
-    <a href="./Songs.php">Songs</a>
+    <a href="./songs.php">Songs</a>
   </h2>
   <h2>
-    <a href="./Artists.php">Artists</a>
+    <a href="./artists.php">Artists</a>
   </h2>
   <h2>
-    <a href="./Playlists.php">Playlists</a>
+    <a href="./playlists.php">Playlists</a>
   </h2>
 
 </body>
