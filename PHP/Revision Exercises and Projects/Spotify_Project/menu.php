@@ -1,11 +1,12 @@
 <?php
+session_start();
 $msg = '      Status: ';
 $signinMenu = '<a href="./signin.php?register">Register</a> | <a href="./signin.php?login">Login</a>';
 
 if (isset($_SESSION['emailuser'])) {
   $msg = $msg . ' -- Session of  ' . $_SESSION['emailuser'];
   // session_unset();
-  $signinMenu = $signinMenu . '| <a href="./home.php?logout">Logout</a>';
+  $signinMenu = $signinMenu . '| <a href="./signin.php?logout">Logout</a>';
 }
 
 ?>

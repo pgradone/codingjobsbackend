@@ -1,7 +1,7 @@
 <?php 
 // This page will serve as Login AND Register page
 // as a function of the the $_GET argument
-session_start(); 
+// session_start(); 
 ?>
 
 <!DOCTYPE html>
@@ -13,23 +13,29 @@ session_start();
 </head>
 <body>
   <?php
-    require_once 'menu.php';
     $email = '';
     $loginEmail = '';
     $errors = [];
     $mode = 'login';
     $extraFields = '';
     if (isset($_GET['register'])) {
-        $mode = 'register';
-        $extraFields = '<br>- First Name :<input type="text" name="first_name" placeholder="First Name"><br>
+      $mode = 'register';
+      $extraFields = '<br>- First Name :<input type="text" name="first_name" placeholder="First Name"><br>
       - Last Name :<input type="text" name="last_name" placeholder="Last_Name">';
     }
     if (isset($_GET['login'])) {
-        $mode = 'login';
-        $loginEmail = $_GET['login'];
-        var_dump($loginEmail);
+      $mode = 'login';
+      $loginEmail = $_GET['login'];
     }
-
+    
+    if (isset($_GET['logout'])) {
+      session_unset();
+      $mode = 'login';
+    }
+    
+    session_start();
+    require_once 'menu.php';
+    
     // *** LOGIN procedure
     if (isset($_POST['login'])) {
       $email = $_POST['mail'];

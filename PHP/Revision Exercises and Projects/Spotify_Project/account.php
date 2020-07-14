@@ -1,7 +1,6 @@
 <?php
 
-session_start();
-
+// session_start();
 require_once 'menu.php';
 
 if (isset($_SESSION['emailuser'])) {
