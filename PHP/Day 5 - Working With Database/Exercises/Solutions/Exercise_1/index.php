@@ -17,11 +17,11 @@
   require_once 'database.php';
 
   $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD);
-  $db_found = mysqli_select_db($db_handle, 'moviedatabase');
+  $db_found = mysqli_select_db($db_handle, 'moviedb');
 
   if ($db_found) {
 
-    $sql_query = 'SELECT * FROM movies ORDER BY date_of_release DESC LIMIT 3';
+    $sql_query = 'SELECT * FROM movies ORDER BY year_released DESC LIMIT 3';
 
     $result_query = mysqli_query($db_handle, $sql_query);
 
@@ -29,7 +29,7 @@
       echo '<hr>';
       //echo $db_field['movie_id'] . '<br>'; 
       echo '<p><strong>Title : </strong>' . $db_field['title'] . '</p>';
-      echo '<p><strong>Year of release : </strong>' . $db_field['year_of_release'] . '</p>';
+      echo '<p><strong>Year of release : </strong>' . $db_field['year_released'] . '</p>';
       echo '<p><strong>Number of views : </strong>' . $db_field['views'] . '</p>';
     }
   } else {
