@@ -6,7 +6,7 @@ echo '<h1>Movie details page<h1>';
 require_once '../Example Files/database.php';
 // create connection string
 $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD);
-$db_name = 'moviedatabase';
+$db_name = 'moviedb';
 $db_OK = mysqli_select_db($conn, $db_name);
 
 $movieID = $_GET['id'];

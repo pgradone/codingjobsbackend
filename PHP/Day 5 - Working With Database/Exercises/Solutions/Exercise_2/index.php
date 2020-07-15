@@ -21,7 +21,7 @@
 
   if ($db_found) {
 
-    $sql_query = 'SELECT * FROM movies ORDER BY year_of_release DESC LIMIT 3';
+    $sql_query = 'SELECT * FROM movies ORDER BY year_released DESC LIMIT 3';
 
     $result_query = mysqli_query($db_handle, $sql_query);
 

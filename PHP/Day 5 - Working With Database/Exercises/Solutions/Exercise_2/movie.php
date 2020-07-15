@@ -38,7 +38,7 @@
 
 				echo '<img href="' . $movie['poster'] . '" alt="' . $movie['title'] . '">';
 				echo '<p><strong>Title : </strong>' . $movie['title'] . '</p>';
-				echo '<p><strong>Year of release : </strong>' . $movie['year_of_release'] . '</p>';
+				echo '<p><strong>Year of release : </strong>' . $movie['year_released'] . '</p>';
 
 				echo '<br>';
 				echo '<p><strong>Director : </strong>' . $movie['name'] . '</p>';
@@ -46,11 +46,11 @@
 				echo 'DB not found (' . DB_NAME . ')';
 			}
 		} else {
-			echo 'Something\'s wrong...';
+			echo 'Something\'s wrong1...';
 			echo '<a href="./">Go Back</a>';
 		}
 	} else {
-		echo 'Something\'s wrong...';
+		echo 'Something\'s wrong2...';
 		echo '<a href="./">Go Back</a>';
 	}
 
