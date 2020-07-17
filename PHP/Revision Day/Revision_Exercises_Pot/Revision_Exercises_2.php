@@ -10,9 +10,16 @@ $y = "1";
 $z = true;
 $n = 2.5;
 
+echo '$x' . ' ' . gettype($x) . ' ' . $x . '<br>';
+echo '$y' . ' ' . gettype($y) . ' ' . $y . '<br>';
+echo '$z' . ' ' . gettype($z) . ' ' . $z . '<br>';
+echo '$n' . ' ' . gettype($n) . ' ' . $n . '<br><br>';
+
 $z = $x + $y;
 $k = $n * $y;
 
+echo '$z' . ' ' . gettype($z) . ' ' . $z . '<br>';
+echo '$k' . ' ' . gettype($k) . ' ' . $k . '<br>';
 
 /*
 	Show the date (in a nice format) for :
