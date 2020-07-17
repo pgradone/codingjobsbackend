@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 12, 2020 at 08:35 PM
+-- Generation Time: Jul 16, 2020 at 10:15 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `spotify`
 --
+CREATE DATABASE IF NOT EXISTS `spotify` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `spotify`;
 
 -- --------------------------------------------------------
 
@@ -31,7 +33,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `artists`;
 CREATE TABLE IF NOT EXISTS `artists` (
   `artist_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name_` varchar(100) DEFAULT NULL,
+  `artist_name` varchar(100) DEFAULT NULL,
   `bio` longtext DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
   `date_of_birth` datetime DEFAULT NULL,
@@ -43,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `artists` (
 -- Dumping data for table `artists`
 --
 
-INSERT INTO `artists` (`artist_id`, `name_`, `bio`, `gender`, `date_of_birth`) VALUES
+INSERT INTO `artists` (`artist_id`, `artist_name`, `bio`, `gender`, `date_of_birth`) VALUES
 (1, '\'Lectric Funk', NULL, NULL, NULL),
 (2, '101', NULL, NULL, NULL),
 (3, '16 Bit', NULL, NULL, NULL),
@@ -886,7 +888,7 @@ INSERT INTO `artists` (`artist_id`, `name_`, `bio`, `gender`, `date_of_birth`) V
 (840, '28-TRIAL-Urban Soul 67', NULL, '151-TRIAL-', NULL),
 (841, '191-TRIAL-Universal Tracks 166', NULL, '17-TRIAL- ', NULL),
 (842, '293-TRIAL-Sabrina Johnston 187', NULL, '221-TRIAL-', NULL);
-INSERT INTO `artists` (`artist_id`, `name_`, `bio`, `gender`, `date_of_birth`) VALUES
+INSERT INTO `artists` (`artist_id`, `artist_name`, `bio`, `gender`, `date_of_birth`) VALUES
 (843, '267-TRIAL-Underground Solution Feat. Jasmine 99', NULL, '44-TRIAL- ', NULL),
 (844, '1-TRIAL-Joint Venture 28', NULL, '42-TRIAL- ', NULL),
 (845, '268-TRIAL-Jomanda 68', NULL, '241-TRIAL-', NULL),
@@ -7665,18 +7667,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `mail` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `mail`, `password`) VALUES
-(1, 'Potito', 'Gradone', 'pgradone@gmail.com', 'sdfgsdgfksdlégjàsw604 w¨vzos'),
 (2, 'Brad', 'Pitt', 'bpitt@youllnevernow.org', 'dfgsdfsgdgfsd'),
 (3, 'Guil', 'Pereira', 'gui_pereira10@live.com.pt', 'sukasukasuka'),
 (4, 'Simon', 'Bertrand', 'goodteacher@school.net', 'stressstressstress'),
-(5, 'Jeyashree', 'Vaithiam', 'jeyashreeradhika@gmail.com', 'myfirstdatabase');
+(5, 'Jeyashree', 'Vaithiam', 'jeyashreeradhika@gmail.com', 'myfirstdatabase'),
+(6, 'Potito', 'Gradone', 'pgradone@gmail.com', '$2y$10$RrJDw17KseSx5oe6zgBbH.2Fy5vyCRUlxTsREah5rj0hRnikPgCLi'),
+(7, 'urerfirst', 'userlast', 'user@gmail.com', '$2y$10$elvRZjXWOMokB2Sf7FeexuD.3q7EIMmv28sFU7N.NMl6UBOhtnoBq');
 
 --
 -- Constraints for dumped tables
