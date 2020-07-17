@@ -1,7 +1,6 @@
 <?php
-// This page will serve as Login AND Register page
+// This page will serve as Login, Register AND Logout page
 // as a function of the the $_GET argument
-// session_start(); 
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +14,6 @@
 
 <body>
   <?php
-  // session_start();
   require_once 'menu.php';
 
   $email = '';
@@ -36,7 +34,10 @@
   if (isset($_GET['logout'])) {
     $mode = 'login';
     $loginEmail = $_GET['logout'];
-    session_unset();
+    if (isset($_SESSION['emailuser'])) {
+      $error['logoutOK'] = $_SESSION['emailuser'] . ' successfully logged out';
+      session_unset();
+    }
   }
 
 
@@ -64,13 +65,13 @@
         # verify password for successful login
         if (password_verify($password, $mailusr['password'])) {
           $errors['success'] = $mailusr['first_name'] . ' '
-            . $mailusr['last_name'] . ' is successfully logged in! <a>
-             Logout</a>';
+            . $mailusr['last_name'] . ' is successfully logged in! <br>
+            ...redirecting to account page.. <a href="signin.php?logout">Logout</a>';
           $_SESSION['emailuser'] = $mailusr['mail'];
           $_SESSION['firstname'] = $mailusr['first_name'];
           $_SESSION['lastname'] = $mailusr['last_name'];
           $_SESSION['user_id'] = $mailusr['user_id'];
-          header('Refresh: 2; url="account.php');
+          header('Refresh: 5; url="account.php');
         } else {
           # throw wrong password error
           $errors['wrongpassword'] = 'Invalid password.';
