@@ -72,7 +72,7 @@ $db_name = 'moviedb';
 $db_handle = mysqli_connect('localhost', 'root', '', $db_name);
 $db_found = mysqli_select_db($db_handle, $db_name);
 if ($db_found) {
-	echo 'Connection : ' . $db_handle . '<br>';
+	echo 'Connection : ' . $db_found . '<br>';
 	// build the query
 	echo '<h3>2. Run a query to delete all movies by George Lucas</h3>';
 	$sql_txt = 'SELECT m.id from movies m '
@@ -82,10 +82,9 @@ if ($db_found) {
 
 	if ($result_query) {
 		// $movies = mysqli_fetch_all($result_query, MYSQLI_ASSOC);
-		echo 'SQL QUERY : ' . $sql_txt . '<br>';
-		echo '<h3>3. Retrieve the number of rows affected by this query</h3><br>';
+		echo 'SQL QUERY :<br> DELETE FROM movies WHERE id in (' . $sql_txt . ')<br>';
 		$affectedrows = mysqli_affected_rows($db_handle);
-		echo $affectedrows;
+		echo '<h3>3. Retrieve the number of rows affected by this query: ' . $affectedrows . '</h3>';
 	} else {
 		echo 'Problem with ' . $sql_txt;
 	}

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /* -- Exercise : 
 	1 :
@@ -16,3 +16,10 @@
 	4 :
 	Display the multiplication table in a nice HTML format table style.
 */
+
+echo '1. multiplication table of 2<br>'
+for ($i = 1; $i <= 10; $i++) {
+	echo 2 . '*' . $i . '=' . 2 * $i . '<br>';
+	# code...
+}
+echo '<hr>';
