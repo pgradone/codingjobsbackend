@@ -5,6 +5,9 @@
 	2. Display the type AND the value of each variable (using only one function)
 */
 
+echo '1. Display the type of each variable at the end of the script (using only one function)<br>
+			2. Display the type AND the value of each variable (using only one function)<br>';
+
 $x = 5;
 $y = "1";
 $z = true;
@@ -21,6 +24,7 @@ $k = $n * $y;
 echo '$z' . ' ' . gettype($z) . ' ' . $z . '<br>';
 echo '$k' . ' ' . gettype($k) . ' ' . $k . '<br>';
 
+echo '<hr>';
 /*
 	Show the date (in a nice format) for :
 		- Today
