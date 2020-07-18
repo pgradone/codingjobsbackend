@@ -1,7 +1,7 @@
 <?php
 
 // session_start();
-require_once 'menu.php';
+include_once 'menu.php';
 
 if (isset($_SESSION['emailuser'])) {
   echo '<hr>';

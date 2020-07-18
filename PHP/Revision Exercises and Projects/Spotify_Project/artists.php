@@ -1,4 +1,6 @@
-<?php include_once 'menu.php'; ?>
+<?php
+include_once 'menu.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,16 +22,18 @@
       if ($db_found) {
         $criteria = !empty($_GET) ? 'WHERE ' . key($_GET) . ' LIKE \'%' . $_GET[key($_GET)] . '%\'' : '';
         $sql_txt = 'SELECT a.artist_id, a.artist_name, a.bio, a.gender, a.date_of_birth, 
-          count(s.Title) as songs FROM artists a LEFT JOIN songs s ON a.artist_id = s.`#artist_id`' .
+          count(s.Title) as songs FROM artists a LEFT JOIN songs s ON a.artist_id = s.`artist_id`' .
           $criteria .
           ' GROUP BY a.artist_id, a.artist_name, a.bio, a.gender, a.date_of_birth ';
         $res_qry = mysqli_query($db_handle, $sql_txt);
         if ($res_qry) {
           $artists = mysqli_fetch_all($res_qry, MYSQLI_ASSOC);
           echo '<ul>';
+          $artists_count = 0;
           foreach ($artists as $artist) {
-            echo '<li><a href="#">' . $artist['artist_name'] . ' ' . substr($artist['bio'], 1, 20) . ' '
-              . $artist['gender'] . ' (songs: ' . $artist['songs'] . ') </a></li>';
+            echo '<li>' . $artist['artist_name'] . ' ' . substr($artist['bio'], 1, 20) . ' '
+              . $artist['gender'] . ' (songs: ' . $artist['songs'] . ')</li>';
+            $artists_count++;
           }
           echo '<ul>';
         } else {
