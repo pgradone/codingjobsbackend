@@ -39,7 +39,7 @@ function multiplicationtable($x)
 
 function nicemultiplicationtable($x)
 {
-	$res = '<table">
+	$res = '<table>
 	<tr>
 	 <th>calc</th>
 	 <th>res</th>
@@ -56,19 +56,17 @@ function nicemultiplicationtable($x)
 
 echo '<hr>';
 
-echo '<h3>3. Form with one input giving the multiplication table of any number :</h3>
-	Check if the value is correct (no float and no string, ONLY integer).<br><br>';
-
-$inputnumber = '';
-$nicetable = '';
+$inputnumber = 'waiting for input...';
+$nicetable = 'waiting for input...';
+$sv = '$x';
 if (isset($_POST['submit'])) {
 	$sv = $_POST['numberentered'];
-	if (filter_var($sv, FILTER_VALIDATE_INT) && (int) $sv) {
+	if (filter_var($sv, FILTER_VALIDATE_INT) && (int) $sv > 0) {
 		$inputnumber = multiplicationtable($sv);
 		$nicetable = nicemultiplicationtable($sv);
 	} else {
-		$inputnumber = 'not a valid number';
-		$nicetable = 'not a valid number';
+		$inputnumber = '\'' . $sv . '\' is not a valid number';
+		$nicetable = '\'' . $sv . '\' is not a valid number';
 	}
 }
 
@@ -82,7 +80,8 @@ if (isset($_POST['submit'])) {
 		table,
 		th,
 		td {
-			border: 5px solid black;
+			border: 3px dotted blue;
+			color: navy;
 		}
 	</style>
 </head>
@@ -93,9 +92,11 @@ if (isset($_POST['submit'])) {
 		<input type="text" name="numberentered" placeholder="imput an integer">
 		<input type="submit" name="submit" value="maketable">
 	</form>
+	<p>Check if the value is correct (no float and no string, ONLY integer).</p>
+	<h3>3. Form with one input giving a multiplication table of '<?= $sv; ?>' : </h3>
 	<?= $inputnumber; ?>
 	<hr>
-	<h3>3. Multiplication table in a nice HTML format table style :</h3>
+	<h3>4. Multiplication table of '<?= $sv; ?>' in a nice HTML format table style :</h3>
 	<?= $nicetable; ?>
 	<hr>
 </body>

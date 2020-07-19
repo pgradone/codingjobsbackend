@@ -5,13 +5,24 @@ $pl = '';
 // initialize the form variable
 $form = '';
 if (isset($_SESSION['user_id'])) {
-  echo '<h1>User\'s Playlists</h1>';
-
   $db_name = 'spotify';
   $db_handle = mysqli_connect('localhost', 'root', '', $db_name);
   $db_found = mysqli_select_db($db_handle, $db_name);
 
   if ($db_found) {
+
+    $form = '<h2>New playlist</h2>
+    <form method="post">
+    <input type="text" name="title"><br>
+    <input type="datetime" name="creation_date" value="' .
+      strtotime('now') . '" style="display:none">
+    <input type="submit" name="submit" value="create">
+    </form>';
+    if (isset($_POST['submit']) && !empty($_POST['title']) && !empty($_POST['creation_date'])) {
+      $sql_query = 'INSERT INTO playlists (title,creation_date,user_id) '
+        . 'VALUES (\'' . $_POST['title'] . '\',' . $_POST['creation_date'] . ',' . $_SESSION['user_id'] . ')';
+      echo $sql_query . '<br>';
+    }
 
     // build selection criteria given the key and value of $_GET supervariable
     $criteria = !empty($_GET) ? 'WHERE ' . key($_GET) . ' LIKE \'%' . $_GET[key($_GET)] . '%\'' : '';
@@ -42,22 +53,9 @@ if (isset($_SESSION['user_id'])) {
             $pl = $pl . '</li>';
           } // next song
           $pl = $pl . '</ul><hr>';
-
-          $form = '<h2>New playlist</h2>
-          <form method="post">
-            <input type="text" name="title"><br>
-            <input type="datetime" name="creation_date" value="' .
-            strtotime('now') . '" style="display:none">
-            <input type="submit" name="submit" value="create">
-          </form>';
-          if (isset($_POST['submit']) && !empty($_POST['title']) && !empty($_POST['creation_date'])) {
-            $sql_query = 'INSERT INTO playlists (title,creation_date,user_id) '
-              . 'VALUES (' . $_POST['title'] . ',' . $_POST['creation_date'] . ',' . $_SESSION['user_id'] . ')';
-          }
         } else {
           echo 'wrong query for songs : ' . $sql_query . '<br><hr>';
         }
-        echo '<hr>';
       } // next playlist
     } else {
       echo 'wrong query for playlists : ' . $sql_query . '<br>';
@@ -66,7 +64,9 @@ if (isset($_SESSION['user_id'])) {
     echo 'DB not found (' . $db_name . ')';
   }
 } else {
-  header('url="signin.php?login');
+  echo '<h2><a href="signin.php?logout">Logout</a></h2>';
+  echo '<h2><a href="signin.php?login">Login ... redirecting</a></h2>';
+  header('Refresh: 5 url="signin.php?login');
 }
 
 ?>
@@ -81,9 +81,11 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
+  <h1>User's Playlists</h1>
   <section class="createNewPlaylist">
     <?= $form; ?>
   </section>
+  <hr>
   <section class="playlists">
     <?= $pl; ?>
   </section>
