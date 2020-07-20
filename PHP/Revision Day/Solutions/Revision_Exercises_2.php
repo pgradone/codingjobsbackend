@@ -90,13 +90,15 @@ $conn = mysqli_connect('localhost', 'root', '', 'moviedb');
 
 if ($conn) {
 	$query = 'DELETE m FROM movies m
-	INNER JOIN directors d ON m.director_id = d.id
-	WHERE d.name = "Guy Ritchie"';
+INNER JOIN directors d ON m.director_id = d.id
+WHERE d.name = "Spielberg"';
 
 	$result_delete = mysqli_query($conn, $query);
 	if ($result_delete) {
-		echo "Deleted record";
+		echo "Deleted record<br>";
 	} else
-		echo "Problem with the query.";
+		echo "Problem with the query.<br>";
+
+	echo 'Affected rows : ' .  mysqli_affected_rows($conn);
 } else
 	echo 'Problem connecting to the DB';
