@@ -1,10 +1,13 @@
 <?php include_once 'menu.php';
 $limit = 10;
+$page = 1;
 $form = '<h3>awaiting input..</h3>';
 
 // retrieve the order if any
 $order = isset($_POST["order"]) ? ' ORDER BY ' . $_POST['order'] . ' ' : '';
 $limit = isset($_POST["limit"]) ? $_POST["limit"] : 10;
+$page = isset($_POST["page"]) ? $_POST["page"] : 1;
+$offset = $limit*($page-1);
 $db_name = 'spotify';
 $db_handle = mysqli_connect('localhost', 'root', '', $db_name);
 $db_found = mysqli_select_db($db_handle, $db_name);
@@ -12,7 +15,7 @@ if ($db_found) {
   $criteria = !empty($_GET) ? 'WHERE ' . key($_GET) . ' LIKE \'%' . $_GET[key($_GET)] . '%\'' : '';
   $sql_txt = 'SELECT *  FROM songs s LEFT JOIN categories c ON s.`categ_id` = c.categ_id 
         LEFT JOIN artists a ON s.`artist_id` = a.artist_id ' .
-    $criteria . $order . ' LIMIT ' . $limit;
+    $criteria . $order . ' LIMIT ' . $offset . ',' . $limit;
   $res_qry_songs = mysqli_query($db_handle, $sql_txt);
   if ($res_qry_songs) {
     $songs = mysqli_fetch_all($res_qry_songs, MYSQLI_ASSOC);
@@ -51,8 +54,9 @@ if ($db_found) {
           <option value="s.Title">song</option>
           <option value="artist_name">artist</option>
           <option value="c.title">category</option>
-        </select> |
-        songs per page: <input type="number" name="limit" id="" value="<?= $limit; ?>" style="width:5rem"> songs
+        </select>
+        |  songs per page: <input type="number" name="limit" id="" value="<?= $limit; ?>" style="width:5rem">
+        |  page: <input type="number" name="page" id="" value="<?= $page; ?>" style="width:3rem"> songs
         <input type="submit" value="Go">
       </form>
     </div>

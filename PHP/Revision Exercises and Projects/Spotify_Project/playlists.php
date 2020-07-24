@@ -13,15 +13,21 @@ if (isset($_SESSION['user_id'])) {
 
     $form = '<h2>New playlist</h2>
     <form method="post">
-    <input type="text" name="title"><br>
-    <input type="datetime" name="creation_date" value="' .
-      strtotime('now') . '" style="display:none">
+    Playlist Title :<input type="text" name="title"><br>
+    | Creation Date :<input type="datetime" name="creation_date" value="' .
+      strtotime('now') . '" >
     <input type="submit" name="submit" value="create">
     </form>';
     if (isset($_POST['submit']) && !empty($_POST['title']) && !empty($_POST['creation_date'])) {
       $sql_query = 'INSERT INTO playlists (title,creation_date,user_id) '
         . 'VALUES (\'' . $_POST['title'] . '\',' . $_POST['creation_date'] . ',' . $_SESSION['user_id'] . ')';
       echo $sql_query . '<br>';
+      $res_insert_qry = mysqli_query($db_handle,$sql_query);
+      if ($res_insert_qry) {
+        echo mysqli_affected_rows(($db_handle)) . ' rows inserted';
+      } else {
+        echo 'Problem with the query ' . $sql_query;
+      }
     }
 
     // build selection criteria given the key and value of $_GET supervariable
@@ -60,6 +66,7 @@ if (isset($_SESSION['user_id'])) {
     } else {
       echo 'wrong query for playlists : ' . $sql_query . '<br>';
     }
+    mysqli_close($db_handle);
   } else {
     echo 'DB not found (' . $db_name . ')';
   }

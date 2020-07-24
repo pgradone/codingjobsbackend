@@ -51,7 +51,7 @@ TRUNCATE TABLE `artists`;
 -- Dumping data for table `artists`
 --
 
-INSERT DELAYED INTO `artists` (`artist_id`, `artist_name`, `bio`, `gender`, `date_of_birth`) VALUES
+INSERT INTO `artists` (`artist_id`, `artist_name`, `bio`, `gender`, `date_of_birth`) VALUES
 (1, '\'Lectric Funk', NULL, NULL, NULL),
 (2, '101', NULL, NULL, NULL),
 (3, '16 Bit', NULL, NULL, NULL),
@@ -1315,7 +1315,7 @@ INSERT DELAYED INTO `artists` (`artist_id`, `artist_name`, `bio`, `gender`, `dat
 (1261, 'Pebbles', NULL, NULL, NULL),
 (1262, 'Re-Flex', NULL, NULL, NULL),
 (1263, 'Raze', NULL, NULL, NULL);
-INSERT DELAYED INTO `artists` (`artist_id`, `artist_name`, `bio`, `gender`, `date_of_birth`) VALUES
+INSERT  INTO `artists` (`artist_id`, `artist_name`, `bio`, `gender`, `date_of_birth`) VALUES
 (1264, 'Raydio', NULL, NULL, NULL),
 (1265, 'Raw Stylus', NULL, NULL, NULL),
 (1266, 'Rare Arts feat. Flex', NULL, NULL, NULL),
@@ -1686,7 +1686,7 @@ TRUNCATE TABLE `categories`;
 -- Dumping data for table `categories`
 --
 
-INSERT DELAYED INTO `categories` (`categ_id`, `title`) VALUES
+INSERT  INTO `categories` (`categ_id`, `title`) VALUES
 (7, 'Acid'),
 (10, 'Afro'),
 (11, 'Alpin'),
@@ -1868,7 +1868,7 @@ TRUNCATE TABLE `playlists`;
 -- Dumping data for table `playlists`
 --
 
-INSERT DELAYED INTO `playlists` (`playlist_id`, `title`, `creation_date`, `user_id`) VALUES
+INSERT  INTO `playlists` (`playlist_id`, `title`, `creation_date`, `user_id`) VALUES
 (1, 'ARA Megamix 1997', '1997-07-11 22:13:38', 8),
 (2, 'ARA Megamix 1997', '1997-07-19 16:42:40', 7),
 (3, 'ARA Megamix 1997', '1997-08-09 20:14:53', NULL),
@@ -2012,7 +2012,7 @@ TRUNCATE TABLE `playlist_content`;
 -- Dumping data for table `playlist_content`
 --
 
-INSERT DELAYED INTO `playlist_content` (`playlist_id`, `song_id`, `position`) VALUES
+INSERT  INTO `playlist_content` (`playlist_id`, `song_id`, `position`) VALUES
 (1, 627, 3),
 (1, 1286, 5),
 (1, 2064, 15),
@@ -3893,7 +3893,7 @@ TRUNCATE TABLE `songs`;
 -- Dumping data for table `songs`
 --
 
-INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
+INSERT  INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
 (1, 'Shanghaied', '1979-05-31 00:00:00', 135, 1, 128, 1979, '1899-12-30 05:15:00'),
 (2, 'Sweet Sensations', '1979-05-31 00:00:00', NULL, 1, 129, 1979, '1899-12-30 05:45:00'),
 (3, 'Rock To The Beat', '1989-05-31 00:00:00', NULL, 2, 121, 1989, NULL),
@@ -4480,7 +4480,7 @@ INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `ar
 (584, 'I O U', '1983-05-31 00:00:00', NULL, 584, 118, 1983, '1899-12-30 08:46:00'),
 (585, 'I Can\'t Take It', '1992-05-31 00:00:00', NULL, 585, 122.2, 1992, NULL),
 (586, 'Good Life/ Comon Yo', '1992-05-31 00:00:00', NULL, 585, 128.9, 1992, NULL);
-INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
+INSERT  INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
 (587, 'Alice, I Want You Just For Me', '1985-05-31 00:00:00', 35, 587, 100.7, 1985, NULL),
 (588, 'Unselfish Lover', '1985-05-31 00:00:00', NULL, 587, 103, 1985, NULL),
 (589, 'Happy Station', '1983-05-31 00:00:00', NULL, 589, 120, 1983, '1899-12-30 01:00:00'),
@@ -5057,7 +5057,7 @@ INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `ar
 (1160, 'Girl You Know It\'s True', '1988-05-31 00:00:00', NULL, 1158, 98, 1988, NULL),
 (1161, 'Something In The Way', '1989-05-31 00:00:00', NULL, 1161, 94, 1989, NULL),
 (1162, 'Two Hearts', '1981-05-31 00:00:00', NULL, 1280, 106.7, 1981, NULL);
-INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
+INSERT  INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
 (1163, 'I Should Be So Lucky', '1988-05-31 00:00:00', NULL, 1163, 116, 1988, NULL),
 (1164, 'Only Love Can Break Your Heart', '1985-05-31 00:00:00', NULL, 1164, 42, 1985, NULL),
 (1165, 'Girl To The Power Of 6', '1987-05-31 00:00:00', NULL, 1164, 90, 1987, '1899-12-30 05:30:00'),
@@ -5637,7 +5637,7 @@ INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `ar
 (1739, 'Never Gonna Give You Up', '1992-05-31 00:00:00', NULL, 797, 110.1, 1992, '1899-12-30 06:32:00'),
 (1740, 'Surprise', '1991-05-31 00:00:00', NULL, 796, 116.3, 1991, NULL),
 (1741, 'Gypsy Woman', '1991-05-31 00:00:00', NULL, 796, 120, 1991, NULL);
-INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
+INSERT  INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
 (1742, 'Makin\' Happy', '1991-05-31 00:00:00', NULL, 796, 120, 1991, NULL),
 (1743, 'Baby Love', '1992-05-31 00:00:00', NULL, 795, 120.2, 1992, NULL),
 (1744, 'Still A Thrill', '1987-05-31 00:00:00', NULL, 794, 109, 1987, NULL),
@@ -6205,7 +6205,7 @@ INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `ar
 (2306, 'Make It Real', '1987-05-31 00:00:00', 132, 827, 80, 1987, '1899-12-30 04:11:00'),
 (2307, 'Rocket 2 U', '1987-05-31 00:00:00', NULL, 827, 120.7, 1987, '1899-12-30 04:17:00'),
 (2308, 'Sendin\' All My Love', '1987-05-31 00:00:00', NULL, 827, 118, 1987, '1899-12-30 03:30:00');
-INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
+INSERT  INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
 (2309, 'When You\'re Young And In Love', '1987-05-31 00:00:00', NULL, 827, 99.9, 1987, '1899-12-30 04:25:00'),
 (2310, 'Cross My Broken Heart', '1987-05-31 00:00:00', NULL, 827, 117.7, 1987, '1899-12-30 04:08:00'),
 (2311, 'Even When You Sleep [Sands of Time]', '1986-05-31 00:00:00', NULL, 1066, 97, 1986, NULL),
@@ -6749,7 +6749,7 @@ INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `ar
 (2849, 'The Teacher of the House Music', '1989-05-31 00:00:00', NULL, 947, 120, 1989, '1899-12-30 03:45:00'),
 (2850, 'No Sorry remix', '1989-05-31 00:00:00', NULL, 947, 116, 1989, '1899-12-30 04:00:00'),
 (2851, 'I\'ll House You', '1989-05-31 00:00:00', NULL, 947, 121, 1989, '1899-12-30 04:00:00');
-INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
+INSERT  INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
 (2852, 'Moderne Man / Satisfy Your Lust', '1979-05-31 00:00:00', 75, 1034, 144, 1979, '1899-12-30 06:29:00'),
 (2853, 'Made in Munich', '1979-05-31 00:00:00', 75, 1034, 134, 1979, '1899-12-30 05:43:00'),
 (2854, 'Riding With the Wind', '1984-05-31 00:00:00', NULL, 1115, 114, 1984, '1899-12-30 03:22:00'),
@@ -7297,7 +7297,7 @@ INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `ar
 (3396, 'Margherita', '1979-05-31 00:00:00', NULL, 1329, 115.5, 1979, NULL),
 (3397, 'Baker Street', '1978-05-31 00:00:00', 142, 1330, 120, 1978, '1899-12-30 04:10:00'),
 (3398, 'Big Change In The Weather', '1978-05-31 00:00:00', 142, 1330, 140, 1978, '1899-12-30 05:35:00');
-INSERT DELAYED INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
+INSERT  INTO `songs` (`song_id`, `Title`, `release_date`, `categ_id`, `artist_id`, `BPM`, `Year`, `Time`) VALUES
 (3399, 'The Show', '1985-05-31 00:00:00', 101, 1331, 100.6, 1985, '1899-12-30 05:10:00'),
 (3400, 'La Di Da Di', '1985-05-31 00:00:00', 101, 1331, 96, 1985, '1899-12-30 04:58:00'),
 (3401, 'Keep on Loving You', '1980-05-31 00:00:00', NULL, 1332, 87.5, 1980, '1899-12-30 03:22:00'),
@@ -7700,7 +7700,7 @@ TRUNCATE TABLE `users`;
 -- Dumping data for table `users`
 --
 
-INSERT DELAYED INTO `users` (`user_id`, `first_name`, `last_name`, `mail`, `password`) VALUES
+INSERT  INTO `users` (`user_id`, `first_name`, `last_name`, `mail`, `password`) VALUES
 (2, 'Brad', 'Pitt', 'bpitt@youllnevernow.org', 'dfgsdfsgdgfsd'),
 (3, 'Guil', 'Pereira', 'gui_pereira10@live.com.pt', 'sukasukasuka'),
 (4, 'Simon', 'Bertrand', 'goodteacher@school.net', 'stressstressstress'),

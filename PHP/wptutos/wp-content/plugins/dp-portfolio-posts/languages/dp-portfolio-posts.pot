@@ -1,0 +1,1141 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: DP Portfolio Posts Pro\n"
+"POT-Creation-Date: 2018-12-14 08:34-0500\n"
+"PO-Revision-Date: 2018-08-24 12:32-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: dp_portfolio_posts_pro.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:145
+msgid "Portfolio Posts Pro License Options"
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:152
+msgid "License Key"
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:156
+msgid "Enter your license key"
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:162
+#: admin/class-dp-portfolio-posts-pro-admin.php:173
+msgid "Activate License"
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:166
+msgid "Active"
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:168
+msgid "Deactivate License"
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:236
+#: admin/class-dp-portfolio-posts-pro-admin.php:264
+#: admin/class-dp-portfolio-posts-pro-admin.php:303
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:244
+#, php-format
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:248
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:251
+msgid "Invalid license."
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:255
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:258
+#, php-format
+msgid "This appears to be an invalid license key for %s."
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:261
+msgid "Your license key has reached its activation limit."
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:330
+msgid "Thanks for purchase and activate DP Portfolio Posts Pro"
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:341
+msgid "Please activate your DP Portfolio Posts Pro Pro license."
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:341
+msgid "PPP Activation Page"
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:351
+msgid "License"
+msgstr ""
+
+#: admin/class-dp-portfolio-posts-pro-admin.php:352
+msgid "Get support"
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-updater.php:217
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-updater.php:221
+#, php-format
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-updater.php:444
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-updater.php:444
+msgid "Error"
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-utils.php:136
+msgid ""
+"Select one or more post types below. Use CTRL or SHIFT to select multiple."
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-utils.php:180
+msgid ""
+"Select one or more taxonomies below. Use CTRL or SHIFT to select multiple."
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-utils.php:236
+msgid "Select one or more terms below. Use CTRL or SHIFT to select multiple."
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-utils.php:254
+msgid "Set Values"
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-utils.php:255
+msgid "Clean Values"
+msgstr ""
+
+#: includes/class-dp-portfolio-posts-pro-utils.php:256
+msgid "Exit"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:9
+msgid "DP Blog Portfolio"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:17
+#: includes/modules/dp_filterable_blog.php:17
+#: includes/modules/dp_fullwidth_blog.php:18
+msgid "Content"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:18
+#: includes/modules/dp_filterable_blog.php:18
+#: includes/modules/dp_fullwidth_blog.php:19
+msgid "Elements"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:24
+#: includes/modules/dp_blog_portfolio.php:189
+#: includes/modules/dp_filterable_blog.php:24
+#: includes/modules/dp_filterable_blog.php:186
+#: includes/modules/dp_fullwidth_blog.php:25
+#: includes/modules/dp_fullwidth_blog.php:156
+msgid "Layout"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:28
+#: includes/modules/dp_blog_portfolio.php:140
+#: includes/modules/dp_filterable_blog.php:28
+#: includes/modules/dp_filterable_blog.php:145
+#: includes/modules/dp_fullwidth_blog.php:29
+msgid "Overlay"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:32
+#: includes/modules/dp_filterable_blog.php:32
+#: includes/modules/dp_fullwidth_blog.php:33
+msgid "Text"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:44
+#: includes/modules/dp_blog_portfolio.php:239
+#: includes/modules/dp_filterable_blog.php:62
+#: includes/modules/dp_filterable_blog.php:234
+#: includes/modules/dp_fullwidth_blog.php:204
+msgid "Title"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:53
+#: includes/modules/dp_filterable_blog.php:71
+#: includes/modules/dp_fullwidth_blog.php:64
+msgid "Post Meta"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:61
+#: includes/modules/dp_filterable_blog.php:97
+msgid "Excerpt"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:69
+#: includes/modules/dp_filterable_blog.php:105
+msgid "Read More"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:78
+#: includes/modules/dp_blog_portfolio.php:160
+#: includes/modules/dp_filterable_blog.php:79
+#: includes/modules/dp_filterable_blog.php:165
+#: includes/modules/dp_fullwidth_blog.php:82
+#: includes/modules/dp_fullwidth_blog.php:131
+msgid "Custom Field Label"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:87
+#: includes/modules/dp_blog_portfolio.php:164
+#: includes/modules/dp_filterable_blog.php:88
+#: includes/modules/dp_filterable_blog.php:169
+#: includes/modules/dp_fullwidth_blog.php:91
+#: includes/modules/dp_fullwidth_blog.php:135
+msgid "Custom Field Value"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:96
+msgid "Pagination Links"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:136
+#: includes/modules/dp_filterable_blog.php:141
+msgid "Portfolio Image"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:144
+#: includes/modules/dp_filterable_blog.php:149
+msgid "Overlay Icon"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:148
+#: includes/modules/dp_filterable_blog.php:153
+#: includes/modules/dp_fullwidth_blog.php:45
+#: includes/modules/dp_fullwidth_blog.php:107
+#: includes/modules/dp_fullwidth_blog.php:148
+msgid "Portfolio Title"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:152
+#: includes/modules/dp_filterable_blog.php:157
+msgid "Portfolio Post Meta"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:156
+#: includes/modules/dp_filterable_blog.php:161
+#: includes/modules/dp_fullwidth_blog.php:127
+msgid "Custom Field Container"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:168
+#: includes/modules/dp_filterable_blog.php:173
+msgid "Portfolio Excerpt"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:172
+#: includes/modules/dp_filterable_blog.php:177
+msgid "Portfolio Read More"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:176
+msgid "Portfolio Pagination Next"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:180
+msgid "Portfolio Pagination Prev"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:193
+#: includes/modules/dp_filterable_blog.php:189
+msgid "Fullwidth"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:194
+#: includes/modules/dp_filterable_blog.php:190
+#: includes/modules/dp_fullwidth_blog.php:161
+msgid "Grid"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:195
+msgid "List"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:198
+#: includes/modules/dp_filterable_blog.php:193
+#: includes/modules/dp_fullwidth_blog.php:164
+msgid "Choose your desired portfolio layout style."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:203
+#: includes/modules/dp_filterable_blog.php:198
+#: includes/modules/dp_fullwidth_blog.php:169
+msgid "Custom Query"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:207
+#: includes/modules/dp_blog_portfolio.php:303
+#: includes/modules/dp_blog_portfolio.php:316
+#: includes/modules/dp_blog_portfolio.php:351
+#: includes/modules/dp_blog_portfolio.php:364
+#: includes/modules/dp_blog_portfolio.php:374
+#: includes/modules/dp_blog_portfolio.php:388
+#: includes/modules/dp_blog_portfolio.php:403
+#: includes/modules/dp_blog_portfolio.php:416
+#: includes/modules/dp_blog_portfolio.php:428
+#: includes/modules/dp_blog_portfolio.php:451
+#: includes/modules/dp_blog_portfolio.php:464
+#: includes/modules/dp_blog_portfolio.php:493
+#: includes/modules/dp_blog_portfolio.php:539
+#: includes/modules/dp_filterable_blog.php:202
+#: includes/modules/dp_filterable_blog.php:350
+#: includes/modules/dp_filterable_blog.php:363
+#: includes/modules/dp_filterable_blog.php:397
+#: includes/modules/dp_filterable_blog.php:410
+#: includes/modules/dp_filterable_blog.php:420
+#: includes/modules/dp_filterable_blog.php:434
+#: includes/modules/dp_filterable_blog.php:449
+#: includes/modules/dp_filterable_blog.php:461
+#: includes/modules/dp_filterable_blog.php:473
+#: includes/modules/dp_filterable_blog.php:496
+#: includes/modules/dp_filterable_blog.php:509
+#: includes/modules/dp_filterable_blog.php:538
+#: includes/modules/dp_filterable_blog.php:583
+#: includes/modules/dp_fullwidth_blog.php:173
+#: includes/modules/dp_fullwidth_blog.php:270
+#: includes/modules/dp_fullwidth_blog.php:281
+#: includes/modules/dp_fullwidth_blog.php:294
+#: includes/modules/dp_fullwidth_blog.php:307
+#: includes/modules/dp_fullwidth_blog.php:320
+#: includes/modules/dp_fullwidth_blog.php:354
+#: includes/modules/dp_fullwidth_blog.php:383
+#: includes/modules/dp_fullwidth_blog.php:406
+msgid "No"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:208
+#: includes/modules/dp_blog_portfolio.php:304
+#: includes/modules/dp_blog_portfolio.php:317
+#: includes/modules/dp_blog_portfolio.php:350
+#: includes/modules/dp_blog_portfolio.php:363
+#: includes/modules/dp_blog_portfolio.php:375
+#: includes/modules/dp_blog_portfolio.php:389
+#: includes/modules/dp_blog_portfolio.php:402
+#: includes/modules/dp_blog_portfolio.php:415
+#: includes/modules/dp_blog_portfolio.php:429
+#: includes/modules/dp_blog_portfolio.php:452
+#: includes/modules/dp_blog_portfolio.php:465
+#: includes/modules/dp_blog_portfolio.php:494
+#: includes/modules/dp_blog_portfolio.php:538
+#: includes/modules/dp_filterable_blog.php:203
+#: includes/modules/dp_filterable_blog.php:351
+#: includes/modules/dp_filterable_blog.php:364
+#: includes/modules/dp_filterable_blog.php:396
+#: includes/modules/dp_filterable_blog.php:409
+#: includes/modules/dp_filterable_blog.php:421
+#: includes/modules/dp_filterable_blog.php:435
+#: includes/modules/dp_filterable_blog.php:448
+#: includes/modules/dp_filterable_blog.php:460
+#: includes/modules/dp_filterable_blog.php:474
+#: includes/modules/dp_filterable_blog.php:497
+#: includes/modules/dp_filterable_blog.php:510
+#: includes/modules/dp_filterable_blog.php:539
+#: includes/modules/dp_filterable_blog.php:582
+#: includes/modules/dp_fullwidth_blog.php:174
+#: includes/modules/dp_fullwidth_blog.php:269
+#: includes/modules/dp_fullwidth_blog.php:282
+#: includes/modules/dp_fullwidth_blog.php:295
+#: includes/modules/dp_fullwidth_blog.php:308
+#: includes/modules/dp_fullwidth_blog.php:321
+#: includes/modules/dp_fullwidth_blog.php:355
+#: includes/modules/dp_fullwidth_blog.php:384
+#: includes/modules/dp_fullwidth_blog.php:407
+msgid "Yes"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:213
+#: includes/modules/dp_filterable_blog.php:208
+#: includes/modules/dp_fullwidth_blog.php:179
+msgid ""
+"Turn this option on if you want to create a custom query that is not "
+"possible using the options below. Once this option is turned on, all Content "
+"options below will be ignored and the module will load the 10 most recent "
+"blog posts by default. You can override this query using the following "
+"filter in your child theme's functions.php file: "
+"<strong>dp_ppp_custom_query_args</strong>. For more information and to see "
+"an example, see demo at <a href=\"https://www.diviplugins.com/divi-custom-"
+"queries/\" target=\"_blank\">Divi Plugins</a>  "
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:216
+#: includes/modules/dp_filterable_blog.php:211
+#: includes/modules/dp_fullwidth_blog.php:182
+msgid "Posts Number"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:220
+msgid "Define the number of projects that should be displayed per page."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:225
+#: includes/modules/dp_filterable_blog.php:220
+#: includes/modules/dp_fullwidth_blog.php:190
+msgid "Offset number"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:231
+#: includes/modules/dp_filterable_blog.php:224
+#: includes/modules/dp_fullwidth_blog.php:196
+msgid "Choose how many posts you would like to offset by"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:234
+#: includes/modules/dp_filterable_blog.php:229
+#: includes/modules/dp_fullwidth_blog.php:199
+msgid "Order By"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:238
+#: includes/modules/dp_filterable_blog.php:233
+#: includes/modules/dp_fullwidth_blog.php:203
+msgid "Date"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:240
+#: includes/modules/dp_filterable_blog.php:235
+#: includes/modules/dp_filterable_blog.php:315
+#: includes/modules/dp_fullwidth_blog.php:205
+msgid "Slug"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:241
+#: includes/modules/dp_filterable_blog.php:236
+#: includes/modules/dp_fullwidth_blog.php:206
+msgid "Random"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:244
+#: includes/modules/dp_filterable_blog.php:239
+#: includes/modules/dp_fullwidth_blog.php:209
+msgid "Choose how to sort posts"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:249
+#: includes/modules/dp_filterable_blog.php:244
+#: includes/modules/dp_fullwidth_blog.php:214
+msgid "Order"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:253
+#: includes/modules/dp_filterable_blog.php:248
+#: includes/modules/dp_filterable_blog.php:328
+#: includes/modules/dp_fullwidth_blog.php:218
+msgid "Asc"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:254
+#: includes/modules/dp_filterable_blog.php:249
+#: includes/modules/dp_filterable_blog.php:329
+#: includes/modules/dp_fullwidth_blog.php:219
+msgid "Desc"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:257
+#: includes/modules/dp_filterable_blog.php:252
+#: includes/modules/dp_fullwidth_blog.php:222
+msgid "Choose which order to display posts"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:262
+#: includes/modules/dp_filterable_blog.php:257
+#: includes/modules/dp_fullwidth_blog.php:227
+msgid "Custom Post Type Name"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:268
+#: includes/modules/dp_filterable_blog.php:261
+#: includes/modules/dp_fullwidth_blog.php:233
+msgid "Check which posts types you would like to include in the layout"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:271
+#: includes/modules/dp_filterable_blog.php:266
+#: includes/modules/dp_fullwidth_blog.php:236
+msgid "Categories"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:276
+#: includes/modules/dp_filterable_blog.php:269
+#: includes/modules/dp_fullwidth_blog.php:241
+msgid "Check which categories you would like to include in the layout"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:279
+#: includes/modules/dp_filterable_blog.php:274
+#: includes/modules/dp_fullwidth_blog.php:244
+msgid "Include/Exclude Taxonomy"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:283
+#: includes/modules/dp_filterable_blog.php:276
+#: includes/modules/dp_fullwidth_blog.php:248
+msgid ""
+"Here you can control which taxonomy the include/exclude tags apply to. Leave "
+"empty for posts. For other CPTs, enter the tag name above. For projects, the "
+"tag name is project_tag"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:286
+#: includes/modules/dp_filterable_blog.php:281
+#: includes/modules/dp_fullwidth_blog.php:251
+msgid "Include Tags"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:290
+#: includes/modules/dp_filterable_blog.php:283
+#: includes/modules/dp_fullwidth_blog.php:255
+msgid ""
+"Enter a single tag slug or a comma separated list of tag slugs. All posts in "
+"the categories above AND WITH these tags will load. Leave empty if you only "
+"want to filter using the categories above."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:293
+#: includes/modules/dp_filterable_blog.php:288
+#: includes/modules/dp_fullwidth_blog.php:258
+msgid "Exclude Tags"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:297
+#: includes/modules/dp_filterable_blog.php:290
+#: includes/modules/dp_fullwidth_blog.php:262
+msgid ""
+"Enter a single tag slug or a comma separated list of tag slugs. All posts in "
+"the categories above AND WITHOUT these tags will load. Leave empty if you "
+"only want to filter using the categories above."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:300
+#: includes/modules/dp_filterable_blog.php:347
+#: includes/modules/dp_fullwidth_blog.php:304
+msgid "Show post in popup"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:307
+#: includes/modules/dp_filterable_blog.php:354
+#: includes/modules/dp_fullwidth_blog.php:311
+msgid "Posts open in popup instead of opening blog post."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:312
+#: includes/modules/dp_filterable_blog.php:359
+#: includes/modules/dp_fullwidth_blog.php:316
+msgid "Use Custom URLs"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:320
+#: includes/modules/dp_filterable_blog.php:367
+#: includes/modules/dp_fullwidth_blog.php:324
+msgid "Changes the URL to a custom field value set in each post."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:325
+#: includes/modules/dp_filterable_blog.php:372
+#: includes/modules/dp_fullwidth_blog.php:329
+msgid "Custom Field for URL"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:328
+#: includes/modules/dp_filterable_blog.php:375
+#: includes/modules/dp_fullwidth_blog.php:332
+msgid ""
+"Enter custom field name (NOT the URL). The URL value needs to be set in each "
+"post using the custom field you input here. If no value is set, defaults to "
+"post URL."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:333
+#: includes/modules/dp_filterable_blog.php:380
+#: includes/modules/dp_fullwidth_blog.php:337
+msgid "Url Opens"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:337
+#: includes/modules/dp_filterable_blog.php:384
+#: includes/modules/dp_fullwidth_blog.php:341
+msgid "In The Same Window"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:338
+#: includes/modules/dp_filterable_blog.php:385
+#: includes/modules/dp_fullwidth_blog.php:342
+msgid "In The New Tab"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:341
+#: includes/modules/dp_filterable_blog.php:388
+#: includes/modules/dp_fullwidth_blog.php:345
+msgid "Here you can choose whether or not your link opens in a new window"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:346
+#: includes/modules/dp_filterable_blog.php:393
+#: includes/modules/dp_fullwidth_blog.php:265
+msgid "Show Title"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:354
+#: includes/modules/dp_filterable_blog.php:400
+msgid "Turn project titles on or off."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:359
+#: includes/modules/dp_filterable_blog.php:405
+msgid "Show Featured Image"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:367
+#: includes/modules/dp_filterable_blog.php:413
+msgid "This will turn thumbnails on and off."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:371
+#: includes/modules/dp_filterable_blog.php:417
+#: includes/modules/dp_fullwidth_blog.php:278
+msgid "Open in Lightbox"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:379
+#: includes/modules/dp_filterable_blog.php:424
+#: includes/modules/dp_fullwidth_blog.php:285
+msgid "Image opens in lightbox instead of opening blog post."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:384
+#: includes/modules/dp_filterable_blog.php:430
+#: includes/modules/dp_fullwidth_blog.php:290
+msgid "Lightbox Gallery"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:395
+#: includes/modules/dp_filterable_blog.php:441
+#: includes/modules/dp_fullwidth_blog.php:301
+msgid ""
+"Turn this option on if you want the lightbox to display all images from the "
+"carousel in a gallery. Leave this option off if you only want the clicked "
+"image to display in the lightbox."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:398
+#: includes/modules/dp_filterable_blog.php:444
+msgid "Show Author"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:406
+#: includes/modules/dp_filterable_blog.php:452
+msgid "Turn the author link on or off."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:411
+#: includes/modules/dp_filterable_blog.php:457
+msgid "Show Categories"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:419
+#: includes/modules/dp_filterable_blog.php:464
+msgid "Turn the category links on or off."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:424
+#: includes/modules/dp_filterable_blog.php:469
+#: includes/modules/dp_fullwidth_blog.php:379
+msgid "Show Date"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:432
+#: includes/modules/dp_filterable_blog.php:477
+#: includes/modules/dp_fullwidth_blog.php:387
+msgid "Turn the date display on or off."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:437
+#: includes/modules/dp_filterable_blog.php:482
+#: includes/modules/dp_fullwidth_blog.php:392
+msgid "Meta Date Format"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:442
+#: includes/modules/dp_filterable_blog.php:487
+#: includes/modules/dp_fullwidth_blog.php:397
+msgid ""
+"If you would like to adjust the date format, input the appropriate PHP date "
+"format here."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:447
+#: includes/modules/dp_filterable_blog.php:492
+msgid "Show Comment Count"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:455
+#: includes/modules/dp_filterable_blog.php:500
+msgid "Turn comment count on and off."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:460
+#: includes/modules/dp_filterable_blog.php:505
+#: includes/modules/dp_fullwidth_blog.php:350
+msgid "Show Custom Fields"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:468
+#: includes/modules/dp_filterable_blog.php:513
+#: includes/modules/dp_fullwidth_blog.php:358
+msgid "Displays custom fields set in each post."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:473
+#: includes/modules/dp_filterable_blog.php:518
+#: includes/modules/dp_fullwidth_blog.php:363
+msgid "Custom Field Names"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:476
+#: includes/modules/dp_filterable_blog.php:521
+#: includes/modules/dp_fullwidth_blog.php:366
+msgid "Enter a single custom field name or a comma separated list of names."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:481
+#: includes/modules/dp_filterable_blog.php:526
+#: includes/modules/dp_fullwidth_blog.php:371
+msgid "Custom Field Labels"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:484
+#: includes/modules/dp_filterable_blog.php:529
+#: includes/modules/dp_fullwidth_blog.php:374
+msgid ""
+"Enter custom field label (including separator and spaces) or a comma "
+"separated list of labels in the same order as the names above. The number of "
+"labels must equal the number of names above, otherwise the name above will "
+"be used as the label for each custom field. For more information, see demo "
+"at <a href=\"http://www.diviplugins.com/portfolio-posts-pro-plugin/\">Divi "
+"Plugins</a>"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:489
+#: includes/modules/dp_filterable_blog.php:534
+#: includes/modules/dp_fullwidth_blog.php:402
+msgid "Show Excerpt"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:497
+#: includes/modules/dp_filterable_blog.php:542
+#: includes/modules/dp_fullwidth_blog.php:410
+msgid "Turn the excerpt display on or off"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:502
+#: includes/modules/dp_filterable_blog.php:547
+#: includes/modules/dp_fullwidth_blog.php:415
+msgid "Excerpt Limit"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:506
+#: includes/modules/dp_filterable_blog.php:551
+#: includes/modules/dp_fullwidth_blog.php:419
+msgid "Enter number of characters to limit excerpt."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:511
+#: includes/modules/dp_filterable_blog.php:556
+msgid "Read More Button"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:515
+#: includes/modules/dp_blog_portfolio.php:584
+#: includes/modules/dp_blog_portfolio.php:628
+#: includes/modules/dp_filterable_blog.php:560
+#: includes/modules/dp_filterable_blog.php:614
+#: includes/modules/dp_fullwidth_blog.php:456
+msgid "Off"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:516
+#: includes/modules/dp_blog_portfolio.php:583
+#: includes/modules/dp_blog_portfolio.php:629
+#: includes/modules/dp_filterable_blog.php:561
+#: includes/modules/dp_filterable_blog.php:613
+#: includes/modules/dp_fullwidth_blog.php:457
+msgid "On"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:519
+#: includes/modules/dp_filterable_blog.php:564
+msgid ""
+"Here you can define whether to show \"read more\" link after the excerpts or "
+"not."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:524
+#: includes/modules/dp_filterable_blog.php:569
+msgid "Read More Text"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:528
+#: includes/modules/dp_blog_portfolio.php:738
+#: includes/modules/dp_filterable_blog.php:738
+msgid "read more"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:529
+#: includes/modules/dp_filterable_blog.php:574
+msgid "Leave blank will show \"read more\" by default."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:534
+#: includes/modules/dp_filterable_blog.php:579
+msgid "Show Pagination"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:542
+#: includes/modules/dp_filterable_blog.php:586
+msgid "Enable or disable pagination for this feed."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:547
+msgid "Pagination Older Text"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:550
+#: includes/modules/dp_blog_portfolio.php:744
+msgid "Older Entries"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:552
+msgid "Leave blank will show \"Older Entries\" by default."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:557
+msgid "Pagination Next Text"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:560
+#: includes/modules/dp_blog_portfolio.php:741
+msgid "Next Entries"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:562
+msgid "Leave blank will show \"Next Entries\" by default."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:567
+#: includes/modules/dp_filterable_blog.php:591
+#: includes/modules/dp_fullwidth_blog.php:439
+msgid "Text Color"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:571
+#: includes/modules/dp_filterable_blog.php:594
+#: includes/modules/dp_fullwidth_blog.php:443
+msgid "Dark"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:572
+#: includes/modules/dp_filterable_blog.php:595
+#: includes/modules/dp_fullwidth_blog.php:444
+msgid "Light"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:575
+#: includes/modules/dp_filterable_blog.php:598
+#: includes/modules/dp_fullwidth_blog.php:447
+msgid ""
+"Here you can choose whether your text should be light or dark. If you are "
+"working with a dark background, then your text should be light. If your "
+"background is light, then your text should be set to dark."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:580
+#: includes/modules/dp_filterable_blog.php:610
+msgid "Featured Image Overlay"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:587
+#: includes/modules/dp_filterable_blog.php:617
+msgid ""
+"If enabled, an overlay color and icon will be displayed when a visitors "
+"hovers over the featured image of a post."
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:592
+#: includes/modules/dp_filterable_blog.php:622
+#: includes/modules/dp_fullwidth_blog.php:476
+msgid "Hover Icon Picker"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:601
+#: includes/modules/dp_filterable_blog.php:630
+#: includes/modules/dp_fullwidth_blog.php:484
+msgid "Zoom Icon Color"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:609
+#: includes/modules/dp_filterable_blog.php:638
+#: includes/modules/dp_fullwidth_blog.php:491
+msgid "Hover Overlay Color"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:617
+#: includes/modules/dp_filterable_blog.php:603
+msgid "Grid Tile Background Color"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:624
+msgid "Use Dropshadow"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:963
+#: includes/modules/dp_filterable_blog.php:962
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: includes/modules/dp_blog_portfolio.php:972
+#: includes/modules/dp_filterable_blog.php:971
+#, php-format
+msgctxt "number of comments"
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/modules/dp_filterable_blog.php:9
+msgid "DP Filterable Blog"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:44
+msgid "Filter"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:53
+msgid "Filter Active"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:114
+msgid "Pagination"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:133
+msgid "Portfolio Filters"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:137
+msgid "Active Portfolio Filter"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:215
+#: includes/modules/dp_fullwidth_blog.php:185
+msgid "Define the number of posts that should be displayed per page."
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:295
+msgid "Filters Sort"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:299
+#: includes/modules/dp_fullwidth_blog.php:428
+msgid "Default"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:300
+msgid "ID, Name, Slug"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:301
+msgid "Custom"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:304
+msgid "Choose which method to sort the filters"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:309
+msgid "Filters By"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:313
+msgid "ID"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:314
+msgid "Name"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:319
+msgid "Choose how to sort the filters"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:324
+msgid "Filters Order"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:333
+msgid "Choose which order to display the filters"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:338
+msgid "Filters Custom"
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:341
+msgid ""
+"Enter a comma-separated list of categories from the selected Categories "
+"above. Categories will appear in the order you enter them."
+msgstr ""
+
+#: includes/modules/dp_filterable_blog.php:1039
+msgid "All"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:9
+msgid "DP Fullwidth Blog"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:54
+msgid "Post Title"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:73
+msgid "Post Excerpt"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:111
+msgid "Portfolio Item"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:115
+msgid "Item Overlay"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:119
+msgid "Item Title"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:123
+msgid "Meta"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:139
+msgid "Navigation Arrows"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:151
+msgid "Title displayed above the portfolio."
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:160
+msgid "Carousel"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:273
+msgid "Turn post titles on or off."
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:424
+msgid "Arrow Placement"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:429
+msgid "Top"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:430
+msgid "Push to left/right"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:434
+msgid "Choose your desired location of left and right carousel arrows."
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:452
+msgid "Automatic Carousel Rotation"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:461
+msgid ""
+"If you the carousel layout option is chosen and you would like the carousel "
+"to slide automatically, without the visitor having to click the next button, "
+"enable this option and then adjust the rotation speed below if desired."
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:466
+msgid "Automatic Carousel Rotation Speed (in ms)"
+msgstr ""
+
+#: includes/modules/dp_fullwidth_blog.php:471
+msgid ""
+"Here you can designate how fast the carousel rotates, if 'Automatic Carousel "
+"Rotation' option is enabled above. The higher the number the longer the "
+"pause between each rotation. (Ex. 1000 = 1 sec)"
+msgstr ""
+
+#: templates/dp-popup-template.php:66
+msgid "Pages:"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "DP Portfolio Posts Pro"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.diviplugins.com/divi/portfolio-posts-pro-plugin/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Creates three new modules similar to Divi's portfolio modules, but with the "
+"ability to load posts or any custom post type. Also adds new features: open "
+"posts in a popup window, open the featured image in a lightbox, display "
+"custom fields."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "DiviPlugins"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.diviplugins.com"
+msgstr ""
