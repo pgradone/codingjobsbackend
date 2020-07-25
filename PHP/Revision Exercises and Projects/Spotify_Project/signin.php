@@ -23,8 +23,6 @@
   $mode = 'login';
   $extraFields = '';
 
-  var_dump($_GET);
-
   if (isset($_GET['register'])) {
     $mode = 'register';
     $extraFields = '<br>- First Name :<input type="text" name="first_name" placeholder="First Name"><br>
@@ -63,7 +61,7 @@
       require_once 'dbconstants.php';
       $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
       $checkqry = 'SELECT * FROM users WHERE mail = \'' . $validEmail . '\'';
-      $errors['SQL'] = $checkqry;
+      $messagess['SQL'] = $checkqry;
       $result_query = mysqli_query($connection, $checkqry);
 
       $mailusr = mysqli_fetch_assoc($result_query);

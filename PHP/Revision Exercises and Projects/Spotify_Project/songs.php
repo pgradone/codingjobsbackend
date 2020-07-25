@@ -7,7 +7,7 @@ $form = '<h3>awaiting input..</h3>';
 $order = isset($_POST["order"]) ? ' ORDER BY ' . $_POST['order'] . ' ' : '';
 $limit = isset($_POST["limit"]) ? $_POST["limit"] : 10;
 $page = isset($_POST["page"]) ? $_POST["page"] : 1;
-$offset = $limit*($page-1);
+$offset = $limit * ($page - 1);
 $db_name = 'spotify';
 $db_handle = mysqli_connect('localhost', 'root', '', $db_name);
 $db_found = mysqli_select_db($db_handle, $db_name);
@@ -21,6 +21,8 @@ if ($db_found) {
     $songs = mysqli_fetch_all($res_qry_songs, MYSQLI_ASSOC);
     $optionselector = '<option value="" disabled selected>Choose a playlist</option>';
     $sql_txt = 'SELECT title, playlist_id FROM playlists;';
+    // restrict playlist for user_id only, if user is logged in
+    $sql_txt = isset($_SESSION['user_id']) ? $sql_txt . ' WHERE user_id = ' . $_SESSION['user_id'] : $sql_txt;
     $res_qry_pl = mysqli_query($db_handle, $sql_txt);
     if ($res_qry_pl) {
       $options = mysqli_fetch_all($res_qry_pl, MYSQLI_ASSOC);
@@ -55,8 +57,8 @@ if ($db_found) {
           <option value="artist_name">artist</option>
           <option value="c.title">category</option>
         </select>
-        |  songs per page: <input type="number" name="limit" id="" value="<?= $limit; ?>" style="width:5rem">
-        |  page: <input type="number" name="page" id="" value="<?= $page; ?>" style="width:3rem"> songs
+        | songs per page: <input type="number" name="limit" id="" value="<?= $limit; ?>" style="width:5rem">
+        | page: <input type="number" name="page" id="" value="<?= $page; ?>" style="width:3rem"> songs
         <input type="submit" value="Go">
       </form>
     </div>
@@ -69,16 +71,19 @@ if ($db_found) {
               . $song['BPM'] . 'BPM Year:' . $song['Year'] . ' Time: ' . substr($song['Time'], 11, 5) .
               ' -> <a href="artists.php?artist_name=' . str_replace("'", "''", $song['artist_name']) . '">'
               . $song['artist_name'] . '</a> - ' . $song['title'];
-            echo '<form name="playlistadder" method="post">
+            // add playlist chooser only if user is logged in
+            if (isset($_SESSION['user_id'])) {
+              echo '<form name="playlistadder" method="post">
             <select name="playlists">';
-            echo '<option value="" disabled selected>Choose a playlist</option>';
-            // echo $optionselector;
-            foreach ($options as $option) {
-              echo '<option value="' . $option['playlist_id'] . '" >' .
-                $option['title'] . ' - ' . $option['playlist_id'] . '</option>';
-            }
-            echo '</select>
+              echo '<option value="" disabled selected>Choose a playlist</option>';
+              // echo $optionselector;
+              foreach ($options as $option) {
+                echo '<option value="' . $option['playlist_id'] . '" >' .
+                  $option['title'] . ' - ' . $option['playlist_id'] . '</option>';
+              }
+              echo '</select>
             <input type="submit" name="addToPlaylist" value="add to my playlist"></form> </li>';
+            }
             ?>
           </li>
         <?php endforeach; ?>
