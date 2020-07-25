@@ -71,7 +71,7 @@
         # verify password for successful login
         if (password_verify($password, $mailusr['password'])) {
           $messages['success'] = $mailusr['first_name'] . ' '
-            . $mailusr['last_name'] . ' is successfully logged in! <br>
+            . $mailusr['last_name'] . ' is successfully logged in! <br><br>
             ...redirecting to account page.. <a href="signin.php?logout">Logout</a>';
           $_SESSION['emailuser'] = $mailusr['mail'];
           $_SESSION['firstname'] = $mailusr['first_name'];

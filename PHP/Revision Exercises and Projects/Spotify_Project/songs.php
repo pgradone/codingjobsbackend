@@ -20,9 +20,10 @@ if ($db_found) {
   if ($res_qry_songs) {
     $songs = mysqli_fetch_all($res_qry_songs, MYSQLI_ASSOC);
     $optionselector = '<option value="" disabled selected>Choose a playlist</option>';
-    $sql_txt = 'SELECT title, playlist_id FROM playlists;';
+    $sql_txt = 'SELECT title, playlist_id FROM playlists';
     // restrict playlist for user_id only, if user is logged in
     $sql_txt = isset($_SESSION['user_id']) ? $sql_txt . ' WHERE user_id = ' . $_SESSION['user_id'] : $sql_txt;
+    // var_dump($sql_txt);
     $res_qry_pl = mysqli_query($db_handle, $sql_txt);
     if ($res_qry_pl) {
       $options = mysqli_fetch_all($res_qry_pl, MYSQLI_ASSOC);
@@ -32,6 +33,14 @@ if ($db_found) {
     echo '!Error SQL: ' . $sql_txt . '<br>';
   }
   mysqli_close($db_handle);
+  // *** INSERT a song into a playlist
+  if (isset($_POST['addToPlaylist'])) {
+    # code...
+    echo $_POST['playlists'];
+    $sql_txt = 'INSERT INTO playlist_content (playlist_id, song_id)';
+  } else {
+    # code...
+  }
 } else {
   echo 'Error DB ' . $$db_name . ' not found!<br>';
 }
@@ -53,9 +62,11 @@ if ($db_found) {
       <form name="sort" method="POST">Order by:</label>
         <select name="order">
           <!-- <option value="" disabled selected>Choose</option> -->
-          <option value="s.Title">song</option>
+          <option value="s.Title">song title</option>
           <option value="artist_name">artist</option>
           <option value="c.title">category</option>
+          <option value="s.song_id">song_id</option>
+          <option value="a.artist_id">artist_id</option>
         </select>
         | songs per page: <input type="number" name="limit" id="" value="<?= $limit; ?>" style="width:5rem">
         | page: <input type="number" name="page" id="" value="<?= $page; ?>" style="width:3rem"> songs
@@ -65,26 +76,26 @@ if ($db_found) {
     <div class="songslist">
       <ul>
         <?php foreach ($songs as $song) : ?>
-          <li>
-            <?php
-            echo $song['Title'] . ' (released: ' . date('d/m/Y', strtotime($song['release_date'])) . ') '
-              . $song['BPM'] . 'BPM Year:' . $song['Year'] . ' Time: ' . substr($song['Time'], 11, 5) .
-              ' -> <a href="artists.php?artist_name=' . str_replace("'", "''", $song['artist_name']) . '">'
-              . $song['artist_name'] . '</a> - ' . $song['title'];
-            // add playlist chooser only if user is logged in
-            if (isset($_SESSION['user_id'])) {
-              echo '<form name="playlistadder" method="post">
+          <li><span>
+              <?php
+              echo $song['Title'] . ' (released: ' . date('d/m/Y', strtotime($song['release_date'])) . ') '
+                . $song['BPM'] . 'BPM Year:' . $song['Year'] . ' Time: ' . substr($song['Time'], 11, 5) .
+                ' -> <a href="artists.php?artist_name=' . str_replace("'", "''", $song['artist_name']) . '">'
+                . $song['artist_name'] . '</a> - ' . $song['title'];
+              // add playlist chooser only if user is logged in
+              if (isset($_SESSION['user_id'])) {
+                echo '<form name="playlistadder" method="post">
             <select name="playlists">';
-              echo '<option value="" disabled selected>Choose a playlist</option>';
-              // echo $optionselector;
-              foreach ($options as $option) {
-                echo '<option value="' . $option['playlist_id'] . '" >' .
-                  $option['title'] . ' - ' . $option['playlist_id'] . '</option>';
-              }
-              echo '</select>
+                echo '<option value="" disabled selected>Choose a playlist</option>';
+                // echo $optionselector;
+                foreach ($options as $option) {
+                  echo '<option value="' . $option['playlist_id'] . '" >' .
+                    $option['title'] . ' - ' . $option['playlist_id'] . '</option>';
+                }
+                echo '</select>
             <input type="submit" name="addToPlaylist" value="add to my playlist"></form> </li>';
-            }
-            ?>
+              }
+              ?></span>
           </li>
         <?php endforeach; ?>
       </ul>
