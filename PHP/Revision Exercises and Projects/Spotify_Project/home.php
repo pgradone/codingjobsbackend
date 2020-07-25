@@ -30,13 +30,10 @@ require_once 'menu.php';
   <hr>
 
   <h2>
-    <a href="./artists.php">Artists</a>
+    <a href="./signin.php?login">Login to an existing user</a>
   </h2>
   <h2>
-    <a href="./songs.php">Songs</a>
-  </h2>
-  <h2>
-    <a href="./playlists.php">Playlists</a>
+    <a href="./signin.php?register">Register a new user</a>
   </h2>
 
 </body>

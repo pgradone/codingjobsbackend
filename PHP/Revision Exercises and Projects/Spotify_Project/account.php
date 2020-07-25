@@ -13,3 +13,29 @@ if (isset($_SESSION['emailuser'])) {
   // If not login, redirect to login page
   header('Location: signin.php');
 }
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>
+    <a href="./artists.php">Artists</a>
+  </h2>
+  <h2>
+    <a href="./songs.php">Songs</a>
+  </h2>
+  <h2>
+    <a href="./playlists.php">Playlists</a>
+  </h2>
+
+</body>
+
+</html>
