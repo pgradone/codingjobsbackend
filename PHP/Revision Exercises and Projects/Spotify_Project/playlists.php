@@ -4,7 +4,10 @@ include_once 'menu.php';
 $pl = '';
 // initialize the form variable
 $form = '';
+// init variable username
+$username = 'User';
 if (isset($_SESSION['user_id'])) {
+  $username = trim($_SESSION['firstname'] . ' ' . $_SESSION['lastname']);
   $db_name = 'spotify';
   $db_handle = mysqli_connect('localhost', 'root', '', $db_name);
   $db_found = mysqli_select_db($db_handle, $db_name);
@@ -22,7 +25,7 @@ if (isset($_SESSION['user_id'])) {
       $sql_query = 'INSERT INTO playlists (title,creation_date,user_id) '
         . 'VALUES (\'' . $_POST['title'] . '\',' . $_POST['creation_date'] . ',' . $_SESSION['user_id'] . ')';
       echo $sql_query . '<br>';
-      $res_insert_qry = mysqli_query($db_handle,$sql_query);
+      $res_insert_qry = mysqli_query($db_handle, $sql_query);
       if ($res_insert_qry) {
         echo mysqli_affected_rows(($db_handle)) . ' rows inserted';
       } else {
@@ -71,8 +74,7 @@ if (isset($_SESSION['user_id'])) {
     echo 'DB not found (' . $db_name . ')';
   }
 } else {
-  echo '<h2><a href="signin.php?logout">Logout</a></h2>';
-  echo '<h2><a href="signin.php?login">Login ... redirecting</a></h2>';
+  echo '<h2><a href="signin.php?login">No user logged in ... redirecting ...</a></h2>';
   header('Refresh: 5 url="signin.php?login');
 }
 
@@ -88,7 +90,7 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-  <h1>User's Playlists</h1>
+  <h1><?= $username ?>'s Playlists</h1>
   <section class="createNewPlaylist">
     <?= $form; ?>
   </section>
