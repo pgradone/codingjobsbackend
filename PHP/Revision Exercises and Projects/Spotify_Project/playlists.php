@@ -16,14 +16,12 @@ if (isset($_SESSION['user_id'])) {
 
     $form = '<h2>New playlist</h2>
     <form method="post">
-    Playlist Title :<input type="text" name="title"><br>
-    | Creation Date :<input type="datetime" name="creation_date" value="' .
-      strtotime('now') . '" >
+    Playlist Title :<input type="text" name="title">
     <input type="submit" name="submit" value="create">
     </form>';
     if (isset($_POST['submit']) && !empty($_POST['title']) && !empty($_POST['creation_date'])) {
       $sql_query = 'INSERT INTO playlists (title,creation_date,user_id) '
-        . 'VALUES (\'' . $_POST['title'] . '\',' . $_POST['creation_date'] . ',' . $_SESSION['user_id'] . ')';
+        . 'VALUES(\'' . $_POST['title'] . '\',NOW(),' . $_SESSION['user_id'] . ')';
       echo $sql_query . '<br>';
       $res_insert_qry = mysqli_query($db_handle, $sql_query);
       if ($res_insert_qry) {
