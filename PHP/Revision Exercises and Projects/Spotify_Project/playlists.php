@@ -19,7 +19,7 @@ if (isset($_SESSION['user_id'])) {
     Playlist Title :<input type="text" name="title">
     <input type="submit" name="submit" value="create">
     </form>';
-    if (isset($_POST['submit']) && !empty($_POST['title']) && !empty($_POST['creation_date'])) {
+    if (isset($_POST['submit']) && !empty($_POST['title'])) {
       $sql_query = 'INSERT INTO playlists (title,creation_date,user_id) '
         . 'VALUES(\'' . $_POST['title'] . '\',NOW(),' . $_SESSION['user_id'] . ')';
       echo $sql_query . '<br>';

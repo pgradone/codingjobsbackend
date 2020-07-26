@@ -15,8 +15,8 @@ $db_handle = mysqli_connect('localhost', 'root', '', $db_name);
 $db_found = mysqli_select_db($db_handle, $db_name);
 if ($db_found) {
   $criteria = !empty($_GET) ? 'WHERE ' . key($_GET) . ' LIKE \'%' . $_GET[key($_GET)] . '%\'' : ' ';
-  $sql_txt = 'SELECT *  FROM songs s LEFT JOIN categories c ON s.`categ_id` = c.categ_id 
-        LEFT JOIN artists a ON s.`artist_id` = a.artist_id ' .
+  $sql_txt = 'SELECT *  FROM songs s LEFT JOIN categories c ON s.categ_id = c.categ_id 
+        LEFT JOIN artists a ON s.artist_id = a.artist_id ' .
     $criteria . $order . ' LIMIT ' . $offset . ',' . $limit;
   $res_qry_songs = mysqli_query($db_handle, $sql_txt);
   if ($res_qry_songs) {
@@ -37,11 +37,23 @@ if ($db_found) {
   mysqli_close($db_handle);
   // *** INSERT a song into a playlist
   if (isset($_POST['addToPlaylist'])) {
-    # code...
-    echo $_POST['playlists'];
-    $sql_txt = 'INSERT INTO playlist_content (playlist_id, song_id)';
-  } else {
-    # code...
+    if (!empty($_POST['playlist_id'])) {
+      $sql_txt = 'INSERT INTO playlist_content (playlist_id, song_id) VALUES(' . $_POST['playlist_id'] . ', ' . $_POST['playlist_song_id'] . ')';
+      $res = mysqli_query($db_handle, $sql_txt);
+      if ($res) {
+        echo mysqli_affected_rows(($db_handle)) . ' rows inserted with ' . $sql_txt . '<br>';
+      } else
+        echo '!Error SQL: ' . $sql_txt . '<br>';
+    }
+  }
+  // *** DELETE a song FROM a playlist
+  if (isset($_POST['removeFromPlaylist']) && !empty($_POST['playlist_id'])) {
+    $sql_txt = 'DELETE FROM playlist_content WHERE playlist_id=' . $_POST['playlist_id'] . ' AND song_id=' . $_POST['playlist_song_id'] . ' ';
+    $res = mysqli_query($db_handle, $sql_txt);
+    if ($res) {
+      echo mysqli_affected_rows(($db_handle)) . ' rows inserted with ' . $sql_txt . '<br>';
+    } else
+      echo '!Error SQL: ' . $sql_txt . '<br>';
   }
 } else {
   echo 'Error DB ' . $$db_name . ' not found!<br>';
@@ -87,15 +99,17 @@ if ($db_found) {
               // add playlist chooser only if user is logged in
               if (isset($_SESSION['user_id'])) {
                 echo '<form name="playlistadder" method="post">
-            Manage ' . $_SESSION['firstname'] . '\'s playlists :<select name="playlists">';
+            Manage ' . $_SESSION['firstname'] . '\'s playlists :<select name="playlist_id">';
                 echo '<option value="" disabled selected>Choose a playlist</option>';
                 // echo $optionselector;
                 foreach ($options as $option) {
                   echo '<option value="' . $option['playlist_id'] . '" >' .
                     $option['title'] . ' - ' . $option['playlist_id'] . '</option>';
                 }
-                echo '</select>
-            <input type="submit" name="addToPlaylist" value="add to my playlist"></form> </li>';
+                echo '</select><input type="number" name="playlist_song_id" value="' . $song['song_id'] . '" hidden>
+            <input type="submit" name="addToPlaylist" value=" ++ ">
+            <input type="submit" name="removeFromPlaylist" value=" -- ">
+            </form> </li>';
               }
               ?></span>
           </li>
