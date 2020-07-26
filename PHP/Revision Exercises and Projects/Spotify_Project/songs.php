@@ -2,6 +2,8 @@
 $limit = 10;
 $page = 1;
 $form = '<h3>awaiting input..</h3>';
+$songs = [];
+$criteria = '';
 
 // retrieve the order if any
 $order = isset($_POST["order"]) ? ' ORDER BY ' . $_POST['order'] . ' ' : '';
@@ -12,7 +14,7 @@ $db_name = 'spotify';
 $db_handle = mysqli_connect('localhost', 'root', '', $db_name);
 $db_found = mysqli_select_db($db_handle, $db_name);
 if ($db_found) {
-  $criteria = !empty($_GET) ? 'WHERE ' . key($_GET) . ' LIKE \'%' . $_GET[key($_GET)] . '%\'' : '';
+  $criteria = !empty($_GET) ? 'WHERE ' . key($_GET) . ' LIKE \'%' . $_GET[key($_GET)] . '%\'' : ' ';
   $sql_txt = 'SELECT *  FROM songs s LEFT JOIN categories c ON s.`categ_id` = c.categ_id 
         LEFT JOIN artists a ON s.`artist_id` = a.artist_id ' .
     $criteria . $order . ' LIMIT ' . $offset . ',' . $limit;
@@ -52,7 +54,7 @@ if ($db_found) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Songs</title>
+  <title>Songs <?= $criteria; ?></title>
 </head>
 
 <body>

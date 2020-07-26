@@ -1,5 +1,6 @@
 <?php
 include_once 'menu.php';
+$criteria = '';
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ include_once 'menu.php';
 
 <body>
   <main>
-    <h2>Artists</h2>
+    <h2>Artists <?= $criteria; ?></h2>
     <div class="artists">
       <?php
       $db_name = 'spotify';
@@ -31,9 +32,13 @@ include_once 'menu.php';
           echo '<ul>';
           $artists_count = 0;
           foreach ($artists as $artist) {
+            // echo '<li>' . $artist['artist_name'] . ' ' . substr($artist['bio'], 1, 20) . ' '
+            // . $artist['gender'] . ' (songs: ' . $artist['songs'] . ')</li>';
             echo '<li>' . $artist['artist_name'] . ' ' . substr($artist['bio'], 1, 20) . ' '
               . $artist['gender'] . ' (songs: ' . $artist['songs'] . ')</li>';
             $artists_count++;
+
+            echo '<a href="songs.php?artist_name=' . str_replace("'", "''", $artist['artist_name']) . '">(songs: ' . $artist['songs'] . ')</a>';
           }
           echo '<ul>';
         } else {
