@@ -85,7 +85,7 @@ if ($db_found) {
               // add playlist chooser only if user is logged in
               if (isset($_SESSION['user_id'])) {
                 echo '<form name="playlistadder" method="post">
-            <select name="playlists">';
+            Manage ' . $_SESSION['firstname'] . '\'s playlists :<select name="playlists">';
                 echo '<option value="" disabled selected>Choose a playlist</option>';
                 // echo $optionselector;
                 foreach ($options as $option) {
