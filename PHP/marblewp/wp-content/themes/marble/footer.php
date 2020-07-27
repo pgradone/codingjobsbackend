@@ -72,12 +72,11 @@
 				<!-- common way to add your new widget area to a parent or child theme -->
 				<!-- use example from:
 				https://codex.wordpress.org/Widgetizing_Themes -->
-				<?php if ( is_active_sidebar( 'footer' ) ) : ?>
-						<?php dynamic_sidebar( 'footer' ); ?>
+				<?php if ( is_active_sidebar('footer_widget_area') ) : ?>
+						<?php dynamic_sidebar('footer_widget_area'); ?>
 				<?php endif; ?>
 
 			</div>
-
 			<!-- ./container -->
 
 			<hr />

@@ -93,12 +93,12 @@ add_action('after_setup_theme', 'marble_theme_support');
 function marble_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => 'footer',
-		'id'            => 'footer',
+		'name'          => 'Footer widget area',
+		'id'            => 'footer_widget_area',
 		'before_widget' => '<div class="col">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="rounded">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>',
 	) );
 
 }
