@@ -12,7 +12,7 @@
 	
 	<!-- mes styles -->
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/styles.css">
-
+  <?php wp_head(); ?>
 </head>
 <body>
 
