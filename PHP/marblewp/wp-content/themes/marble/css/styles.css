@@ -114,7 +114,7 @@ body {
 	padding: 0px 10px;
 }
 
-.main-header ul li.active a,
+.main-header ul li.current-menu-item a,
 .main-header ul li a:hover,
 .main-header ul li a:focus,
 .main-header ul li a:active {
