@@ -6,14 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Marble - homepage</title>
 
-	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/normalize.css" rel="stylesheet">
-	
-	<!-- polices -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700|Roboto+Slab:400,700" rel="stylesheet">
-	
-	<!-- mes styles -->
-	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/styles.css">
   <!-- this is mandatory -->
+  <!-- this calls the functions.php -->
   <?php wp_head(); ?>
 </head>
 <body>
