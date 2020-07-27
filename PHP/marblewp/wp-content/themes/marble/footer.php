@@ -1,11 +1,14 @@
 </main>
 	<!-- ./main -->
 
+	<?php if (is_front_page()) : ?>
 	<section id="section-testimony">
 		<blockquote class="wrapper">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque voluptatum, quibusdam temporibus voluptas repudiandae hic maiores eligendi repellendus, accusamus nobis laboriosam</p>
 		</blockquote>
 	</section>
+	<?php endif;?>
+	
 	<!-- ./testimony -->
 
 	<footer class="main-footer">
