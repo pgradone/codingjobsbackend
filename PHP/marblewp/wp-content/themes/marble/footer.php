@@ -79,7 +79,8 @@
 			<!-- ./copyrights -->
 		</div>
 	</footer>
-	<!-- ./main-footer -->
-	
+  <!-- ./main-footer -->
+  <!-- mandatory before end of body tag -->
+	<?php wp_footer(); ?>
 </body>
 </html>
