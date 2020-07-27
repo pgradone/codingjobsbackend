@@ -83,3 +83,24 @@ function marble_theme_support()
   register_nav_menu('primary', 'Main navigation');
 }
 add_action('after_setup_theme', 'marble_theme_support');
+
+// https://codex.wordpress.org/Widgetizing_Themes
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function marble_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'footer',
+		'id'            => 'footer',
+		'before_widget' => '<div class="col">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'marble_widgets_init' );
+

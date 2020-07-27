@@ -68,7 +68,16 @@
 				</div> -->
 				<!-- ./col4 -->
 
+				<!-- use this in spite of the previous <div>s -->
+				<!-- common way to add your new widget area to a parent or child theme -->
+				<!-- use example from:
+				https://codex.wordpress.org/Widgetizing_Themes -->
+				<?php if ( is_active_sidebar( 'footer' ) ) : ?>
+						<?php dynamic_sidebar( 'footer' ); ?>
+				<?php endif; ?>
+
 			</div>
+
 			<!-- ./container -->
 
 			<hr />
