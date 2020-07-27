@@ -21,6 +21,18 @@ function marble_styles_and_scripts()
     get_template_directory_uri() . '/css/styles.css',
     array('marble-normalize')
   );
+  
 }
 //call for the function whenever Wordpress enqueues its own scripts and styles 
 add_action('wp_enqueue_scripts', 'marble_styles_and_scripts');
+
+
+/**
+ * Theme supported features declaration
+ */
+function marble_theme_support(){
+  
+}
+add_action( 'after_setup_theme', 'marble_theme_support' );
+
+
