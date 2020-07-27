@@ -4,8 +4,7 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Marble - homepage</title>
-
+	
   <!-- this is mandatory -->
   <!-- this calls the functions.php -->
   <?php wp_head(); ?>
