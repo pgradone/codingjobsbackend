@@ -78,5 +78,8 @@ function marble_theme_support()
 	 * to change 'twentytwenty' to the name of your theme in all the template files.
 	 */
   load_theme_textdomain('marble');
+
+  // register a new navigation menu to be used un this theme
+  register_nav_menu('primary', 'The main navigation menu of the theme');
 }
 add_action('after_setup_theme', 'marble_theme_support');
