@@ -17,14 +17,21 @@
 		<div class="wrapper">
 			<h1 class="logo">Marble</h1>
 			<nav>
-				<ul>
+				<!-- <ul>
 					<li class="active"><a href="#">Home</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">Journal</a></li>
 					<li><a href="#">Service</a></li>
 					<li><a href="#">Features</a></li>
 					<li><a href="#">Contact</a></li>
-				</ul>
+				</ul> -->
+				<?php
+					$args= array(
+						'theme_location' => "primary",
+					);
+					// call for the menu html rendering
+					wp_nav_menu($args);
+				?>
 			</nav>
 			<!-- ./main navigation -->
 		</div>
