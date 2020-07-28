@@ -1,3 +1,8 @@
+//functions.php
+
+//http://sharemycode.fr/7sv
+
+
 <?php
 
 /**
@@ -43,7 +48,7 @@ function marble_theme_support()
   // Set post thumbnail size.
   //set_post_thumbnail_size( 1200, 9999 );
   // Add custom image size used in Cover Template.
-  add_image_size( 'custom-img-size', 380, 270, true );
+  add_image_size('home-thumb', 380, 270, true);
 
 
   /*
@@ -79,28 +84,27 @@ function marble_theme_support()
 	 */
   load_theme_textdomain('marble');
 
-  // register a new navigation menu to be used un this theme
+
+  //register a new navigation menu to be used in this theme
+  //register_nav_menu('theme_slug', 'Description')
   register_nav_menu('primary', 'Main navigation');
 }
 add_action('after_setup_theme', 'marble_theme_support');
 
-// https://codex.wordpress.org/Widgetizing_Themes
 
 /**
  * Register our sidebars and widgetized areas.
- *
  */
-function marble_widgets_init() {
+function marble_widgets_init()
+{
 
-	register_sidebar( array(
-		'name'          => 'Footer widget area',
-		'id'            => 'footer_widget_area',
-		'before_widget' => '<div class="col">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>',
-	) );
-
+  register_sidebar(array(
+    'name'          => 'Footer widget area',
+    'id'            => 'footer-widget-area',
+    'before_widget' => '<div class="col">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>',
+  ));
 }
-add_action( 'widgets_init', 'marble_widgets_init' );
-
+add_action('widgets_init', 'marble_widgets_init');
