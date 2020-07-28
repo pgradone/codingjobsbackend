@@ -1,7 +1,3 @@
-//front-page.php
-//http://sharemycode.fr/0wr
-
-
 <?php get_header(); ?>
 
 <section class="jumbotron">
@@ -46,7 +42,7 @@
 
 </section>
 
-<section id="section-latest-work" class="wrapper">
+<!-- <section id="section-latest-work" class="wrapper">
   <h3>Our latest works</h3>
   <div class="container">
     <article class="col">
@@ -69,6 +65,49 @@
       <h5>Branding, Graphic Design</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </article>
+  </div>
+</section> -->
+
+<section id="section-latest-work" class="wrapper">
+  <h3>Our latest news</h3>
+  <div class="container">
+    <?php
+
+
+    // Create an arguments array 
+    // to request any data from the post table
+    $args = array(
+      'post_type' => 'post',
+      'posts_per_page' => 3,
+      // 'orderby' => 'title',
+      // 'order'   => 'DESC',
+    );
+
+    //call for the query and grab the results and methods in a variable
+    $the_query = new WP_Query($args);
+
+    // if any results to display...
+    if ($the_query->have_posts()) {
+
+      while ($the_query->have_posts()) {
+        $the_query->the_post();
+
+
+        the_title();
+        echo '<br>';
+      }
+    }
+    /* Restore original Post Data */
+    wp_reset_postdata();
+    ?>
+
+    <!-- <article class="col">
+      <img src="<?= get_template_directory_uri(); ?>/img/image3.jpg" alt="Passionaries Branding Cover">
+      <h4>Passionaries Branding Cover</h4>
+      <h5>Branding, Graphic Design</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+     -->
   </div>
 </section>
 
