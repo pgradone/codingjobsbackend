@@ -353,3 +353,16 @@ body {
 .main-footer .copyrights {
 	margin: 30px 0px;
 }
+
+.post-entry {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.post-content {
+  padding-left: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}

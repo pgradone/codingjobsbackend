@@ -68,6 +68,7 @@ if ($db_found) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Songs <?= $criteria; ?></title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -91,7 +92,7 @@ if ($db_found) {
     <div class="songslist">
       <ul>
         <?php foreach ($songs as $song) : ?>
-          <li><span>
+          <li><span class="song-item">
               <?php
               echo $song['Title'] . ' (released: ' . date('d/m/Y', strtotime($song['release_date'])) . ') '
                 . $song['BPM'] . 'BPM Year:' . $song['Year'] . ' Time: ' . substr($song['Time'], 11, 5) .
