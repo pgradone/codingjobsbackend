@@ -91,22 +91,33 @@
 
       while ($the_query->have_posts()) {
         $the_query->the_post();
-?>
-    <article class="col">
-      <img src="<?= get_template_directory_uri(); ?>/img/image3.jpg" alt="Passionaries Branding Cover">
-      <h4>Passionaries Branding Cover</h4>
-      <h5>Branding, Graphic Design</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    </article>
-<?php
-        the_title();
-        echo '<br>';
+    ?>
+
+        <article class="col">
+          <?php
+          if (has_post_thumbnail()) {
+            //here we call for a custom size created in the function marble_theme_setup
+            //with add_image_size(), called 'home-thumb'
+            the_post_thumbnail('home-thumb');
+          } else {
+            //default image in case there is no thumbnail in the post
+            echo '<img src="' . get_template_directory_uri() . '/img/image1.jpg" alt="default image">';
+          }
+          ?>
+          <h4><?php the_title(); ?></h4>
+          <h5><?php the_category(','); ?></h5>
+          <p><?php the_excerpt(); ?></p>
+        </article>
+
+    <?php
       }
     }
     /* Restore original Post Data */
     wp_reset_postdata();
     ?>
 
+    <!-- 
+     -->
   </div>
 </section>
 
