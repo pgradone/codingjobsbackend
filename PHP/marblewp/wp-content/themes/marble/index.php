@@ -3,7 +3,7 @@
 <section>
 	<div class="wrapper">
 		<?php
-		
+
 		//if there is something to display...
 		if (have_posts()) {
 
@@ -15,8 +15,15 @@
 
 
 				// inside de loop
+				$permalink = get_the_permalink();
+				$title = get_the_title();
+
 				// You can use template tags here to display post informations
-				the_title('<h1>', '</h1>');
+				if (is_singular()) :
+					echo '<h1>' . $title . '</h1>';
+				else :
+					echo '<h1><a href="' . $permalink . '">' . $title . '</a></h1>';
+				endif;
 
 				echo '<p>' . get_the_author() . '</p>';
 
