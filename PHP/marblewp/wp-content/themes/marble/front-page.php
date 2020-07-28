@@ -91,8 +91,14 @@
 
       while ($the_query->have_posts()) {
         $the_query->the_post();
-
-
+?>
+    <article class="col">
+      <img src="<?= get_template_directory_uri(); ?>/img/image3.jpg" alt="Passionaries Branding Cover">
+      <h4>Passionaries Branding Cover</h4>
+      <h5>Branding, Graphic Design</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </article>
+<?php
         the_title();
         echo '<br>';
       }
@@ -101,13 +107,6 @@
     wp_reset_postdata();
     ?>
 
-    <!-- <article class="col">
-      <img src="<?= get_template_directory_uri(); ?>/img/image3.jpg" alt="Passionaries Branding Cover">
-      <h4>Passionaries Branding Cover</h4>
-      <h5>Branding, Graphic Design</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    </article>
-     -->
   </div>
 </section>
 
