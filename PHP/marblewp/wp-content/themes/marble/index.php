@@ -13,29 +13,46 @@
 				//set the curent post in the loop as the content
 				the_post();
 
+				//a single post
+				if (is_single()) {
+		?>
+					<div class="post-entry">
+						<div class="post-thumbnail">
+							<?php the_post_thumbnail('medium'); ?>
+						</div>
+						<div class="post-content">
+							<h2><?php the_title(); ?></h2>
+							<p class="post-metas"><?php the_category(', '); ?><?= ' - ' . get_the_author() . ' - ' . get_the_date(); ?></p>
+							<p><?php the_content(); ?></p>
+						</div>
+					</div>
+				<?php
+					//a single page
+				} else if (is_page()) {
+				?>
+					<div class="post-entry">
+						<h2><?php the_title(); ?></h2>
+						<div class="post-content"><?php the_content(); ?></div>
+					</div>
+				<?php
+					//a list of posts
+				} else {
+				?>
+					<div class="post-entry">
+						<div class="post-thumbnail">
+							<?php the_post_thumbnail('medium'); ?>
+						</div>
+						<div class="post-content">
+							<h2><?php the_title(); ?></h2>
+							<p class="post-metas"><?php the_category(', '); ?><?= ' - ' . get_the_author() . ' - ' . get_the_date(); ?></p>
+							<p><?php the_excerpt(); ?></p>
+							<p><a href="<?php the_permalink(); ?>">Read more</a></p>
+						</div>
+					</div>
+		<?php
+				}
 
-				// inside de loop
-				$permalink = get_the_permalink();
-				$title = get_the_title();
-
-				// You can use template tags here to display post informations
-				if (is_singular()) :
-					echo '<h1>' . $title . '</h1>';
-				else :
-					echo '<h1><a href="' . $permalink . '">' . $title . '</a></h1>';
-				endif;
-
-				echo '<p>' . get_the_author() . '</p>';
-
-				//example conditional tag:
-				//if the page shown is a singular element (page or post) :
-				if (is_singular()) :
-					//display the full content of the post/page
-					the_content();
-				else :
-					//else: display only the resume
-					the_excerpt();
-				endif;
+				echo '<br>';
 			} // end while
 		} // end if
 		?>
