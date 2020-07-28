@@ -34,7 +34,6 @@ if ($db_found) {
   } else {
     echo '!Error SQL: ' . $sql_txt . '<br>';
   }
-  mysqli_close($db_handle);
   // *** INSERT a song into a playlist
   if (isset($_POST['addToPlaylist'])) {
     if (!empty($_POST['playlist_id'])) {
@@ -43,7 +42,7 @@ if ($db_found) {
       if ($res) {
         echo mysqli_affected_rows(($db_handle)) . ' rows inserted with ' . $sql_txt . '<br>';
       } else
-        echo '!Error SQL: ' . $sql_txt . '<br>';
+      echo '!Error SQL: ' . $sql_txt . '<br>';
     }
   }
   // *** DELETE a song FROM a playlist
@@ -53,8 +52,10 @@ if ($db_found) {
     if ($res) {
       echo mysqli_affected_rows(($db_handle)) . ' rows inserted with ' . $sql_txt . '<br>';
     } else
-      echo '!Error SQL: ' . $sql_txt . '<br>';
+    echo '!Error SQL: ' . $sql_txt . '<br>';
   }
+  // finally close the DB!
+  mysqli_close($db_handle);
 } else {
   echo 'Error DB ' . $$db_name . ' not found!<br>';
 }
