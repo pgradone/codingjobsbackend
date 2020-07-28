@@ -50,7 +50,7 @@ if ($db_found) {
     $sql_txt = 'DELETE FROM playlist_content WHERE playlist_id=' . $_POST['playlist_id'] . ' AND song_id=' . $_POST['playlist_song_id'] . ' ';
     $res = mysqli_query($db_handle, $sql_txt);
     if ($res) {
-      echo mysqli_affected_rows(($db_handle)) . ' rows inserted with ' . $sql_txt . '<br>';
+      echo mysqli_affected_rows(($db_handle)) . ' rows deleted with ' . $sql_txt . '<br>';
     } else
     echo '!Error SQL: ' . $sql_txt . '<br>';
   }
