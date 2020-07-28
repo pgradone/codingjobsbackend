@@ -1,8 +1,3 @@
-//functions.php
-
-//http://sharemycode.fr/7sv
-
-
 <?php
 
 /**
