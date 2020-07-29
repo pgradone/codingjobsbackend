@@ -44,11 +44,6 @@
 	Now we save the max. volume of the mug (cl) in the object.
 	You need to add another properties $volume
 	We define the volume of the mug when creating the object but can't edit later.
-
-	Example :
-	$myCoffee = new CoffeeCup(20); // Mug with 20 cl volume
-	$otherCoffee = new CoffeeCup(33); // Another mug with 33 cl volume
-
 */
 
 
