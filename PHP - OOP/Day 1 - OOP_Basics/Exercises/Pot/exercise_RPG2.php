@@ -56,3 +56,12 @@ echo $elf . '<br>' .
 $orc . '<br>' .
 $human . '<br>' ;
 echo '<hr>';
+
+// *** create new characters and var_dump them
+
+// *** DISPLAY THE AdventurerS WITH THEIR (MULTIPLE) EQUIPMENT
+echo '<h2>Adventurers with (single) equipment:</h2>';
+echo $elf . '<br>' .
+$orc . '<br>' .
+$human . '<br>' ;
+echo '<hr>';

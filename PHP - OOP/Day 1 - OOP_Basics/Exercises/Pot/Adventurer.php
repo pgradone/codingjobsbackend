@@ -2,13 +2,13 @@
 
 class Adventurer
 {
-  private $_race;
-  private $_attackPoints;
-  private $_defensePoints;
-  private $_healthPoints;
-  private $_warCry;
-  private $_equipments;
-  private $_speed;
+  protected $_race;
+  protected $_attackPoints;
+  protected $_defensePoints;
+  protected $_healthPoints;
+  protected $_warCry;
+  protected $_equipments;
+  protected $_speed;
 
   // Constructor
   public function __construct($race='human')
