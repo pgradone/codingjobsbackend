@@ -1,22 +1,26 @@
 <?php
 // include the classes:
-require_once 'Character.php';
-require_once 'Equipment.php';
+function projectAutoload($class)
+{
+  include $class . '.php';
+}
+spl_autoload_register('projectAutoload');
+
 /*
-	Set up different type of character. You must be able to create Elves, Orcs or Humans.
+	Set up different type of Adventurer. You must be able to create Elves, Orcs or Humans.
 	Examples : 
 */
 
-echo '<h1>RPG EXERCISE</h1>';
+echo '<h1>RPG EXERCISE 2</h1>';
 echo '<hr>';
 
-// *** CREATE THE CHARACTERS
-$elf = new Elf('Elf');
-$orc = new Orc('Orc');
-$human = new Human();
+// *** CREATE THE Adventurers
+$elf = new Adventurer('Elf');
+$orc = new Adventurer('Orc');
+$human = new Adventurer('Human');
 
-// *** DISPLAY THE CHARACTERS
-echo '<h2>Characters:</h2>';
+// *** DISPLAY THE AdventurerS
+echo '<h2>Adventurers:</h2>';
 echo $elf . '<br>' .
 $orc . '<br>' .
 $human . '<br>' ;
@@ -38,16 +42,16 @@ $stone . '<br>' ;
 echo '<hr>';
 
 /*
-  You can add/remove/display the equipment for a character 
-  For now, the character can hold only one equipment at a time.
-  Trying to add equipment to existing characters:
+  You can add/remove/display the equipment for a Adventurer 
+  For now, the Adventurer can hold only one equipment at a time.
+  Trying to add equipment to existing Adventurers:
 */
 $elf->addEquipment('wooden stick');
 $human->addEquipment('iron fist');
 $orc->addEquipment('ball of chains');
 
-// *** DISPLAY THE CHARACTERS WITH THEIR (SINGLE) EQUIPMENT
-echo '<h2>Characters with (single) equipment:</h2>';
+// *** DISPLAY THE AdventurerS WITH THEIR (SINGLE) EQUIPMENT
+echo '<h2>Adventurers with (single) equipment:</h2>';
 echo $elf . '<br>' .
 $orc . '<br>' .
 $human . '<br>' ;
