@@ -92,4 +92,18 @@ class Adventurer
       . 'Def : ' . $bonusDef . '<br>'
       . 'Health : ' . $bonusLife . '<br>';
   }
+  public function __tostring()
+  {
+    $display = '<h3>Character properties:</h3>' .
+    ' name: ' . $this->name . '<br>' .
+    ' attackPoints: ' . $this->attackPoints . '<br>' .
+    ' defensePoints: ' . $this->defensePoints . '<br>' .
+    ' warCry: ' . $this->warCry . '<br>' .
+    ' type: ' . $this->type . '<br>';
+    if (!empty($this->equipment))
+      $display .=  'equipment: ' . $this->displayEquipment() . '<br>';
+    // add the possibility to display an equipment 
+    return $display;
+  }  
+
 }
