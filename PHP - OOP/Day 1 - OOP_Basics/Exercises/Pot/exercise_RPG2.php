@@ -18,15 +18,26 @@ echo '<hr>';
 $elf = new Adventurer('Elf');
 $orc = new Adventurer('Orc');
 $human = new Adventurer('Human');
-$student = new Adventurer('Human');
-$legolas = new Character('Elf');
+$student = new Adventurer();
+$legolas = new Adventurer('Elf');
 
 // *** DISPLAY THE AdventurerS
-echo '<h2>Adventurers:</h2>';
-echo $elf . '<br>' .
-$orc . '<br>' .
-$human . '<br>' ;
-echo '<hr>';
+// echo '<h2>Adventurers:</h2>';
+// echo $elf . '<br>' .
+// $orc . '<br>' .
+// $human . '<br>' .
+// $student . '<br>' .
+// $legolas . '<br>' ;
+// echo '<hr>';
+
+// *** VAR_DUMP() THE AdventurerS
+// echo '<h2>Adventurers:</h2>';
+// var_dump($elf);
+// var_dump($orc);
+// var_dump($human);
+// var_dump($student);
+// var_dump($legolas);
+// echo '<hr>';
 
 // *** CREATE Some EQUIPMENTS
 // 10 atk bonus, 0 def bonus, 0 life bonus;
@@ -37,12 +48,33 @@ $jewel = new Equipment('Jewel','Grace Necklace', 0, 0, 5);
 $stone = new Equipment('Stone','Druid Stone', 15, 25, 5);
 $shield = new Equipment('Shield', 'Wood shield', 0, 5, 0);
 
-// *** DISPLAY THE EQUIPMENTS
+// *** DUMP THE EQUIPMENTS
 echo '<h2>Equipments:</h2>';
-echo $sword . '<br>' .
-$jewel . '<br>' .
-$stone . '<br>' .
-$shield . '<br>' ;
+// echo $sword . '<br>' .
+// $jewel . '<br>' .
+// $stone . '<br>' .
+// $shield . '<br>' ;
+var_dump($sword);
+var_dump($jewel);
+var_dump($stone);
+var_dump($shield);
+echo '<hr>';
+
+
+// *** RE-CREATE THE Adventurers
+$elf = new Elf('Elf');
+$orc = new Orc('Orc');
+$human = new Human('Human');
+$student = new Human();
+$legolas = new Elf('Elf');
+
+// *** DUMP THE AdventurerS
+echo '<h2>Adventurers only:</h2>';
+var_dump($orc);
+var_dump($human);
+var_dump($student);
+var_dump($legolas);
+var_dump($elf);
 echo '<hr>';
 
 /*
@@ -52,14 +84,20 @@ echo '<hr>';
   Trying to add equipment to existing Adventurers:
 */
 $elf->addEquipment($sword);
+$legolas->addEquipment($sword);
 $human->addEquipment($shield);
 $orc->addEquipment($stone);
 $student->addEquipment($jewel);
 
-// *** DISPLAY THE AdventurerS WITH THEIR (MULTIPLE) EQUIPMENT
-echo '<h2>Adventurers with (single) equipment:</h2>';
-echo $elf . '<br>' .
-$orc . '<br>' .
-$human . '<br>' .
-$student . '<br>' ;
+// *** DUMP THE AdventurerS WITH THEIR (MULTIPLE) EQUIPMENT
+echo '<h2>Adventurers with (multiple) equipment:</h2>';
+// echo $elf . '<br>' .
+// $orc . '<br>' .
+// $human . '<br>' .
+// $student . '<br>' ;
+var_dump($orc);
+var_dump($human);
+var_dump($student);
+var_dump($legolas);
+var_dump($elf);
 echo '<hr>';

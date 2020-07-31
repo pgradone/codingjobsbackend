@@ -13,10 +13,12 @@ class Adventurer
   // Constructor
   public function __construct($race='human')
   {
+    $this->_race = $race;
     $this->_healthPoints = 100;
     $this->_attackPoints = 10;
     $this->_defensePoints = 5;
     $this->_warCry = 'Arhhhhgggg';
+    $this->_speed = 2;
     $this->_equipments = array();
 
     if ($race === 'Orcs') {
@@ -95,7 +97,7 @@ class Adventurer
   public function __tostring()
   {
     $display = '<h3>Character properties:</h3>' .
-    ' name: ' . $this->name . '<br>' .
+    ' race: ' . $this->_race . '<br>' .
     ' attackPoints: ' . $this->attackPoints . '<br>' .
     ' defensePoints: ' . $this->defensePoints . '<br>' .
     ' warCry: ' . $this->warCry . '<br>' .
