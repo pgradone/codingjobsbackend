@@ -14,13 +14,14 @@ Overview :
 Step 1: Connecting Users
 
 	We will not take into account the creation of the users, they will be created manually in the database.	
-	We will create a class \Flowers\User and a class \Flowers\Db\UserManager, to manage the connection.
-
+	We will create a class User and a class UserManager, to manage the connection.
+	
+	You have to take care of login/connecting.
 	Connection page will look like this :
 */
 
 if (isset($_POST['login']) && isset($_POST['password'])) {
-	$userManager = new \Flowers\UserManager();
+	$userManager = new UserManager();
 	$userLogged = $userManager->login($_POST['login'], $_POST['password']);
 
 	if (!empty($userLogged)) {
@@ -38,8 +39,10 @@ Step 2 : Display Flowers
 	Create the page view-flowers.php
 	The user is redirect to this page if the connection is successfull.
 	
-	Create classes \Flowers\Flower and \Flowers\Db\FlowerManager.
-	Method \Flowers\Db\FlowerManager::findAll() will retrieve all the flowers
+	Create classes Flower and FlowerManager.
+	Method FlowerManager::findAll() will retrieve all the flowers
+
+	Display all the flowers on the page.
 
 Step 3 : Ask the teacher if you want extra work ;)
 
