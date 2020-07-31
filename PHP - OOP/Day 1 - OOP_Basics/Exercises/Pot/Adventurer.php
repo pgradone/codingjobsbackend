@@ -2,7 +2,8 @@
 
 class Adventurer
 {
-  protected $_race;
+  // race is not a property anymore
+  // protected $_race;
   protected $_attackPoints;
   protected $_defensePoints;
   protected $_healthPoints;
@@ -13,7 +14,7 @@ class Adventurer
   // Constructor
   public function __construct($race='human')
   {
-    $this->_race = $race;
+    // $this->_race = $race;
     $this->_healthPoints = 100;
     $this->_attackPoints = 10;
     $this->_defensePoints = 5;
