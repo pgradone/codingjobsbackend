@@ -1,0 +1,6 @@
+2020-04-08 11:25:12 : Deposit success - 50
+2020-04-08 11:25:12 : Withdraw success - 90
+2020-04-08 11:25:12 : Withdraw success - 10
+2020-04-08 11:25:12 : Deposit success - 50
+2020-04-08 11:25:12 : Withdraw success - 90
+2020-04-08 11:25:12 : Withdraw success - 10
