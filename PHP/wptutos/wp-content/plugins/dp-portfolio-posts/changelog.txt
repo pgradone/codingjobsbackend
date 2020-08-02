@@ -1,0 +1,7 @@
+version 2.0 ( 7-17-2019 )
+
+- Converted plugin from shortcode to module and can now be upgraded to Pro version and all existing module settings will transfer
+
+version 1.0 ( 7-29-2015 )
+
+- Initial release
