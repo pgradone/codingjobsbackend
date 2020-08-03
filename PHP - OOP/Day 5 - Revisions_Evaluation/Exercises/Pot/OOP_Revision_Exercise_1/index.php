@@ -1,34 +1,6 @@
 <?php
 
-$errors = [];
-$messages = [];
-$messages['Standing by'] = 'awaiting input....';
-$name = '';
-$price = '';
-
-if (isset($_POST['submit'])) {
-    $errors = array();
-    $messages = [];
-    if (empty($_POST['name'])) {
-        $errors['name'] = 'Name cannot be empty!';
-    } else {
-        $name = $_POST['name'];
-    }
-    if (empty($_POST['price'])) {
-      $errors['price'] = 'Price cannot be empty!';
-  } 
-    if (!is_numeric($_POST['price'])) {
-      $errors['price type'] = 'Price must be numeric';
-    } else {
-      $price = $_POST['price'];
-    }
-    if (sizeof($errors) == 0) {
-      $messages['Form OK'] = 'input fields are OK';
-    }
-  }
-
-
-
+include_once 'addFlowersDB.php';
 
 ?>
 
@@ -55,7 +27,31 @@ if (isset($_POST['submit'])) {
   <?php foreach ($messages as $key => $value) : ?>
     <p style=color:green><?= $key . ' : ' . $value; ?></p>
   <?php endforeach; ?>
+  <div id="xtraMessage" style=color:green></div>
+  <div id="xtraError" style=color:red></div>
 
-
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+  </script>
+  <script>
+  $(function() {
+    $('input[type="submit"]').click(function (e) {
+      e.preventDefault();
+      // console.log('helloooooooo');
+      $.ajax({
+        url: 'addFlowersDB.php',
+        type: 'post',
+        data: $('form').serialize(),
+        success: function (result) {
+          $('#xtraMessage').html(result);
+        },
+        error: function (error) {
+          $('#xtraError').html(error);
+        }
+      })
+    })
+  })
+  
+  </script>
 </body>
 </html>
