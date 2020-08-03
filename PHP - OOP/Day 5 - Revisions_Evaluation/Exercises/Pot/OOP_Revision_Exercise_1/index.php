@@ -2,11 +2,13 @@
 
 $errors = [];
 $messages = [];
+$messages['Standing by'] = 'awaiting input....';
 $name = '';
 $price = '';
 
 if (isset($_POST['submit'])) {
     $errors = array();
+    $messages = [];
     if (empty($_POST['name'])) {
         $errors['name'] = 'Name cannot be empty!';
     } else {
@@ -20,11 +22,11 @@ if (isset($_POST['submit'])) {
     } else {
       $price = $_POST['price'];
     }
+    if (sizeof($errors) == 0) {
+      $messages['Form OK'] = 'input fields are OK';
+    }
   }
 
-  if (sizeof($errors) == 0) {
-    $messages['Form OK'] = 'input fields are OK';
-  }
 
 
 
