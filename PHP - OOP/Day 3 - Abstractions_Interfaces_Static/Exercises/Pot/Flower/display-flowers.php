@@ -14,12 +14,12 @@ if (isset($_SESSION['user']['mail'])) {
   $flowerMgr = new FlowerManager();
   // put all fetched in an an associative array 
   $flowers = $flowerMgr->getAllFlowers();
+  // var_dump($flowers);
   // foreach ($flowers as $key => $value) {
   foreach ($flowers as $flower) {
-    echo 'Flower: ' . $flower['name'] .
-     ' price: ' . $flower['price'] . '<br>';
+    echo 'Flower: ' . $flower->getName() .
+     ' price: ' . $flower->getPrice() . '<br><hr>';
   }
-
 } else {
   echo 'user not logged in. redirecting...<br>';
   header('Refresh: 5 url="Connection.php');

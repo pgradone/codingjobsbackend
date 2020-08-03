@@ -2,18 +2,18 @@
 
 class Flower
 {
-  private $_id;
-  private $_name;
-  private $_price;
+  private $id;
+  private $name;
+  private $price;
 
 // Getters
   public function getId() {
-    return $this->_id;
+    return $this->id;
   }
   public function getName() {
-    return $this->_name;
+    return $this->name;
   }
   public function getPrice() {
-    return $this->_price;
+    return $this->price;
   }
 }
