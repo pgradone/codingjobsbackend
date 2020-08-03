@@ -2,7 +2,7 @@
 
 function projectAutoload($class)
 {
-  include $class . '.php';
+  include 'classes/' . $class . '.php';
 }
 spl_autoload_register('projectAutoload');
 
@@ -10,9 +10,13 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 	$userManager = new UserManager();
 	$userLogged = $userManager->login($_POST['login'], $_POST['password']);
 
-	if (!empty($userLogged)) {
+	// if (!empty($userLogged)) {
+    if ($userLogged) {
+    session_start();
 		$_SESSION['user']['mail']   = $userLogged->getMail();
-		$_SESSION['user']['id']     = $userLogged->getId();
+    $_SESSION['user']['id']     = $userLogged->getId();
+    echo $_SESSION['user']['mail'] . 'logged in successfully. redirecting...<br>';
+    header('Refresh: 5 url="display-flowers.php');
 	}
 }
 
@@ -29,7 +33,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
   <form method="POST">
   <input type="mail" name="login">
   <input type="password" name="password">
-  <input type="submit" name="submit">
+  <input type="submit" name="submit" value="login">
   </form>
 </body>
 </html>
