@@ -22,7 +22,6 @@ class Train
     public function setId($id)
     {
         $myId = (int) $id;
-        var_dump($myId);
         if ($myId > 0)
             $this->_id = $myId;
         else
