@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
   if (sizeof($errors) == 0) {
     $messages['Form OK'] = 'input fields are OK';
   }
-}
+
 
 
 ?>
