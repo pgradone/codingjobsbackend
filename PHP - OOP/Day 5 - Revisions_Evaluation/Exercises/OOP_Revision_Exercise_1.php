@@ -38,9 +38,9 @@
 	6. Using index.php, make an AJAX call to send the data from the form
 	If it succeed print the message, if it doesn't print errors message
 
-	7. You can try to serialize your $errors array into JSON Format.
-	So now you can send this json back to javascript.
+	You can try (if you want) to return JSON format.
+	For example : return json_encode($errors);
+
+	So now you can grab this json back in javascript.
 
 */
-
- ?>
