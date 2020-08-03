@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 02, 2020 at 06:12 PM
+-- Generation Time: Aug 03, 2020 at 05:22 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `flowers`
 --
+CREATE DATABASE IF NOT EXISTS `flowers` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `flowers`;
 
 -- --------------------------------------------------------
 
@@ -33,8 +35,9 @@ CREATE TABLE IF NOT EXISTS `flowers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `price` float NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `flowers`
@@ -44,7 +47,8 @@ INSERT INTO `flowers` (`id`, `name`, `price`) VALUES
 (1, 'lila', 20),
 (2, 'rose', 70),
 (3, 'lily', 44),
-(4, 'sunflower', 33);
+(4, 'sunflower', 33),
+(5, 'muguet', 33);
 
 -- --------------------------------------------------------
 
