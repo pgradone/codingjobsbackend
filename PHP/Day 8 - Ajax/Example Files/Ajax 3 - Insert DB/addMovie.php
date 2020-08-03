@@ -22,7 +22,7 @@ if (!empty($_POST)) {
 		// Open a connection to the DBMS
 		$connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
-		$query = "INSERT INTO movies(title, release_year, director_id) 
+		$query = "INSERT INTO movies(title, release_year) 
 		VALUES('" . $_POST['title'] . "', '" . $_POST['year'] . "')";
 
 		// Send an SQL request to our DB
@@ -31,7 +31,7 @@ if (!empty($_POST)) {
 		if ($result_query) {
 			echo 'Movie successfully addded !';
 		} else {
-			echo 'Error inserting into the DB';
+			echo 'Error inserting into the DB ' . $query;
 		}
 	} else {
 		echo implode('<br>', $errors);
