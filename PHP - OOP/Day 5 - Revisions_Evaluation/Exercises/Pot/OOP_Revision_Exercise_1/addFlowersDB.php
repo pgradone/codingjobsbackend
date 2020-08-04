@@ -15,7 +15,8 @@ if (!empty($_POST)) {
   if (empty($_POST['name'])) {
     $errors['name'] = 'Name cannot be empty!';
   } else {
-    $name = $_POST['name'];
+    // define and clean name
+    $name = htmlspecialchars($_POST['name']);
   }
   if (empty($_POST['price'])) {
     $errors['price'] = 'Price cannot be empty!';
@@ -23,8 +24,10 @@ if (!empty($_POST)) {
   if (!is_numeric($_POST['price'])) {
     $errors['price type'] = 'Price must be numeric';
   } else {
-    $price = $_POST['price'];
+    // define and clean price
+    $price = htmlspecialchars($_POST['price']);
   }
+  // go ahead if there are no errors
   if (sizeof($errors) == 0) {
     $messages['Form OK'] = 'input fields are OK';
     $pdo = dbConnect();
@@ -47,8 +50,9 @@ if (!empty($_POST)) {
       $messages['DBNOK'] = 'Could not connect to flowers DB';
     }
   } else {
-    $messages = [];
+    $messages['status'] = 'error';
     $messages['Redo imput'] = 'awaiting input....';
+    $messages['errors'] = $errors;
   }
 }
 
@@ -59,3 +63,7 @@ function dbConnect()
   $pdo = new PDO($connString, 'root', '');
   return $pdo;
 }
+
+// echo var_dump($messages);
+// Send messages as response
+echo json_encode($messages);
