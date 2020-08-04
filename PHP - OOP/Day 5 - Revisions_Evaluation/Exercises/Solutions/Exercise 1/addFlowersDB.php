@@ -44,6 +44,6 @@ if (!count($errors)) {
     $response['errors'] = $errors;
 }
 
-
+// echo var_dump($response);
 // Send response
 echo json_encode($response);
