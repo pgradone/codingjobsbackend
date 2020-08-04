@@ -20,7 +20,7 @@ if (empty($lName))
 // If no errors : insert
 if (!count($errors)) {
 
-    $pdo = new PDO('mysql:host=localhost;dbname=eval_final;port=8889', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=eval_final;', 'root', '');
 
     // Prepare the query
     $prep = $pdo->prepare('INSERT INTO driver(firstname, lastname) VALUES(?, ?)');
