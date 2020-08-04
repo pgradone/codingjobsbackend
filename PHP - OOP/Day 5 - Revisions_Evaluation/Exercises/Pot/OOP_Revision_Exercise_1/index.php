@@ -51,25 +51,26 @@ include_once 'addFlowersDB.php';
           data: $('form').serialize(),
           // define data type as JSON
           dataType: 'json',
-          success: function(result) {
-            $('#xtra').html(result);
-          },
+          // I was doing this and it didn't display
+          // success: function(result) {
+          //   $('#xtra').html(result);
+          // },
           success: function(result) {
             console.log(result);
             if(result.status == 'error') {
                 $('#e_name').html(result.errors.name);
                 $('#e_price').html(result.errors.price);
             } else {
-                $('#result').html(result.msg);
-                init_display();
+                $('h4.message').html(result.msg);
+                clear_errors();
             }
           },
           error: function(error) {
             $('h4.error').html(error);
           }
-        })
-      })
-    })
+        });
+      });
+    });
 
     function clear_errors() {
             $('#err_name').html('');
