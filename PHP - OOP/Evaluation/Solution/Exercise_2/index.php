@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowers</title>
+    <title>Drivers</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h2>Insert a flower in DB</h2>
+    <h2>Insert a driver in DB</h2>
 
     <h4 id="result"></h4>
 
     <form method="post">
-        <input type="text" name="flower_name" placeholder="Name">
-        <span class="error" id="e_name"></span>
+        <input type="text" name="first_name" placeholder="First Name">
+        <span class="error" id="e_fname"></span>
         <br>
         
-        <input type="text" name="flower_price" placeholder="Price">
-        <span class="error" id="e_price"></span>
+        <input type="text" name="last_name" placeholder="Last Name">
+        <span class="error" id="e_lname"></span>
         <br>
         
         <input type="submit" value="Insert">
@@ -36,15 +36,15 @@
 
                 // Make AJAX Call to insert
                 $.ajax({
-                    url: 'addFlowersDB.php',
+                    url: 'addDriver.php',
                     type: 'post',
                     data: $('form').serialize(),
                     dataType: 'json',
                     success: function(result) {
                         console.log(result);
                         if(result.status == 'error') {
-                            $('#e_name').html(result.errors.first_name);
-                            $('#e_price').html(result.errors.last_name);
+                            $('#e_fname').html(result.errors.first_name);
+                            $('#e_lname').html(result.errors.last_name);
                         } else {
                             $('#result').html(result.msg);
                             init_display();
@@ -58,8 +58,8 @@
         });
 
         function init_display() {
-            $('#e_name').html('');
-            $('#e_price').html('');
+            $('#e_fname').html('');
+            $('#e_lname').html('');
         }
 
     </script>
