@@ -19,9 +19,12 @@ class FlowerManager {
 
         // Check if query works and returns at least one result.
         if($result && $prep->rowCount() > 0) {
+
             // Fetch flowers directly as Objects using PDO features !
             $prep->setFetchMode(PDO::FETCH_CLASS, 'Flower');
+            
             return $prep->fetchAll();
+
         } else 
             return false;
     }
