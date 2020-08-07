@@ -13,9 +13,9 @@ echo 'inside FlowerDetailView';
 </head>
 <body>
 <h2>Flower detail</h2>
-    <p>ID : <?= $movie->get_id(); ?></p>
-    <p>Name : <?= $movie->get_name(); ?></p>
-    <p>Price : <?= $movie->get_price(); ?></p>
+    <p>ID : <?= $flower->get_id(); ?></p>
+    <p>Name : <?= $flower->get_name(); ?></p>
+    <p>Price : <?= $flower->get_price(); ?></p>
     <hr>
 </body>
 

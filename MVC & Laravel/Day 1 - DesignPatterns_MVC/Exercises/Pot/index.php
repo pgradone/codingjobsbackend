@@ -1,9 +1,11 @@
 <?php
 
-echo 'MVC Flowers - index.php';
+echo 'MVC Flowers - index.php<br>';
 
 // call the right controller
 // depending on request
+
+// http://myproject/index.php?rq=flowers&id=2
 
 // Check if for a GET request
 if (isset($_GET['rq'])) {
@@ -17,7 +19,7 @@ if (isset($_GET['rq'])) {
         if (!isset($_GET['id'])) {
             $flowerCtrler->handleFlowers();
         } else {
-            $flowerCtrler->handleMovies($_GET['id']);
+            $flowerCtrler->handleFlower($_GET['id']);
         }
     } else {
         $message = 'unknown request : ' . $_GET['rq'];
