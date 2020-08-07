@@ -1,5 +1,3 @@
-<?php $message = 'wrong error call!'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

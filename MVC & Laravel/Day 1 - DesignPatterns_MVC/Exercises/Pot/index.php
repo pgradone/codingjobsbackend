@@ -10,9 +10,14 @@ if (isset($_GET['rq'])) {
 
     // valid request on flowers
     if ($_GET['rq'] == 'flowers') {
-        # code...
+        // call a new flower creation from controller
+        require_once './Controller/FlowerController.php';
+        $flowerCtrler = new FlowerController();
+
+        
     } else {
-        # code...
+        $message = 'unknown request : ' . $_GET['rq'];
+        require_once './View/ErrorView.php';
     }
     
 
