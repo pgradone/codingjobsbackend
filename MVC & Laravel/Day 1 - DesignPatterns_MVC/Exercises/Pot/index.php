@@ -14,13 +14,15 @@ if (isset($_GET['rq'])) {
         require_once './Controller/FlowerController.php';
         $flowerCtrler = new FlowerController();
 
-        
+        if (!isset($_GET['id'])) {
+            $flowerCtrler->handleFlowers();
+        } else {
+            $flowerCtrler->handleMovies($_GET['id']);
+        }
     } else {
         $message = 'unknown request : ' . $_GET['rq'];
         require_once './View/ErrorView.php';
     }
-    
-
 } else {
     $message = 'No rq made - no page to display';
     require_once './View/ErrorView.php';

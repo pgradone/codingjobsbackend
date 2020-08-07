@@ -8,9 +8,10 @@ class FlowerModel
         return new PDO('mysql:host=localhost;dbname=flowers', 'root','');
     }
 
-    public function getMovies($id='') {
+    public function getFlowers($id='') {
         $pdo = $this->connectDB();
         $sqlTxt = 'SELECT * FROM flowers WHERE id like %?%';
+        echo $sqlTxt;
         $prep = $pdo->prepare($sqlTxt);
         $prep->bindValue(1, $id, PDO::PARAM_INT);
         $res = $prep->execute();

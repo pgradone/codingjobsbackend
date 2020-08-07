@@ -2,12 +2,15 @@
 
 echo 'inside the FlowerController!';
 
+require_once './Model/FlowerModel.php';
+
 class FlowerController 
 {
     private $model;
 
     public function __construct() {
         $this->model = new FlowerModel();
+        var_dump($this->model);
     }
 
     public function handleFlowers() {
@@ -17,8 +20,8 @@ class FlowerController
         if (count($flowers) == 0) {
             $message = 'No flowers found!';
             require_once './View/ErrorView.php';
-        } elseif count($flowers) == 1 {
-            require_once './View/FlowerDetailView.php'
+        } elseif (count($flowers) == 1) {
+            require_once './View/FlowerDetailView.php';
         } else {
             require_once './View/FlowersView.php';
         }
