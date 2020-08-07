@@ -4,6 +4,8 @@ class Flower
     private $id;
     private $name;
     private $price;
+    private $reference;
+    private $image;
 
     public function __construct ($data = [])
     {
@@ -11,6 +13,8 @@ class Flower
             $this->id = $data['id'];
             $this->name = $data['name'];
             $this->price = $data[ 'price'];
+            $this->reference = $data[ 'reference'];
+            $this->image = $data[ 'image'];
         }
     }
 
@@ -26,6 +30,14 @@ class Flower
     public function get_price()
     {
         return $this->price;
+    }
+    public function get_reference()
+    {
+        return $this->reference;
+    }
+    public function get_image()
+    {
+        return $this->image;
     }
 
 }

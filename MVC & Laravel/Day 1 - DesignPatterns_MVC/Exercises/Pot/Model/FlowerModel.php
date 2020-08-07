@@ -10,7 +10,7 @@ class FlowerModel
 
   public function getFlowers() {
     $pdo = $this->connectDB();
-    $sqlTxt = 'SELECT id, name, price FROM flowers';
+    $sqlTxt = 'SELECT id, name, price, reference, image FROM flowers';
     echo $sqlTxt . '<br>';
     $qry = $pdo->query($sqlTxt);
     $res = $qry->fetchAll(PDO::FETCH_CLASS, 'Flower');
