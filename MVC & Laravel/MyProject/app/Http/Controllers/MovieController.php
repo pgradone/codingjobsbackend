@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MovieController extends Controller
 {
+    /* CRUD operation :
+    Create / Read / Update / Delete
+    */
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +18,10 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        // Display all the movies: READ
+        // Raw SQL 
+        $movies = DB::select('SELECT * FROM movies');
+        return view('movies', ['movies' => $movies]);
     }
 
     /**
@@ -23,7 +31,8 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        // Show the form to add a new Movie.
+        return view('add-movie');
     }
 
     /**
@@ -34,7 +43,12 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Save the movie in the DB.
+        $insert = DB::insert('INSERT INTO movies(title, description) VALUES(?, ?)', [$request->title, $request->description]);
+
+        return 'Insert result : ' . $insert;
+        //return 'Form was submitted. Title of movie : ' . $request->title;
     }
 
     /**
@@ -45,7 +59,8 @@ class MovieController extends Controller
      */
     public function show($id)
     {
-        //
+        // Display a specific 
+        return 'in show method of MControer';
     }
 
     /**
@@ -56,7 +71,7 @@ class MovieController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +83,7 @@ class MovieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $insert = DB::update('UPDATE movies SET title = ? WHERE id = ?', [$request->title, $id]);
     }
 
     /**
@@ -79,6 +94,7 @@ class MovieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Delete the movie
+        DB::delete('delete from movies where id = ?', [$id]);
     }
 }
