@@ -5,7 +5,7 @@ require_once './Model/Movie.php';
 class MovieModel {
 
     private function connectDB() {
-        return new PDO('mysql:host=localhost:3309;dbname=moviedb;charset=utf8', 'root', '');
+        return new PDO('mysql:host=localhost;dbname=moviedb', 'root', '');
     }
 
     public function getAllMovies() {
