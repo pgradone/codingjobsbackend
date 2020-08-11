@@ -18,8 +18,7 @@ class BooksController extends Controller
         // Display the list of books here
         // return '<h2>index() function displays the list of books</h2>';
         $bouquin = DB::select('SELECT * FROM books');
-        return view('books', ['livres' => $bouquin]);
-
+        return view('list-books', ['livres' => $bouquin]);
     }
 
     /**
@@ -30,7 +29,7 @@ class BooksController extends Controller
     public function create()
     {
         // get to the screen to add a 'new-book'
-        return view('new-book');
+        return view('create-book');
     }
 
     /**
@@ -59,7 +58,7 @@ class BooksController extends Controller
         // return 'Display the books ' . $id;
         $books = DB::select('SELECT * FROM books WHERE id = ? ', [$id]);
         $book = $books[0];
-        return view('book', ['book' => $book]);
+        return view('read-book', ['book' => $book]);
     }
 
     /**
@@ -72,9 +71,9 @@ class BooksController extends Controller
     {
         // EDIT one specific book
         $books = DB::select('SELECT * FROM books WHERE id = ? ', [$id]);
-        $book = $books[0];
+        $currentBook = $books[0];
         // fill the form with data to edit
-        return view('edit-book', ['book' => $book]);
+        return view('update-book', ['book' => $currentBook]);
 
     }
 
