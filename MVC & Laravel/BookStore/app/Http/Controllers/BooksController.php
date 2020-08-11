@@ -40,6 +40,7 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         // insert the new book into the DB
         DB::insert('INSERT INTO books(title, price) VALUES(?, ?)', [$request->title, $request->price]);
         // then show the (updated) list right after that

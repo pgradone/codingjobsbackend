@@ -4,7 +4,7 @@
 @section('content')
     <form method="post">
         @csrf
-        @method('put')
+        @method('post')
         <label for="title">Title</label>
         <input type="text" name="title" id="title" value="{{$book->title}}">
         <label for="price">Price</label>
