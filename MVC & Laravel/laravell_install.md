@@ -1,5 +1,10 @@
 # Laravel install procedure
 
+https://laravel.com/docs
+
+migrations doc:
+https://laravel.com/docs/7.x/migrations
+
 - Download laravel from here:
 https://getcomposer.org/download/
 
@@ -20,3 +25,8 @@ to launch the server :
 to make a new controller :
 >php artisan make:controller --resource MyController
 
+
+
+>php artisan route:list
+
+>https://laravel.com/docs/7.x/seeding
