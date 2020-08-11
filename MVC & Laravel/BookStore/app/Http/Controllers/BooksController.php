@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-
 use Illuminate\Http\Request;
+// add this to access the DB methods!
+use Illuminate\Support\Facades\DB;
 
 class BooksController extends Controller
 {
@@ -29,7 +29,8 @@ class BooksController extends Controller
      */
     public function create()
     {
-        //
+        // get to the screen to add a 'new-book'
+        return view('new-book');
     }
 
     /**
@@ -40,7 +41,10 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // insert the new book into the DB
+        DB::insert('INSERT INTO books(title, price) VALUES(?, ?)', [$request->title, $request->price]);
+        // then show the (updated) list right after that
+        return redirect('/books');
     }
 
     /**
@@ -52,7 +56,10 @@ class BooksController extends Controller
     public function show($id)
     {
         // display the list of books:
-        return 'Display the books ' . $id;
+        // return 'Display the books ' . $id;
+        $books = DB::select('SELECT * FROM books WHERE id = ? ', [$id]);
+        $book = $books[0];
+        return view('book', ['book' => $book]);
     }
 
     /**
@@ -63,7 +70,12 @@ class BooksController extends Controller
      */
     public function edit($id)
     {
-        //
+        // EDIT one specific book
+        $books = DB::select('SELECT * FROM books WHERE id = ? ', [$id]);
+        $book = $books[0];
+        // fill the form with data to edit
+        return view('edit-book', ['book' => $book]);
+
     }
 
     /**
@@ -75,7 +87,14 @@ class BooksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // actually update the DB with data from the form
+        DB::update(
+            'UPDATE books SET title=?, price=? WHERE id = ?',
+            [$request->title, $request->price, $id]
+        );
+        // show the list again
+        return redirect('/books');
+
     }
 
     /**
@@ -86,6 +105,10 @@ class BooksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete a specific book
+        DB::delete('DELETE FROM books WHERE id = ? ', [$id]);
+        // and back to the books list
+        return redirect('/books');
+
     }
 }
