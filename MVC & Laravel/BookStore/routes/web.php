@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('welcome-books');
 });
+
+Route::get('/books', 'BooksController@index')->name('books');
+
+/* Route::get('/books', function() {
+    return 'List of books';
+});
+ */

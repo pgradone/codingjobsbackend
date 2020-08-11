@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
@@ -13,7 +15,11 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        // Display the list of books here
+        // return '<h2>index() function displays the list of books</h2>';
+        $bouquin = DB::select('SELECT * FROM books');
+        return view('books', ['livres' => $bouquin]);
+
     }
 
     /**
@@ -45,7 +51,8 @@ class BooksController extends Controller
      */
     public function show($id)
     {
-        //
+        // display the list of books:
+        return 'Display the books ' . $id;
     }
 
     /**
