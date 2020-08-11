@@ -6,7 +6,7 @@
         {{ $book->title }}
         {{ $book->price}}
         <!-- Best practice (always work) : -->
-        <a href="{{ route('book.edit', ['id' => $book->id]) }}">Edit</a>
+        <a href="{{ route('book.edit', ['id' => $book->id]) }}">Edit book</a>
 
         <form action="/books/delete/{{$book->id}}" method="post">
             @csrf

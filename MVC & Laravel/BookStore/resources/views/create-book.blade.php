@@ -1,5 +1,5 @@
 @extends('layouts.simple-template')
-@section('title', 'Create a new book')
+@section('title', 'CREATE a new book')
 
 @section('content')
     <form method="post">
