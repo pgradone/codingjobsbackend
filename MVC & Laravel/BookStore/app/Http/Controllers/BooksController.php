@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // add this to access the DB methods!
 use Illuminate\Support\Facades\DB;
+// add model Book created with eloquent
+use App\Book;
 
 class BooksController extends Controller
 {
@@ -17,8 +19,11 @@ class BooksController extends Controller
     {
         // Display the list of books here
         // return '<h2>index() function displays the list of books</h2>';
-        $bouquin = DB::select('SELECT * FROM books');
-        return view('list-books', ['livres' => $bouquin]);
+        // $bouquins = DB::select('SELECT * FROM books');
+        // use eloquent with Book model created in App
+        $bouquins = Book::all();
+        // var_dump($bouquins);
+        return view('list-books', ['livres' => $bouquins]);
     }
 
     /**
@@ -58,7 +63,9 @@ class BooksController extends Controller
     {
         // display the list of books:
         // return 'Display the books ' . $id;
-        $books = DB::select('SELECT * FROM books WHERE id = ? ', [$id]);
+        // $books = DB::select('SELECT * FROM books WHERE id = ? ', [$id]);
+        // using eloquent filter:
+        $books = Book::where('id', $id)->get();
         $book = $books[0];
         return view('read-book', ['book' => $book]);
     }
@@ -71,8 +78,10 @@ class BooksController extends Controller
      */
     public function edit($id)
     {
-        // EDIT one specific book
-        $books = DB::select('SELECT * FROM books WHERE id = ? ', [$id]);
+        // EDIT one specific book classic way
+        // $books = DB::select('SELECT * FROM books WHERE id = ? ', [$id]);
+        // edit one book with eloquent
+        $books =  Book::where('id', $id)->get();
         $currentBook = $books[0];
         // fill the form with data to edit
         return view('update-book', ['book' => $currentBook]);
@@ -89,10 +98,14 @@ class BooksController extends Controller
     public function update(Request $request, $id)
     {
         // actually update the DB with data from the form
-        DB::update(
-            'UPDATE books SET title=?, price=? WHERE id = ?',
-            [$request->title, $request->price, $id]
-        );
+        // without eloquent
+        // DB::update(
+        //     'UPDATE books SET title=?, price=? WHERE id = ?',
+        //     [$request->title, $request->price, $id]
+        // );
+        // using eloquent
+        Book::where('id', $id)
+          ->update(['title' => $request->title, 'price' => $request->price]);
         // show the list again
         return redirect('/books');
 
@@ -106,8 +119,10 @@ class BooksController extends Controller
      */
     public function destroy($id)
     {
-        // delete a specific book
+        // delete a specific book, classic way
         DB::delete('DELETE FROM books WHERE id = ? ', [$id]);
+        // delete using eloquent:
+        $deletedRows = Book::where('id', $id)->delete();
         // and back to the books list
         return redirect('/books');
 

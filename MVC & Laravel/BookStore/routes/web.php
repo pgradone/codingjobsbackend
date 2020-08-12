@@ -25,9 +25,9 @@ Route::get('/', function () {
 
 // **** CREATE SECTION
 // Show the creation form only : 
-Route::get('/books/create', 'BooksController@create');
+Route::get('/books/create', 'BooksController@create')->name('book.create');
 // Process submitted form :
-Route::post('/books/create', 'BooksController@store');
+Route::post('/books/create', 'BooksController@store')->name('book.insert');
   
 // **** READ SECTION
 // List ALL the books :
