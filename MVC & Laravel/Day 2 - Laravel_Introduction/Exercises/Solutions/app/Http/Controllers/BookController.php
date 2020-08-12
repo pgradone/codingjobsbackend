@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Book;
 
 class BookController extends Controller
 {
@@ -12,10 +13,14 @@ class BookController extends Controller
     */
     public function index()
     {
-        $books = DB::select('SELECT * FROM books');
+       // $books = DB::select('SELECT * FROM books');
+       $books = Book::all();
         return view('books', ['books' => $books]);
     }
 
+    public function test() {
+        $books = Book::where('price', '<', 10);
+    }
     /*
         Display a specifiec book
     */
@@ -73,8 +78,12 @@ class BookController extends Controller
     */
     public function destroy($id)
     {
-        DB::delete('DELETE FROM books WHERE id = ? ', [$id]);
+        $result = DB::delete('DELETE FROM books WHERE id = ? ', [$id]);
 
-        return redirect('/books');
+        if($result)
+            return response()->json(['message'=>'Book(id:'.$id.') destroyed']);
+        else
+            return response()->json(['message'=>'Impossible to destroy the book with id : ' . $id]);
+
     }
 }
