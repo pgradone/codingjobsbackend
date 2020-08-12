@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 // C.R.U.D -> Create Read Update Delete
 
+Route::get('/', function() {
+    return redirect('books');
+});
+
 // List all the books :
 Route::get('/books', 'BookController@index');
 
