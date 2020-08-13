@@ -4,7 +4,7 @@
 @section('content')
     <form method="post">
         @csrf
-        @method('PUT')
+        <!-- @method('PUT') -->
         <input type="text" name="title">
         <input type="number" step="0.01" name="price">
         <input type="submit" name="submit" value="Create">
