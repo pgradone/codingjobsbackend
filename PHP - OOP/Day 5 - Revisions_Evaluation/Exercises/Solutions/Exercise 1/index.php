@@ -43,8 +43,8 @@
                     success: function(result) {
                         console.log(result);
                         if(result.status == 'error') {
-                            $('#e_name').html(result.errors.name);
-                            $('#e_price').html(result.errors.price);
+                            $('#e_name').html(result.errors.first_name);
+                            $('#e_price').html(result.errors.last_name);
                         } else {
                             $('#result').html(result.msg);
                             init_display();
