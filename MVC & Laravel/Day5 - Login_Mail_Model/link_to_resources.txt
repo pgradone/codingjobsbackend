@@ -1,0 +1,5 @@
+Setters&Getters in Laravel : https://laravel.com/docs/7.x/eloquent-mutators
+
+Send mail tutorial : https://www.itsolutionstuff.com/post/laravel-7-send-email-exampleexample.html
+
+Heroku : https://devcenter.heroku.com/articles/getting-started-with-laravel
