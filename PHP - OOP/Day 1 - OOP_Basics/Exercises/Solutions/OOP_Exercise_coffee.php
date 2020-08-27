@@ -43,7 +43,7 @@ class CoffeeCup
             echo 'You sipped ' . $sipQuantity . ' cl, there is no more coffee ! (You try to sip ' . $volume . ' cl)<br>';
         } else {
             $this->quantity = $this->getQuantity() - $volume;
-            echo 'You sipped ' . $volume . ' cl, coffee left : ' . $this->getQuantity() ' cl<br>';
+            echo 'You sipped ' . $volume . ' cl, coffee left : ' . $this->getQuantity() . ' cl<br>';
         }
     }
     

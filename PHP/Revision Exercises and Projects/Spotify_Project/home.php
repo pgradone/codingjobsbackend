@@ -28,7 +28,9 @@ require_once 'menu.php';
     A playlist is designated by a title, a creation date, a user (the one who owns the
     playlist) and all of the music in this playlist.</p>
   <hr>
-
+  <h2>Data Model</h2>
+  <p><a href="http://localhost/phpmyadmin/db_designer.php?db=spotify">SPOTIFY CLONE Physical Data Model</a></p>
+  <hr>
   <h2>
     <a href="./signin.php?login">Login to an existing user</a>
   </h2>

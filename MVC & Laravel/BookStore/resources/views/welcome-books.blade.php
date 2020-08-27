@@ -8,13 +8,12 @@
 <body>
     <h2>MAIN BOOKS WELCOME page</h2>
     <header>
-    <ul->
-        <li><a src:"localhost:8000/books">List all books</a></li>
-        <li>Create<a href:"/books"></li>
-        <li>Update<a href:"/books"></li>
+    <ul>
+        <li><a class="button" href="{{ route('books') }}">Books List</a></li>
+        <li><a href="{{ route('book.create') }}">New Book</a></li>
         <li></li>
         <li></li>
-    </ul->
+    </ul>
     </header>
 </body>
 </html>
